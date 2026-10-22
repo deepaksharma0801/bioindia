@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Secrets
+.env
+
+# Data: large, regenerable, or licensed (IUCN, WDPA, WorldClim and GBIF terms restrict redistribution).
+# Only the GBIF download request is kept, so the download can be reproduced.
+/data/*
+!/data/raw/
+/data/raw/*
+!/data/raw/gbif/
+/data/raw/gbif/*
+!/data/raw/gbif/gbif_download_request.json
+/outputs/
+
+# IUCN Red List downloads (licensed; no redistribution) and other original archives
+/0433e6f8-919d-4ab4-ba8a-6bc57065b07b/
+/4d02c143-09ce-4141-a871-56e90dd8369b/
+/c8874e26-600e-4dab-9baf-6698861c9646/
+/eb7e98c0-ebba-47ed-893b-968755b6122d/
+*.zip
+
+# Local tool state (launch.json is shared)
+/.claude/*
+!/.claude/launch.json

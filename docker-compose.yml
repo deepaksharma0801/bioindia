@@ -1,0 +1,37 @@
+services:
+  api:
+    build:
+      context: ./backend
+    container_name: bioindia-api
+    environment:
+      BIOINDIA_PROJECT_ROOT: /workspace
+      DATABASE_URL: postgresql://bioindia:bioindia@postgis:5432/bioindia
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/workspace
+    depends_on:
+      postgis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: bioindia-postgis
+    environment:
+      POSTGRES_DB: bioindia
+      POSTGRES_USER: bioindia
+      POSTGRES_PASSWORD: bioindia
+    ports:
+      - "5432:5432"
+    volumes:
+      - bioindia_postgis_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bioindia -d bioindia"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  bioindia_postgis_data:

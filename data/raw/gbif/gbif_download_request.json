@@ -1,0 +1,10 @@
+{
+  "format": "SIMPLE_CSV",
+  "predicate": {
+    "type": "and",
+    "predicates": [
+      { "type": "equals", "key": "COUNTRY", "value": "IN" },
+      { "type": "in", "key": "TAXON_KEY", "values": ["5219416", "5219461", "5220113", "2433395", "2441350"] }
+    ]
+  }
+}
