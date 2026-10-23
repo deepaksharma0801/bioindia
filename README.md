@@ -1,4 +1,4 @@
-# BioIndia — India Biodiversity Intelligence Platform
+# BioIndia - India Biodiversity Intelligence Platform
 
 MSc project: an India-focused biodiversity decision-support platform (extinction risk, spatio-temporal
 analysis, conservation prioritization). The full brief and its 24 development phases are in
