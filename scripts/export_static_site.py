@@ -41,7 +41,8 @@ DASHBOARD_FILES = ["BioIndia_v3_Complete.html", "bioindia-phase2.js", "bioindia-
 DATA_FILES = ["state_species.json", "occurrence_points.json", "hotspots.geojson"]
 WITHHELD = "-"
 # Fields that carry a Red List category from the IUCN export.
-IUCN_FIELDS = {"official_iucn_category", "official_category", "iucn_category", "reported_category", "current_iucn_status", "category"}
+IUCN_FIELDS = {"official_iucn_category", "official_category", "iucn_category", "reported_category", "current_iucn_status", "category",
+               "official_iucn_status", "source_reported_iucn_status"}
 
 
 def snapshot_key(path: str, body: dict | None = None) -> str:
@@ -108,8 +109,11 @@ def main() -> None:
         print(f"Refreshed dashboard files in {out}")
         return
     if out.exists():
-        shutil.rmtree(out)
-    (out / "data" / "processed").mkdir(parents=True)
+        # Keep the publishing repository (site/.git) so the gh-pages history continues.
+        for child in out.iterdir():
+            if child.name != ".git":
+                shutil.rmtree(child) if child.is_dir() else child.unlink()
+    (out / "data" / "processed").mkdir(parents=True, exist_ok=True)
     client = TestClient(app)
     written = 0
 
@@ -142,6 +146,21 @@ def main() -> None:
         for suffix in ("intelligence", "trend", "environment", "land-pressure"):
             get(f"/species/{species_id}/{suffix}", species_id)
         get(f"/prediction/species/{species_id}", species_id)
+
+    print("Species intelligence profiles")
+    species_list = get("/species")
+    profiled = [item["species_id"] for item in species_list["species"] if item.get("observation_record_count")]
+    for number, species_id in enumerate(profiled, start=1):
+        for suffix in ("intelligence", "environment", "land-pressure"):
+            get(f"/species/{species_id}/{suffix}", species_id)
+        get(f"/prediction/species/{species_id}/explanation", species_id)
+        get(f"/indices/ibvci/{species_id}", species_id)
+        network = client.get(f"/api/v1/network/species/{species_id}")
+        if network.status_code == 200:
+            slim = {key: value for key, value in network.json().items() if key not in ("documented_interactions", "co_occurrence_associations")}
+            save(f"/network/species/{species_id}", scrub(slim, species_id))
+        if number % 25 == 0:
+            print(f"  {number}/{len(profiled)} species", flush=True)
 
     print("Cascade scenarios")
     for species_id in CASCADE_SPECIES:

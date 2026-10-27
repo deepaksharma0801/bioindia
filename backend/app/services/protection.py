@@ -12,6 +12,8 @@ ELIGIBLE_UNCERTAINTY_CLASSES = ("precise", "moderate")
 MAX_UNCERTAINTY_M = 10_000
 SMALL_SAMPLE = 30
 
+# Point-in-polygon tests run against protected_areas_sub (the same outlines cut into small pieces by
+# scripts/phase11_subdivide_protected_areas.py), which is far faster than the original polygons.
 PROTECTION_QUERY = """
     SELECT COUNT(*) AS occurrence_record_count,
            COUNT(*) FILTER (WHERE o.coordinate_uncertainty_class = ANY(%(eligible)s)) AS eligible_record_count,
@@ -24,7 +26,7 @@ PROTECTION_QUERY = """
 """.format(
     class_counts=",\n           ".join(
         f"""COUNT(*) FILTER (WHERE o.coordinate_uncertainty_class = ANY(%(eligible)s) AND EXISTS (
-               SELECT 1 FROM protected_areas AS pa
+               SELECT 1 FROM {{table}} AS pa
                WHERE pa.pa_class = '{pa_class}' AND ST_Intersects(o.geom, pa.geom)
            )) AS {pa_class}"""
         for pa_class in PROTECTION_CLASSES
@@ -80,7 +82,25 @@ def summarize_protection(result: dict[str, Any]) -> dict[str, Any] | None:
     }
 
 
+def _sub_table_exists(cursor) -> bool:
+    cursor.execute("SELECT to_regclass('protected_areas_sub') IS NOT NULL AS present")
+    return cursor.fetchone()["present"]
+
+
+# Results depend only on loaded data, so successful ones are cached per process (restart the API after reloading data).
+_CACHE: dict[str, dict[str, Any]] = {}
+
+
 def species_protection(species_id: str) -> dict[str, Any] | None:
+    if species_id in _CACHE:
+        return _CACHE[species_id]
+    result = _species_protection(species_id)
+    if result is not None:
+        _CACHE[species_id] = result
+    return result
+
+
+def _species_protection(species_id: str) -> dict[str, Any] | None:
     database_url = os.getenv("DATABASE_URL")
     if not database_url:
         return None
@@ -92,7 +112,10 @@ def species_protection(species_id: str) -> dict[str, Any] | None:
     try:
         with psycopg.connect(database_url, row_factory=dict_row) as connection:
             with connection.cursor() as cursor:
-                cursor.execute(PROTECTION_QUERY, {"species_id": species_id, "eligible": list(ELIGIBLE_UNCERTAINTY_CLASSES)})
+                cursor.execute("SELECT to_regclass('protected_areas_sub') IS NOT NULL AND EXISTS (SELECT 1 FROM protected_areas_sub) AS ready"
+                               if _sub_table_exists(cursor) else "SELECT FALSE AS ready")
+                table = "protected_areas_sub" if cursor.fetchone()["ready"] else "protected_areas"
+                cursor.execute(PROTECTION_QUERY.replace("{table}", table), {"species_id": species_id, "eligible": list(ELIGIBLE_UNCERTAINTY_CLASSES)})
                 result = cursor.fetchone()
     except UndefinedTable:
         return None

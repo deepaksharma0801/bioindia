@@ -39,13 +39,19 @@ def species_network(species_id: str) -> dict[str, Any] | None:
     for row in rows:
         row["citation_recorded"] = row["distinct_citations"] > 0
     by_type: dict[str, int] = {}
+    partners: dict[str, dict[str, Any]] = {}
     for row in documented:
         by_type[row["interaction_type"]] = by_type.get(row["interaction_type"], 0) + 1
+        partner = partners.setdefault(row["partner_name"], {"name": row["partner_name"], "species_id": row["partner_species_id"], "records": 0, "types": set()})
+        partner["records"] += row["records"]
+        partner["types"].add(row["interaction_type"])
+    top_partners = [{**p, "types": sorted(p["types"])} for p in sorted(partners.values(), key=lambda p: (-p["records"], p["name"]))[:10]]
     return {
         "species": species[0],
         "documented_partner_count": len({row["partner_name"] for row in documented}),
         "partners_in_platform": sorted({row["partner_species_id"] for row in documented if row["partner_species_id"] and row["partner_species_id"] != species_id}),
         "documented_links_by_type": by_type,
+        "top_partners": top_partners,
         "documented_interactions": documented,
         "co_occurrence_associations": [row for row in rows if row["evidence_type"] != "DOCUMENTED"],
         "data_sparsity": "no documented interactions found" if not documented else ("sparse (fewer than 5 partners)" if len({r["partner_name"] for r in documented}) < 5 else "documented"),

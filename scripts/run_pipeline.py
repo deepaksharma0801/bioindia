@@ -31,6 +31,7 @@ STEPS: list[list[str]] = [
     ["phase11_load_wdpa.py"],
     ["phase11_compare_osm_wdpa.py"],
     ["phase11_load_osm.py"],
+    ["phase11_subdivide_protected_areas.py"],
     ["phase9_sample_worldclim.py"],
     ["phase10_build_land_use_grid.py"],
     ["phase13_build_grid_metrics.py"],

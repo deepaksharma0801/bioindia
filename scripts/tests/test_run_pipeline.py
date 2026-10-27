@@ -24,6 +24,7 @@ class PipelineOrderTests(unittest.TestCase):
             ("phase4_prepare_postgis_inputs.py", "phase4_load_postgis.py"),
             ("phase8_prepare_iucn_export.py", "phase8_import_conservation_assessments.py"),
             ("phase11_load_osm.py", "phase13_build_grid_metrics.py"),
+            ("phase11_load_osm.py", "phase11_subdivide_protected_areas.py"),
             ("phase10_build_land_use_grid.py", "phase13_build_grid_metrics.py"),
             ("phase9_sample_worldclim.py", "phase14_train_risk_model.py"),
             ("phase10_build_land_use_grid.py", "phase14_train_risk_model.py"),

@@ -33,6 +33,15 @@ class NetworkAndConservationTests(unittest.TestCase):
         self.assertTrue(all(row["evidence_type"] == "CO_OCCURRENCE_ASSOCIATION" for row in payload["co_occurrence_associations"]))
         self.assertIn("not from observations in India", " ".join(payload["notes"]))
 
+    def test_top_partners_summarise_documented_links(self) -> None:
+        payload = self.client.get("/api/v1/network/species/tiger").json()
+        top = payload["top_partners"]
+        documented = {row["partner_name"] for row in payload["documented_interactions"]}
+
+        self.assertLessEqual(len(top), 10)
+        self.assertEqual([p["records"] for p in top], sorted((p["records"] for p in top), reverse=True))
+        self.assertTrue(all(p["name"] in documented and p["types"] for p in top))
+
     def test_ecosystem_network_avoids_keystone_language(self) -> None:
         payload = self.client.get("/api/v1/network/ecosystem/Assam").json()
 
