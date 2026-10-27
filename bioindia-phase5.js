@@ -280,13 +280,15 @@
     // Stop the demo food-web animation before its canvas is removed.
     if (typeof eAnim !== "undefined" && eAnim) cancelAnimationFrame(eAnim);
     host.innerHTML =
-      '<div class="report-controls" style="flex-wrap:wrap;gap:12px;display:flex;align-items:flex-end">' +
+      '<div style="max-width:1000px;margin:0 auto;padding:28px 32px;text-align:left;background:linear-gradient(135deg,rgba(6,12,20,.96),rgba(8,16,32,.96));' +
+      'border:1px solid rgba(42,138,122,.25);box-shadow:0 20px 60px rgba(0,0,0,.5)">' +
+      '<div class="report-controls">' +
       '<div class="gis-filter-group"><label>Remove species</label><select class="gis-select" id="cascadeSpecies">' +
       FLAGSHIPS.map(function (sp) { return '<option value="' + sp.id + '">' + esc(sp.name) + "</option>"; }).join("") +
       '<option value="ardeola_grayii">Indian Pond-heron</option><option value="pavo_cristatus">Indian Peafowl</option></select></div>' +
       '<div class="gis-filter-group"><label>Loss threshold</label><select class="gis-select" id="cascadeThreshold">' +
       '<option value="0.25">25% of resources</option><option value="0.5" selected>50% of resources</option><option value="0.75">75% of resources</option></select></div>' +
-      '<button class="gen-report-btn" id="cascadeRun">Run scenario</button></div><div id="cascadeOutput" style="margin-top:18px"></div>';
+      '<button class="gen-report-btn" id="cascadeRun">Run scenario</button></div><div id="cascadeOutput"></div></div>';
     async function run() {
       var output = document.getElementById("cascadeOutput");
       output.innerHTML = '<div style="' + NOTE_STYLE + '">Running scenario…</div>';
