@@ -10,10 +10,11 @@ from pathlib import Path
 
 import psycopg
 
+from db_schema import ensure_schema
+
 
 ROOT = Path(__file__).resolve().parents[1]
 KML = ROOT / "data" / "raw" / "protected_areas" / "extracted" / "PA_TR_Corridor_Final.kml"
-SCHEMA = ROOT / "backend" / "app" / "database" / "schema.sql"
 REPORT = ROOT / "data" / "analytics" / "protected_area_load_report.json"
 DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://bioindia:bioindia@127.0.0.1:5432/bioindia")
 KML_NS = "{http://www.opengis.net/kml/2.2}"
@@ -50,9 +51,9 @@ def main() -> None:
             "geometry": json.dumps({"type": "MultiPolygon", "coordinates": polygons}),
         })
 
+    ensure_schema(DATABASE_URL)
     with psycopg.connect(DATABASE_URL) as connection:
         with connection.cursor() as cursor:
-            cursor.execute(SCHEMA.read_text(encoding="utf-8"))
             cursor.executemany(
                 """INSERT INTO protected_areas (protected_area_id, name, designation, state_name, reported_area, source, geom)
                 VALUES (%(protected_area_id)s, %(name)s, %(designation)s, %(state_name)s, %(reported_area)s, %(source)s,

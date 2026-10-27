@@ -16,7 +16,8 @@ def official_assessment(species_id: str) -> dict[str, Any] | None:
     query = """
         SELECT iucn_taxon_id, iucn_category, assessment_year, population_trend,
                threat_codes, threat_descriptions, habitat_codes, conservation_actions,
-               assessment_version, source, source_url, dataset_version, retrieval_date
+               assessment_version, source, source_url, dataset_version, retrieval_date,
+               assessed_taxon_name, taxon_level
         FROM conservation_assessments
         WHERE species_id = %s
         ORDER BY assessment_year DESC, imported_at DESC

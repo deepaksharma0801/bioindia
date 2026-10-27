@@ -12,9 +12,10 @@ from pathlib import Path
 
 import psycopg
 
+from db_schema import ensure_schema
+
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = ROOT / "backend" / "app" / "database" / "schema.sql"
 REPORT = ROOT / "data" / "analytics" / "conservation_import_report.json"
 UNMATCHED = ROOT / "data" / "analytics" / "conservation_import_unmatched.csv"
 DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://bioindia:bioindia@127.0.0.1:5432/bioindia")
@@ -25,6 +26,16 @@ VALID_CATEGORIES = {"EX", "EW", "CR", "EN", "VU", "NT", "LC", "DD", "NE"}
 def list_value(value: str | None) -> list[str] | None:
     values = [item.strip() for item in (value or "").split(";") if item.strip()]
     return values or None
+
+
+def taxon_level(assessed_name: str) -> str:
+    """'subpopulation', 'subspecies' or 'species', from the assessed taxon's name."""
+    text = assessed_name.casefold()
+    if "subpopulation" in text:
+        return "subpopulation"
+    if " ssp." in text or " subsp." in text or len(assessed_name.split()) > 2:
+        return "subspecies"
+    return "species"
 
 
 def assessment_id(row: dict[str, str], species_id: str) -> str:
@@ -50,14 +61,17 @@ def main() -> None:
 
     accepted: list[dict[str, object]] = []
     excluded: list[dict[str, str]] = []
+    ensure_schema(DATABASE_URL)
     with psycopg.connect(DATABASE_URL) as connection:
         with connection.cursor() as cursor:
-            cursor.execute(SCHEMA.read_text(encoding="utf-8"))
-            cursor.execute("SELECT species_id, scientific_name FROM species")
-            species_by_name = {name.casefold(): species_id for species_id, name in cursor.fetchall()}
+            cursor.execute("SELECT species_id, scientific_name, iucn_taxon_id FROM species")
+            species_rows = cursor.fetchall()
+            species_by_name = {name.casefold(): species_id for species_id, name, _ in species_rows}
+            species_by_taxon = {taxon_id: species_id for species_id, _, taxon_id in species_rows if taxon_id}
             for row in rows:
                 category = row["iucn_category"].strip().upper()
-                species_id = species_by_name.get(row["scientific_name"].strip().casefold())
+                # The IUCN taxon ID links subspecies and subpopulation assessments to their species.
+                species_id = species_by_taxon.get((row.get("iucn_taxon_id") or "").strip()) or species_by_name.get(row["scientific_name"].strip().casefold())
                 try:
                     year = int(row["assessment_year"])
                     date.fromisoformat(row["retrieval_date"])
@@ -87,17 +101,22 @@ def main() -> None:
                         "source_url": row["source_url"].strip(),
                         "dataset_version": row.get("dataset_version") or None,
                         "retrieval_date": row["retrieval_date"].strip(),
+                        "assessed_taxon_name": row["scientific_name"].strip(),
+                        "taxon_level": taxon_level(row["scientific_name"]),
                     }
                 )
             cursor.executemany(
                 """INSERT INTO conservation_assessments
                 (assessment_id, species_id, iucn_taxon_id, iucn_category, assessment_year, population_trend,
                  threat_codes, threat_descriptions, habitat_codes, conservation_actions, assessment_version,
-                 source, source_url, dataset_version, retrieval_date)
+                 source, source_url, dataset_version, retrieval_date, assessed_taxon_name, taxon_level)
                 VALUES (%(assessment_id)s, %(species_id)s, %(iucn_taxon_id)s, %(iucn_category)s, %(assessment_year)s, %(population_trend)s,
                         %(threat_codes)s::jsonb, %(threat_descriptions)s::jsonb, %(habitat_codes)s::jsonb, %(conservation_actions)s::jsonb,
-                        %(assessment_version)s, %(source)s, %(source_url)s, %(dataset_version)s, %(retrieval_date)s)
+                        %(assessment_version)s, %(source)s, %(source_url)s, %(dataset_version)s, %(retrieval_date)s,
+                        %(assessed_taxon_name)s, %(taxon_level)s)
                 ON CONFLICT (assessment_id) DO UPDATE SET
+                    assessed_taxon_name = EXCLUDED.assessed_taxon_name,
+                    taxon_level = EXCLUDED.taxon_level,
                     iucn_category = EXCLUDED.iucn_category,
                     assessment_year = EXCLUDED.assessment_year,
                     population_trend = EXCLUDED.population_trend,

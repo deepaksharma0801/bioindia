@@ -47,14 +47,17 @@ class Phase13AnalyticsTests(unittest.TestCase):
         for feature in payload["features"]:
             self.assertLessEqual(feature["properties"]["wildlife_pa_pct"], 5)
             self.assertGreaterEqual(feature["properties"]["threatened_species"], 2)
-            self.assertFalse(feature["properties"]["threatened_status_verified"])
+            # Flagship categories are unverified, so any cell counting one cannot be fully verified.
+            if {"tiger", "elephant", "rhino", "bear", "croc"} & set(feature["properties"]["threatened_species_ids"]):
+                self.assertFalse(feature["properties"]["threatened_status_verified"])
 
     def test_threatened_species_reports_unverified_categories(self) -> None:
         response = self.client.get("/api/v1/analytics/threatened-species")
 
         self.assertEqual(response.status_code, 200)
         species = {item["species_id"]: item for item in response.json()["species"]}
-        self.assertEqual(set(species), {"tiger", "elephant", "rhino", "bear", "croc"})
+        self.assertTrue({"tiger", "elephant", "rhino", "bear", "croc"} <= set(species))
+        self.assertTrue(all(item["category"] in {"CR", "EN", "VU"} for item in species.values()))
         self.assertEqual(species["tiger"]["category"], "EN")
         self.assertFalse(species["tiger"]["category_verified"])
         self.assertGreater(species["tiger"]["grid_cells_occupied"], 0)

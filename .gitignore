@@ -14,7 +14,7 @@ __pycache__/
 /data/raw/*
 !/data/raw/gbif/
 /data/raw/gbif/*
-!/data/raw/gbif/gbif_download_request.json
+!/data/raw/gbif/gbif_download_request*.json
 /outputs/
 
 # IUCN Red List downloads (licensed; no redistribution) and other original archives
@@ -27,3 +27,6 @@ __pycache__/
 # Local tool state (launch.json is shared)
 /.claude/*
 !/.claude/launch.json
+
+# Trained model artifacts (reproducible from scripts/phase14_train_risk_model.py)
+/models/

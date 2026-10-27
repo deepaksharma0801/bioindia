@@ -12,7 +12,7 @@ Mugger Crocodile — with real GBIF occurrences, protected areas and baseline cl
 | Part | Where | Notes |
 |---|---|---|
 | Dashboard | `BioIndia_v3_Complete.html`, `bioindia-phase2.js`, `bioindia-phase3.js` | Static HTML/JS + Leaflet; reads the API, falls back to `data/processed/` |
-| API | `backend/app/` | FastAPI; routers in `routers/`, logic in `services/`, schema in `database/schema.sql` |
+| API | `backend/app/` | FastAPI; routers in `routers/`, logic in `services/`; schema as Alembic migrations in `backend/migrations/` |
 | Database | PostGIS 3.4 (Docker) | Tables: `species`, `occurrences`, `protected_areas`, `conservation_assessments`, `occurrence_land_pressure`, `analytics_grid_cells` |
 | Pipelines | `scripts/phase*.py` | Reproducible import, cleaning and analytics steps |
 | Data | `data/raw`, `data/processed`, `data/analytics` | Not in git (size and licences) |
@@ -45,8 +45,9 @@ Copy `env.example` to `.env` if you need other credentials; the defaults match `
 ## Pipeline (run in order, from the project root)
 
 ```bash
+.venv/Scripts/python scripts/db_schema.py                        # apply Alembic migrations (loaders also do this)
 .venv/Scripts/python scripts/prepare_state_boundaries.py         # 36 states/UTs
-.venv/Scripts/python scripts/phase4_prepare_postgis_inputs.py    # GBIF quality screen + exclusion log
+.venv/Scripts/python scripts/phase4_prepare_postgis_inputs.py    # GBIF quality screen, 72k-per-species sample, exclusion log
 .venv/Scripts/python scripts/phase4_load_postgis.py              # species + occurrences
 .venv/Scripts/python scripts/phase11_load_wdpa.py                # WDPA forest/other layers (also --dry-run)
 .venv/Scripts/python scripts/phase11_compare_osm_wdpa.py         # OSM extract, India filter, comparison

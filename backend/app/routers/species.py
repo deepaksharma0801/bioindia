@@ -28,8 +28,8 @@ def state_profile_data() -> object:
 
 
 @router.get("/occurrences")
-def occurrence_map_data() -> dict[str, object]:
-    payload = species_occurrences()
+def occurrence_map_data(all_species: bool = Query(default=False, description="Return every species instead of the five flagships.")) -> dict[str, object]:
+    payload = species_occurrences(all_species=all_species)
     if payload is None:
         raise HTTPException(status_code=503, detail="Occurrence output is not available.")
     return payload

@@ -43,13 +43,10 @@ class SpeciesApiTests(unittest.TestCase):
         response = self.client.get("/api/v1/species")
 
         self.assertEqual(response.status_code, 200)
-        payload = response.json()
-        self.assertEqual(len(payload["species"]), 5)
-        self.assertEqual(
-            {item["species_id"] for item in payload["species"]},
-            {"tiger", "elephant", "rhino", "bear", "croc"},
-        )
-        self.assertTrue(all(item["observation_record_count"] > 0 for item in payload["species"]))
+        species = {item["species_id"]: item for item in response.json()["species"]}
+        self.assertGreaterEqual(len(species), 5)
+        self.assertTrue({"tiger", "elephant", "rhino", "bear", "croc"} <= set(species))
+        self.assertTrue(all(species[flagship]["observation_record_count"] > 0 for flagship in ("tiger", "elephant", "rhino", "bear", "croc")))
 
     def test_species_search_and_detail(self) -> None:
         search_response = self.client.get("/api/v1/species/search", params={"query": "tiger"})

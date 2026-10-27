@@ -20,11 +20,12 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
+from db_schema import ensure_schema
+
 
 ROOT = Path(__file__).resolve().parents[1]
 OSM_LAYER = ROOT / "data" / "processed" / "osm_protected_areas.gpkg"
 PBF = ROOT / "data" / "raw" / "protected_areas" / "osm" / "india-latest.osm.pbf"
-SCHEMA = ROOT / "backend" / "app" / "database" / "schema.sql"
 REPORT = ROOT / "data" / "analytics" / "osm_protected_area_load_report.json"
 DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://bioindia:bioindia@127.0.0.1:5432/bioindia")
 
@@ -84,9 +85,9 @@ def load_rows():
 def load_postgis(rows: list[dict[str, object]], version: str) -> None:
     import psycopg
 
+    ensure_schema(DATABASE_URL)
     with psycopg.connect(DATABASE_URL) as connection:
         with connection.cursor() as cursor:
-            cursor.execute(SCHEMA.read_text(encoding="utf-8"))
             # Replace the whole OSM layer so features removed from OSM do not linger.
             cursor.execute("DELETE FROM protected_areas WHERE protected_area_id LIKE 'OSM:%%'")
             cursor.executemany(

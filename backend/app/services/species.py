@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 from datetime import date, datetime, timezone
 from typing import Any
 
@@ -23,12 +24,25 @@ SPECIES_DISPLAY = {
     "croc": {"emoji": "\U0001F40A", "color": "#30a080"},
 }
 
+FLAGSHIP_IDS = tuple(SPECIES_DISPLAY)
+
+
+def display_color(species_id: str) -> str:
+    """Flagship colours from the original design; a stable generated colour for every other species."""
+    if species_id in SPECIES_DISPLAY:
+        return SPECIES_DISPLAY[species_id]["color"]
+    hue = int(hashlib.sha1(species_id.encode("utf-8")).hexdigest()[:4], 16) % 360
+    return f"hsl({hue}, 55%, 55%)"
+
+
 SPECIES_QUERY = """
     SELECT s.species_id, s.common_name, s.scientific_name, s.class_name,
            s.kingdom, s.phylum, s.order_name, s.family, s.genus, s.species_epithet, s.gbif_taxon_key,
            s.current_iucn_status, s.current_iucn_status_source, s.source, s.source_dataset_identifier,
            (SELECT ca.iucn_category FROM conservation_assessments AS ca
             WHERE ca.species_id = s.species_id ORDER BY ca.assessment_year DESC LIMIT 1) AS official_iucn_status,
+           (SELECT ca.taxon_level FROM conservation_assessments AS ca
+            WHERE ca.species_id = s.species_id ORDER BY ca.assessment_year DESC LIMIT 1) AS official_assessment_taxon_level,
            COUNT(o.occurrence_id)::integer AS observation_record_count,
            COUNT(DISTINCT o.state)::integer AS states_with_records
     FROM species AS s
@@ -50,6 +64,8 @@ def _summary(row: dict[str, Any]) -> dict[str, Any]:
         "scientific_name": row["scientific_name"],
         "taxonomic_group": row["class_name"],
         "official_iucn_status": row["official_iucn_status"],
+        # 'subspecies' or 'subpopulation' means the category is for the Indian taxon, not the species globally.
+        "official_assessment_taxon_level": row["official_assessment_taxon_level"],
         "source_reported_iucn_status": row["current_iucn_status"],
         "states_with_records": row["states_with_records"],
         "observation_record_count": row["observation_record_count"],
@@ -66,14 +82,24 @@ def list_species(query: str | None = None, status: str | None = None) -> list[di
     results = []
     for row in _species_rows():
         summary = _summary(row)
-        searchable = " ".join(str(summary[key] or "") for key in ("species_id", "scientific_name", "common_name")).casefold()
-        if normalized_query and normalized_query not in searchable:
-            continue
+        names = [str(summary[key] or "").casefold() for key in ("species_id", "scientific_name", "common_name")]
+        if normalized_query:
+            # 0 = exact name, 1 = a name or word starts with the query, 2 = contained anywhere.
+            if normalized_query in names:
+                rank = 0
+            elif any(word.startswith(normalized_query) for name in names for word in name.replace("_", " ").split()):
+                rank = 1
+            elif any(normalized_query in name for name in names):
+                rank = 2
+            else:
+                continue
+        else:
+            rank = 0
         category = summary["official_iucn_status"] or summary["source_reported_iucn_status"] or ""
         if normalized_status and category.upper() != normalized_status:
             continue
-        results.append(summary)
-    return results
+        results.append((rank, summary))
+    return [summary for _, summary in sorted(results, key=lambda item: item[0])]
 
 
 def get_species(species_id: str) -> dict[str, Any] | None:
@@ -114,19 +140,25 @@ def species_trend(species_id: str) -> dict[str, Any] | None:
     }
 
 
-def species_occurrences(species_id: str | None = None) -> dict[str, Any] | None:
-    """Map payload in the dashboard's format: grouped points per species (same place, year)."""
+def species_occurrences(species_id: str | None = None, all_species: bool = False) -> dict[str, Any] | None:
+    """Map payload in the dashboard's format: grouped points per species (same place, year).
+
+    Without a species_id the five flagship species are returned unless all_species is set, which
+    keeps the dashboard map light now that the platform tracks many species.
+    """
     species = _species_rows(species_id)
     if species_id and not species:
         return None
+    if not species_id and not all_species:
+        species = [row for row in species if row["species_id"] in FLAGSHIP_IDS]
     points = fetch_all(
         """SELECT species_id, ROUND(latitude::numeric, 3)::float AS lat, ROUND(longitude::numeric, 3)::float AS lng,
                   year, MODE() WITHIN GROUP (ORDER BY state) AS state, COUNT(*)::integer AS obs,
                   MODE() WITHIN GROUP (ORDER BY coordinate_uncertainty_class) AS uncertainty_class
-           FROM occurrences WHERE (%(species_id)s::text IS NULL OR species_id = %(species_id)s)
+           FROM occurrences WHERE species_id = ANY(%(species_ids)s)
            GROUP BY species_id, 2, 3, year
            ORDER BY species_id, obs DESC, year DESC""",
-        {"species_id": species_id},
+        {"species_ids": [row["species_id"] for row in species]},
     )
     by_species: dict[str, list[dict[str, Any]]] = {}
     for point in points:
@@ -144,7 +176,7 @@ def species_occurrences(species_id: str | None = None) -> dict[str, Any] | None:
                 "scientificName": row["scientific_name"],
                 "status": row["official_iucn_status"] or row["current_iucn_status"],
                 "statusVerified": bool(row["official_iucn_status"]),
-                "col": SPECIES_DISPLAY.get(row["species_id"], {}).get("color"),
+                "col": display_color(row["species_id"]),
                 "emoji": SPECIES_DISPLAY.get(row["species_id"], {}).get("emoji"),
                 "totalRawRecords": row["observation_record_count"],
                 "groupedPointCount": len(by_species.get(row["species_id"], [])),
@@ -233,6 +265,15 @@ def species_intelligence(species_id: str) -> dict[str, Any] | None:
     }
 
 
+def _assessment_note(assessment: dict[str, Any] | None) -> str:
+    if not assessment:
+        return "Official assessment fields are unavailable until an authorized IUCN export is imported."
+    if assessment.get("taxon_level") and assessment["taxon_level"] != "species":
+        return (f"Official IUCN assessment of {assessment['assessed_taxon_name']} ({assessment['taxon_level']}); "
+                "it describes that taxon, not the species' global status.")
+    return "Imported official assessment data with recorded provenance."
+
+
 def species_conservation_status(species_id: str) -> dict[str, Any] | None:
     rows = _species_rows(species_id)
     if not rows:
@@ -245,7 +286,7 @@ def species_conservation_status(species_id: str) -> dict[str, Any] | None:
             "available": bool(verified_assessment),
             "verified": bool(verified_assessment),
             "data": verified_assessment,
-            "note": "Official assessment fields are unavailable until an authorized IUCN export is imported." if not verified_assessment else "Imported official assessment data with recorded provenance.",
+            "note": _assessment_note(verified_assessment),
         },
         "source_reported_category": {
             "category": row["current_iucn_status"],

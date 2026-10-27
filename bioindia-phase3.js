@@ -86,10 +86,22 @@
     }).join("");
   }
 
-  function normalizeYearFilter(select) {
+  function yearSpan(speciesList) {
+    var first = Infinity, last = -Infinity;
+    speciesList.forEach(function (species) {
+      (species.points || []).forEach(function (point) {
+        if (!point.year) return;
+        if (point.year < first) first = point.year;
+        if (point.year > last) last = point.year;
+      });
+    });
+    return first <= last ? first + "–" + last : "no dated records";
+  }
+
+  function normalizeYearFilter(select, speciesList) {
     if (!select) return;
     select.innerHTML =
-      '<option value="all">All Years (1999–2026)</option>' +
+      '<option value="all">All Years (' + yearSpan(speciesList) + ')</option>' +
       '<option value="recent">Recent (2020–2026)</option>' +
       '<option value="2010s">2010–2019</option>' +
       '<option value="2000s">2000–2009</option>';
@@ -101,7 +113,8 @@
       var note = document.createElement("div");
       note.id = "phase3MapNote";
       note.style.cssText = "margin-top:12px;font-family:'EB Garamond',serif;font-style:italic;font-size:.95rem;color:rgba(168,196,216,.52);";
-      note.textContent = "Phase 3 loaded " + totalPoints.toLocaleString() + " grouped occurrence points from " + sourceMode.replace(/_/g, " ") + ".";
+      note.textContent = "Loaded " + totalPoints.toLocaleString() + " grouped occurrence points from " + sourceMode.replace(/_/g, " ") +
+        ". Solid points are located within 10 km; faint dashed rings are obscured or unstated locations.";
       statBar.parentNode.insertBefore(note, statBar.nextSibling);
     }
   }
@@ -113,7 +126,7 @@
 
     refreshSpeciesFilter(speciesList);
     refreshLegend(speciesList);
-    normalizeYearFilter(document.getElementById("gisYearFilter"));
+    normalizeYearFilter(document.getElementById("gisYearFilter"), speciesList);
 
     if (typeof updateGISMap === "function") {
       updateGISMap();
@@ -124,7 +137,7 @@
     }, 0);
 
     tweakMapSectionCopy(payload.sourceMode || "occurrence exports", totalPoints);
-    updateBadge("Phase 3 real occurrence map");
+    updateBadge("Live data: GBIF occurrences (PostGIS)");
     window.BioIndiaPhase3 = payload;
     return true;
   }

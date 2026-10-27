@@ -11,9 +11,10 @@ from pathlib import Path
 
 import psycopg
 
+from db_schema import ensure_schema
+
 
 ROOT = Path(__file__).resolve().parents[1]
-SCHEMA = ROOT / "backend" / "app" / "database" / "schema.sql"
 REPORT = ROOT / "data" / "analytics" / "land_pressure_import_report.json"
 EXCLUSIONS = ROOT / "data" / "analytics" / "land_pressure_import_exclusions.csv"
 DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://bioindia:bioindia@127.0.0.1:5432/bioindia")
@@ -45,9 +46,9 @@ def main() -> None:
 
     accepted: list[dict[str, object]] = []
     excluded: list[dict[str, str]] = []
+    ensure_schema(DATABASE_URL)
     with psycopg.connect(DATABASE_URL) as connection:
         with connection.cursor() as cursor:
-            cursor.execute(SCHEMA.read_text(encoding="utf-8"))
             cursor.execute("SELECT occurrence_id FROM occurrences")
             known_occurrences = {row[0] for row in cursor.fetchall()}
             for row in rows:

@@ -279,20 +279,6 @@
     grid.appendChild(tableCard);
   }
 
-  function hotspotImages() {
-    return [
-      typeof IMG_HS_WESTERN_GHATS !== "undefined" ? IMG_HS_WESTERN_GHATS : "",
-      typeof IMG_HS_EASTERN_HIMALAYA !== "undefined" ? IMG_HS_EASTERN_HIMALAYA : "",
-      typeof IMG_HS_SUNDARBANS !== "undefined" ? IMG_HS_SUNDARBANS : "",
-      typeof IMG_HS_ANDAMAN !== "undefined" ? IMG_HS_ANDAMAN : "",
-      typeof IMG_HS_INDO_BURMA !== "undefined" ? IMG_HS_INDO_BURMA : "",
-      typeof IMG_HS_KAZIRANGA !== "undefined" ? IMG_HS_KAZIRANGA : "",
-      typeof IMG_HS_NILGIRI !== "undefined" ? IMG_HS_NILGIRI : "",
-      typeof IMG_HS_KUTCH !== "undefined" ? IMG_HS_KUTCH : "",
-      typeof IMG_HS_EASTERN_GHATS !== "undefined" ? IMG_HS_EASTERN_GHATS : ""
-    ];
-  }
-
   function renderDynamicHotspots() {
     var grid = document.getElementById("hotspotGrid");
     if (!grid || !PHASE2.hotspots || !Array.isArray(PHASE2.hotspots.features)) return;
@@ -306,7 +292,6 @@
 
     if (!features.length) return;
 
-    var images = hotspotImages();
     grid.innerHTML = "";
 
     features.forEach(function (feature, index) {
@@ -324,10 +309,12 @@
 
       var card = document.createElement("div");
       card.className = "hotspot-card";
+      // Grid cells are data-derived, so no landscape photo is shown (a stock image would misrepresent the place).
+      var coordinates = Number.isFinite(Number(props.centroid_lat)) ?
+        Number(props.centroid_lat).toFixed(2) + "°N, " + Number(props.centroid_lon).toFixed(2) + "°E" : "";
       card.innerHTML =
-        '<div class="hotspot-img-wrap">' +
-        '<img class="hotspot-img" src="' + escapeHtml(images[index % images.length] || "") + '" alt="' + escapeHtml(props.region_name || ("Hotspot " + rank)) + '">' +
-        '<div class="hotspot-img-overlay"></div>' +
+        '<div class="hotspot-img-wrap" style="background:linear-gradient(135deg,rgba(42,138,122,.35),rgba(6,12,20,.95));display:flex;align-items:flex-end;justify-content:flex-start;">' +
+        '<div style="padding:12px 16px;font-family:\'Cinzel\',serif;font-size:.6rem;letter-spacing:.18em;color:rgba(168,196,216,.7)">Grid cell · ' + escapeHtml(coordinates) + "</div>" +
         '<div class="hotspot-rank">' + rank + "</div></div>" +
         '<div class="hotspot-body"><div class="hotspot-name">' + escapeHtml(props.region_name || ("Hotspot " + rank)) + "</div>" +
         '<div class="hotspot-region">&#9652; ' + escapeHtml(status) + "</div>" +
@@ -476,9 +463,15 @@
       window.showState = function (stateName) {
         originalShowState(stateName);
         if (!PHASE2.connected) return;
+        // Replace the hand-written state blurb with a summary of the loaded records.
         var info = document.getElementById("stateInfo");
-        if (info && !STATE_INFO[stateName]) {
-          info.textContent = stateName + " — loaded from generated occurrence summaries for 2000–2025.";
+        var entries = Array.isArray(STATE_DB[stateName]) ? STATE_DB[stateName] : [];
+        if (info) {
+          var total = entries.reduce(function (sum, entry) { return sum + safeNumber(entry.obs, 0); }, 0);
+          info.textContent = entries.length ?
+            stateName + ": " + total.toLocaleString() + " GBIF occurrence records for " + entries.length +
+              " tracked species. Records are observations, not population counts." :
+            stateName + ": no occurrence records for the tracked species in the loaded data.";
         }
       };
       window.showState.__phase2Wrapped = true;
@@ -498,6 +491,30 @@
     }
   }
 
+  // Sections whose content is still hard-coded in the HTML, not produced by the backend.
+  var DEMO_SECTIONS = {
+    "ai-risk": "Illustrative demo — these risk figures are placeholders, not output of a trained model.",
+    "ecosystem": "Illustrative demo — the food web and cascade are not built from documented interaction data yet.",
+    "species-intel": "Illustrative demo — species profiles here are placeholder text; see the API for data-derived profiles.",
+    "timeseries": "Illustrative demo — these series are placeholders, not the loaded occurrence records.",
+    "env-impact": "Illustrative demo — these correlations are placeholders, not computed from the loaded data.",
+    "xai": "Illustrative demo — these feature contributions are placeholders, not SHAP values from a trained model.",
+    "timeline": "Background history from published sources; not computed from the platform's data."
+  };
+
+  function markDemoSections() {
+    Object.keys(DEMO_SECTIONS).forEach(function (id) {
+      var section = document.getElementById(id);
+      if (!section || section.querySelector(".demo-content-notice")) return;
+      var notice = document.createElement("div");
+      notice.className = "demo-content-notice";
+      notice.textContent = DEMO_SECTIONS[id];
+      notice.style.cssText = "margin:0 auto 18px;max-width:900px;padding:8px 14px;border:1px dashed rgba(255,170,64,.55);" +
+        "color:rgba(255,200,140,.9);font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;text-align:center";
+      section.insertBefore(notice, section.firstChild);
+    });
+  }
+
   function rerenderLoadedSections() {
     refreshStatsFromState();
     rerenderHeatmap();
@@ -512,6 +529,7 @@
   async function bootstrapPhase2() {
     setBadge("Demo fallback data", false);
     wrapGlobalFunctions();
+    markDemoSections();
 
     var stateSpecies = await loadJsonWithFallback(DATA_FILE_NAMES.stateSpecies);
     var hotspots = await loadJsonWithFallback(DATA_FILE_NAMES.hotspots);
@@ -524,11 +542,11 @@
       PHASE2.connected = true;
       PHASE2.stateSpecies = stateSpecies;
       rerenderLoadedSections();
-      setBadge("Phase 4 spatial data loaded", true);
+      setBadge("Live data: GBIF occurrences (PostGIS)", true);
     } else if (hotspots || watchlist) {
       renderDynamicHotspots();
       renderDynamicRiskCards();
-      setBadge("Phase 4 partial data bridge", true);
+      setBadge("Partial live data", true);
     }
 
     window.BioIndiaPhase2 = PHASE2;

@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .config import CORS_ORIGINS
-from .routers import analytics, datasets, gis, health, pipeline, species
+from .routers import analytics, datasets, gis, health, network, pipeline, prediction, species
 from .services.db import DatabaseUnavailable
 
 
@@ -35,6 +35,8 @@ app.include_router(species.router, prefix="/api")
 app.include_router(gis.router, prefix="/api")
 app.include_router(gis.map_router, prefix="/api")
 app.include_router(analytics.router, prefix="/api")
+app.include_router(network.router, prefix="/api")
+app.include_router(prediction.router, prefix="/api")
 
 
 @app.get("/")

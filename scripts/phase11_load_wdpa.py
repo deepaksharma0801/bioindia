@@ -20,10 +20,11 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
+from db_schema import ensure_schema
+
 
 ROOT = Path(__file__).resolve().parents[1]
 WDPA_DIR = ROOT / "data" / "raw" / "protected_areas" / "extracted"
-SCHEMA = ROOT / "backend" / "app" / "database" / "schema.sql"
 PROCESSED = ROOT / "data" / "processed"
 ANALYTICS = ROOT / "data" / "analytics"
 WILDLIFE_OUTPUT = PROCESSED / "wdpa_wildlife_protected_areas.gpkg"
@@ -139,9 +140,9 @@ def load_postgis() -> int:
     import pyogrio
 
     loaded = 0
+    ensure_schema(DATABASE_URL)
     with psycopg.connect(DATABASE_URL) as connection:
         with connection.cursor() as cursor:
-            cursor.execute(SCHEMA.read_text(encoding="utf-8"))
             cursor.execute(
                 "DELETE FROM protected_areas WHERE protected_area_id LIKE 'WDPA:%%' AND pa_class <> ALL(%s)",
                 (list(LOADED_CLASSES),),

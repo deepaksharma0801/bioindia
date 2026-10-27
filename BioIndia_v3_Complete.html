@@ -1551,6 +1551,7 @@ function updateGISMap() {
   gisMarkers = [];
 
   let totalShown = 0, stateSet = new Set(), spSet = new Set();
+  const shownYears = [];
 
   GIS_OCCURRENCES.forEach(sp => {
     if (spFilter !== 'all' && sp.id !== spFilter) return;
@@ -1562,12 +1563,15 @@ function updateGISMap() {
       if (yrFilter === '2000s' && (pt.year < 2000 || pt.year > 2009)) return;
 
       const radius = 6 + Math.sqrt(pt.obs) * 0.5;
+      // Obscured (> 10 km) or unstated locations are drawn as faint dashed rings, not solid points.
+      const approximate = pt.uncertaintyClass === 'coarse' || pt.uncertaintyClass === 'unknown';
       const circle = L.circleMarker([pt.lat, pt.lng], {
         radius,
         fillColor: sp.col,
-        color: 'rgba(255,255,255,0.5)',
-        weight: 1.2,
-        fillOpacity: 0.75
+        color: approximate ? sp.col : 'rgba(255,255,255,0.5)',
+        weight: approximate ? 1.5 : 1.2,
+        dashArray: approximate ? '3 3' : null,
+        fillOpacity: approximate ? 0.18 : 0.75
       });
 
       circle.bindPopup(`
@@ -1577,13 +1581,14 @@ function updateGISMap() {
           <div style="margin-bottom:4px"><strong style="color:#4abaa8">Year:</strong> ${pt.year}</div>
           <div style="margin-bottom:4px"><strong style="color:#4abaa8">Occurrences:</strong> ${pt.obs} GBIF records</div>
           <div style="margin-bottom:4px"><strong style="color:#4abaa8">IUCN Status:</strong> ${sp.status}</div>
-          <div style="margin-top:8px;padding:4px 8px;background:rgba(42,138,122,.1);border:1px solid rgba(42,138,122,.2);font-size:.75rem;color:rgba(255,255,255,.6);">Coordinates: ${pt.lat.toFixed(2)}°N, ${pt.lng.toFixed(2)}°E</div>
+          <div style="margin-top:8px;padding:4px 8px;background:rgba(42,138,122,.1);border:1px solid rgba(42,138,122,.2);font-size:.75rem;color:rgba(255,255,255,.6);">Coordinates: ${pt.lat.toFixed(2)}°N, ${pt.lng.toFixed(2)}°E${approximate ? '<br>Approximate location: the publisher obscured or did not state the precision (may be &gt; 10 km off).' : ''}</div>
         </div>
       `);
 
       circle.addTo(gisMap);
       gisMarkers.push(circle);
       totalShown++;
+      if (pt.year) shownYears.push(pt.year);
       stateSet.add(pt.state);
       spSet.add(sp.name);
     });
@@ -1592,7 +1597,7 @@ function updateGISMap() {
   document.getElementById('gisCount').textContent = totalShown.toLocaleString();
   document.getElementById('gisSpCount').textContent = spSet.size;
   document.getElementById('gisStateCount').textContent = stateSet.size;
-  document.getElementById('gisYearRange').textContent = yrFilter === 'all' ? '2000–2025' : yrFilter === 'recent' ? '2020–2025' : yrFilter === '2010s' ? '2010–2019' : '2000–2009';
+  document.getElementById('gisYearRange').textContent = shownYears.length ? `${shownYears.reduce((a, b) => Math.min(a, b))}–${shownYears.reduce((a, b) => Math.max(a, b))}` : '—';
 }
 
 // =========================================================

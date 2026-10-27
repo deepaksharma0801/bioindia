@@ -1,3 +1,22 @@
+"""Baseline schema: species, occurrences, conservation assessments, land pressure, protected areas, grid analytics.
+
+Written to be safe on a fresh database and on databases created before migrations existed
+(every statement is IF NOT EXISTS), so `alembic upgrade head` adopts an existing database.
+
+Revision ID: 0001_baseline
+Revises:
+Create Date: 2026-10-26
+"""
+
+from alembic import op
+
+
+revision = "0001_baseline"
+down_revision = None
+branch_labels = None
+depends_on = None
+
+SCHEMA_SQL = """
 CREATE EXTENSION IF NOT EXISTS postgis;
 
 CREATE TABLE IF NOT EXISTS species (
@@ -138,3 +157,15 @@ CREATE TABLE IF NOT EXISTS analytics_grid_cells (
 
 CREATE INDEX IF NOT EXISTS analytics_grid_cells_geom_gix ON analytics_grid_cells USING GIST (geom);
 CREATE INDEX IF NOT EXISTS protected_areas_pa_class_idx ON protected_areas (pa_class);
+"""
+
+
+def upgrade() -> None:
+    op.get_bind().exec_driver_sql(SCHEMA_SQL)
+
+
+def downgrade() -> None:
+    op.get_bind().exec_driver_sql(
+        "DROP TABLE IF EXISTS analytics_grid_cells, occurrence_land_pressure, conservation_assessments, "
+        "occurrences, protected_areas, species CASCADE"
+    )
