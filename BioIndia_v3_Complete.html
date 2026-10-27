@@ -423,10 +423,55 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .report-placeholder{text-align:center;padding:60px 20px;}
 .report-placeholder-icon{font-size:3rem;opacity:.15;margin-bottom:16px;}
 .report-placeholder-txt{font-family:'IM Fell English',serif;font-style:italic;font-size:1rem;color:rgba(168,196,216,.2);}
+/* Species Intelligence browser (bioindia-phase5.js) */
+.si-browser{display:grid;grid-template-columns:290px minmax(0,1fr);background:linear-gradient(135deg,rgba(6,12,20,.96),rgba(10,20,38,.92));border:1px solid rgba(42,138,122,.2);margin-top:28px;text-align:left;}
+.si-rail{border-right:1px solid rgba(42,138,122,.15);display:flex;flex-direction:column;min-width:0;contain:size;min-height:640px;}
+.si-search{margin:18px 16px 12px;background:rgba(6,12,20,.9);border:1px solid rgba(42,138,122,.3);color:var(--parchment);font-family:'EB Garamond',serif;font-size:.95rem;padding:9px 12px;outline:none;}
+.si-search:focus{border-color:var(--teal);}
+.si-groups{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 14px;border-bottom:1px solid rgba(42,138,122,.12);}
+.si-chip{padding:4px 9px;background:none;border:1px solid rgba(42,138,122,.25);color:rgba(168,196,216,.6);font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;}
+.si-chip.active{border-color:var(--teal-l);color:var(--teal-l);background:rgba(42,138,122,.12);}
+.si-count{padding:10px 16px 6px;font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(168,196,216,.35);}
+.si-list{overflow-y:auto;flex:1;min-height:0;scrollbar-width:thin;scrollbar-color:rgba(42,138,122,.4) transparent;}
+.si-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;width:100%;text-align:left;padding:9px 16px;border:none;border-left:2px solid transparent;background:none;cursor:pointer;color:inherit;}
+.si-row:hover{background:rgba(42,138,122,.06);}
+.si-row.active{border-left-color:var(--teal-l);background:rgba(42,138,122,.12);}
+.si-row-name{font-family:'EB Garamond',serif;font-size:.98rem;color:var(--parchment);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.si-row-sci{grid-column:1;font-family:'EB Garamond',serif;font-style:italic;font-size:.78rem;color:rgba(168,196,216,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.si-row-n{grid-row:1/span 2;grid-column:2;align-self:center;font-family:'Cinzel',serif;font-size:.55rem;color:rgba(168,196,216,.5);}
+.si-row-flag{font-family:'Cinzel',serif;font-size:.42rem;letter-spacing:.15em;color:var(--teal-l);margin-left:6px;}
+.si-detail{padding:28px 32px 32px;min-width:0;}
+.si-head{display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px;align-items:stretch;}
+.si-pic{height:220px;border:2px solid rgba(42,138,122,.25);overflow:hidden;position:relative;background:linear-gradient(135deg,rgba(42,138,122,.16),rgba(6,12,20,.85));}
+.si-pic img{width:100%;height:100%;object-fit:cover;}
+.si-mono{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background-image:radial-gradient(circle at 30% 20%,rgba(74,186,168,.18),transparent 55%),repeating-linear-gradient(45deg,rgba(74,186,168,.05) 0 2px,transparent 2px 9px);}
+.si-mono b{font-family:'Cinzel Decorative',serif;font-size:3.4rem;color:var(--teal-l);font-weight:400;line-height:1;}
+.si-mono span{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(168,196,216,.55);}
+.si-title{font-family:'Cinzel Decorative',serif;font-size:1.6rem;color:var(--parchment);line-height:1.2;}
+.si-sub{font-family:'EB Garamond',serif;font-style:italic;font-size:1rem;color:rgba(168,196,216,.55);margin-top:4px;}
+.si-taxo{font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(168,196,216,.4);margin-top:10px;}
+.si-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px;}
+.si-kpi{background:rgba(42,138,122,.06);border:1px solid rgba(42,138,122,.14);padding:10px 12px;}
+.si-kpi b{display:block;font-family:'Cinzel',serif;font-size:1.05rem;color:var(--parchment);font-weight:600;}
+.si-kpi span{font-family:'Cinzel',serif;font-size:.45rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-l);}
+.si-mid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;margin-top:24px;}
+.si-panel{background:rgba(6,12,20,.6);border:1px solid rgba(42,138,122,.15);padding:16px 18px;min-width:0;}
+.si-panel h5{font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--teal-l);margin:0 0 12px;font-weight:400;}
+.si-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px;}
+.si-kv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;margin-bottom:9px;}
+.si-kv label{font-family:'EB Garamond',serif;font-size:.88rem;color:rgba(168,196,216,.7);}
+.si-kv b{font-family:'Cinzel',serif;font-size:.62rem;color:var(--parchment);font-weight:600;}
+.si-kv i{grid-column:1/-1;height:4px;background:rgba(42,138,122,.12);display:block;}
+.si-kv i em{display:block;height:100%;background:var(--teal-l);}
+.si-note{font-family:'EB Garamond',serif;font-style:italic;font-size:.85rem;line-height:1.55;color:rgba(168,196,216,.5);margin-top:10px;}
+.si-partner{display:flex;justify-content:space-between;gap:10px;font-family:'EB Garamond',serif;font-size:.86rem;color:rgba(168,196,216,.75);padding:4px 0;border-bottom:1px solid rgba(42,138,122,.08);}
+.si-partner span:first-child{font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.si-partner span:last-child{font-family:'Cinzel',serif;font-size:.5rem;color:rgba(168,196,216,.45);white-space:nowrap;}
+.si-loading{padding:60px 20px;text-align:center;font-family:'EB Garamond',serif;font-style:italic;color:rgba(168,196,216,.45);}
 /* Phones and narrow tablets: stack the two-column sections (kept last so it overrides the base grid rules). */
-@media(max-width:900px){#forest-scroll{overflow-x:clip;}.hotspot-grid{grid-template-columns:1fr;}.hotspot-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.hm-metric{min-width:0;}.ai-grid,.env-grid,.xai-grid{grid-template-columns:1fr;}.si-content.active{grid-template-columns:1fr;}.report-controls{grid-template-columns:1fr;}.report-kpis{grid-template-columns:1fr 1fr;}.hm-grid{grid-template-columns:repeat(3,minmax(0,1fr));}.hm-score{font-size:.8rem;}#hero{overflow-x:clip;}.ts-stats{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:900px){#forest-scroll{overflow-x:clip;}.report-risk-list{grid-template-columns:1fr;}.report-risk-item{min-width:0;}.si-browser{grid-template-columns:1fr;}.si-rail{border-right:none;border-bottom:1px solid rgba(42,138,122,.15);}.si-rail{contain:none;min-height:0;}.si-list{max-height:260px;flex:none;}.si-head,.si-mid,.si-cards{grid-template-columns:1fr;}.si-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}.si-detail{padding:20px 16px;}.hotspot-grid{grid-template-columns:1fr;}.hotspot-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.hm-metric{min-width:0;}.ai-grid,.env-grid,.xai-grid{grid-template-columns:1fr;}.si-content.active{grid-template-columns:1fr;}.report-controls{grid-template-columns:1fr;}.report-kpis{grid-template-columns:1fr 1fr;}.hm-grid{grid-template-columns:repeat(3,minmax(0,1fr));}.hm-score{font-size:.8rem;}#hero{overflow-x:clip;}.ts-stats{grid-template-columns:repeat(2,minmax(0,1fr));}}
 </style>
-<script>window.BIOINDIA_STATIC = {date: "2026-10-26"};</script>
+<script>window.BIOINDIA_STATIC = {date: "2026-10-27"};</script>
 <style>.sp-st.s-\-{opacity:.5}</style>
 </head>
 <body>
@@ -797,7 +842,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   <div style="text-align:center;max-width:680px;margin:0 auto 0;">
     <span class="sec-label reveal">Taxonomy · Distribution · Trends</span>
     <h2 class="sec-title reveal">Species <em>Intelligence</em> Pages</h2>
-    <p class="sec-body reveal" style="margin:0 auto">Profiles of the five flagship species — conservation status, distribution across states, protected-area coverage, model-predicted risk and 25 years of recording trends.</p>
+    <p class="sec-body reveal" style="margin:0 auto">Browse a profile for every species with records — search by name or filter by group to see its distribution, recording trend, protection, climate and land use, model-predicted risk and documented ecological connections.</p>
   </div>
   <div style="max-width:1200px;margin:44px auto 0;">
     <div class="si-tabs reveal" id="siTabs"></div>
@@ -2225,7 +2270,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script src="bioindia-phase2.js?v=6"></script>
 <script src="bioindia-phase3.js?v=5"></script>
-<script src="bioindia-phase5.js?v=7"></script>
-<div style="position:relative;z-index:2;padding:14px 16px 18px;background:rgba(4,10,18,.92);font:11px/1.4 Georgia,serif;color:rgba(168,196,216,.75);text-align:center">Static snapshot of 2026-10-26. GBIF.org occurrence download https://doi.org/10.15468/dl.dvgq2s; Hansen et al. Global Forest Change; GHSL; OpenStreetMap contributors (ODbL). IUCN Red List categories are not shown, except the five flagships (unverified reference list). Model outputs are not IUCN assessments.</div>
+<script src="bioindia-phase5.js?v=8"></script>
+<div style="position:relative;z-index:2;padding:14px 16px 18px;background:rgba(4,10,18,.92);font:11px/1.4 Georgia,serif;color:rgba(168,196,216,.75);text-align:center">Static snapshot of 2026-10-27. GBIF.org occurrence download https://doi.org/10.15468/dl.dvgq2s; Hansen et al. Global Forest Change; GHSL; OpenStreetMap contributors (ODbL). IUCN Red List categories are not shown, except the five flagships (unverified reference list). Model outputs are not IUCN assessments.</div>
 </body>
 </html>
