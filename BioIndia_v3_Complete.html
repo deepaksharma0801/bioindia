@@ -246,7 +246,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 /* ===== NEW MODULE STYLES ===== */
 /* GIS MAP */
 #gis-map-wrap{position:relative;border:2px solid var(--teal);box-shadow:0 0 0 1px rgba(42,138,122,.3),0 20px 60px rgba(0,0,0,.6);overflow:hidden;background:#060c14;}
-#leafletMap{height:520px;width:100%;background:#060c14;}
+#leafletMap{height:clamp(440px,74vh,700px);width:100%;background:#060c14;}
 .leaflet-container{background:#060c14 !important;font-family:'EB Garamond',serif;}
 .leaflet-tile-pane{filter:saturate(0.6) brightness(.45) hue-rotate(190deg);}
 .gis-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;align-items:center;}
@@ -480,8 +480,13 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 #ecoScenario{max-width:1040px;margin:28px auto 0;}
 #cascadeCanvas{display:block;width:100%;border:1px solid rgba(42,138,122,.2);margin:18px 0 6px;}
 .cascade-tip{position:fixed;z-index:9999;pointer-events:none;padding:6px 10px;background:rgba(4,10,18,.95);border:1px solid rgba(74,186,168,.4);font-family:'EB Garamond',serif;font-size:.85rem;color:var(--parchment);max-width:280px;display:none;}
+/* State panel: the species list scrolls inside the panel, and the map stays in view beside it */
+#spGrid{max-height:600px;overflow-y:auto;padding-right:4px;scrollbar-width:thin;scrollbar-color:rgba(42,138,122,.4) transparent;}
+@media(min-width:1025px){.map-grid>.reveal:first-child{position:sticky;top:84px;}}
+.leaflet-control-attribution{background:rgba(4,10,18,.75)!important;color:rgba(168,196,216,.7)!important;font-size:10px!important;}
+.leaflet-control-attribution a{color:var(--teal-l)!important;}
 /* Phones and narrow tablets: stack the two-column sections (kept last so it overrides the base grid rules). */
-@media(max-width:900px){#forest-scroll{overflow-x:clip;}.eco-panel{padding:16px 12px;}.report-risk-list{grid-template-columns:1fr;}.report-risk-item{min-width:0;}.si-browser{grid-template-columns:1fr;}.si-rail{border-right:none;border-bottom:1px solid rgba(42,138,122,.15);}.si-rail{contain:none;min-height:0;}.si-list{max-height:260px;flex:none;}.si-head,.si-mid,.si-cards{grid-template-columns:1fr;}.si-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}.si-detail{padding:20px 16px;}.hotspot-grid{grid-template-columns:1fr;}.hotspot-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.hm-metric{min-width:0;}.ai-grid,.env-grid,.xai-grid{grid-template-columns:1fr;}.si-content.active{grid-template-columns:1fr;}.report-controls{grid-template-columns:1fr;}.report-kpis{grid-template-columns:1fr 1fr;}.hm-grid{grid-template-columns:repeat(3,minmax(0,1fr));}.hm-score{font-size:.8rem;}#hero{overflow-x:clip;}.ts-stats{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:900px){#forest-scroll{overflow-x:clip;}#spGrid{max-height:480px;}.eco-panel{padding:16px 12px;}.report-risk-list{grid-template-columns:1fr;}.report-risk-item{min-width:0;}.si-browser{grid-template-columns:1fr;}.si-rail{border-right:none;border-bottom:1px solid rgba(42,138,122,.15);}.si-rail{contain:none;min-height:0;}.si-list{max-height:260px;flex:none;}.si-head,.si-mid,.si-cards{grid-template-columns:1fr;}.si-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}.si-detail{padding:20px 16px;}.hotspot-grid{grid-template-columns:1fr;}.hotspot-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.hm-metric{min-width:0;}.ai-grid,.env-grid,.xai-grid{grid-template-columns:1fr;}.si-content.active{grid-template-columns:1fr;}.report-controls{grid-template-columns:1fr;}.report-kpis{grid-template-columns:1fr 1fr;}.hm-grid{grid-template-columns:repeat(3,minmax(0,1fr));}.hm-score{font-size:.8rem;}#hero{overflow-x:clip;}.ts-stats{grid-template-columns:repeat(2,minmax(0,1fr));}}
 </style>
 <script>window.BIOINDIA_STATIC = {date: "2026-10-27"};</script>
 <style>.sp-st.s-\-{opacity:.5}</style>
@@ -1622,21 +1627,41 @@ const GIS_OCCURRENCES = (function(){
 let gisMap = null, gisMarkers = [];
 
 function initGISMap() {
+  // Fit India on any screen size and keep panning near it; tiles keep their required OSM credit.
+  const INDIA_BOUNDS = L.latLngBounds([6.4, 68.0], [37.4, 97.6]);
   gisMap = L.map('leafletMap', {
-    center: [22.5, 80.9],
-    zoom: 5,
+    zoomSnap: 0.25,
     zoomControl: true,
-    attributionControl: false
+    attributionControl: true,
+    maxBounds: INDIA_BOUNDS.pad(0.4),
+    maxBoundsViscosity: 0.85,
+    worldCopyJump: false
   });
+  gisMap.attributionControl.setPrefix(false);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
-    opacity: 0.6
+    opacity: 0.6,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors'
   }).addTo(gisMap);
 
-  L.rectangle([[8.0, 68.0], [37.0, 97.5]], {
-    color: 'rgba(42,138,122,0.3)', weight: 1.5, fillOpacity: 0, dashArray: '4,4'
-  }).addTo(gisMap);
+  let userMoved = false;
+  const fitIndia = () => {
+    gisMap.invalidateSize();
+    gisMap.fitBounds(INDIA_BOUNDS, {padding: [10, 10]});
+    gisMap.setMinZoom(Math.max(3, gisMap.getZoom() - 0.75));
+  };
+  fitIndia();
+  gisMap.on('zoomstart dragstart', e => { if (e.hard !== true) userMoved = true; });
+  // The map can be laid out before its section is visible; refit once it is, and on resize until the user moves it.
+  window.addEventListener('load', () => { if (!userMoved) fitIndia(); });
+  window.addEventListener('resize', () => { if (!userMoved) fitIndia(); });
+  if ('IntersectionObserver' in window) {
+    const watcher = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) { if (!userMoved) fitIndia(); watcher.disconnect(); }
+    });
+    watcher.observe(document.getElementById('leafletMap'));
+  }
 
   // Fix: Leaflet popup close buttons use href="#close" which triggers Claude's
   // external link warning. Intercept all clicks on .leaflet-popup-close-button
