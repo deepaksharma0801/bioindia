@@ -1,221 +1,258 @@
 <div align="center">
 
-# 🐅 BioIndia
+# BioIndia
 
-### A digital twin of India's biodiversity
+**A biodiversity intelligence platform for India**
 
-*Extinction-risk modelling · spatio-temporal analysis · conservation prioritisation · ecological cascade simulation*
+Extinction-risk modelling · spatio-temporal analysis · conservation prioritisation · ecological cascade simulation
 
-<br>
-
-[![Live dashboard](https://img.shields.io/badge/▶_Live_dashboard-deepaksharma0801.github.io%2Fbioindia-2a8a7a?style=for-the-badge)](https://deepaksharma0801.github.io/bioindia/)
-
-![Python](https://img.shields.io/badge/Python-3.14-3776AB?logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
-![PostGIS](https://img.shields.io/badge/PostGIS-3.4-336791?logo=postgresql&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-SHAP-189FDD)
-![Leaflet](https://img.shields.io/badge/Leaflet-199900?logo=leaflet&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-106_passing-4c1)
+[**Open the live dashboard →**](https://deepaksharma0801.github.io/bioindia/)
+&nbsp;&nbsp;·&nbsp;&nbsp;
+[Methods and limitations](docs/METHODS.md)
+&nbsp;&nbsp;·&nbsp;&nbsp;
+[Run it locally](#running-the-platform)
 
 <br>
 
-> *"In every walk with nature, one receives far more than he seeks.<br>The clearest way into the Universe is through a wild forest."*<br>
-> — **John Muir**, naturalist
+*"In every walk with nature, one receives far more than he seeks.
+The clearest way into the Universe is through a wild forest."*
+<br>— John Muir
 
 </div>
 
----
+<br>
 
-## ✨ What it is
+## Overview
 
-BioIndia is an MSc research platform that brings India's biodiversity data into one place and asks
-three questions of it: **where are species recorded, which ones may be at risk, and what could happen
-if they disappear?** It joins 1.4 million GBIF occurrence records with IUCN assessments, protected
-areas, climate, forest change and documented species interactions, and every number on the dashboard
-can be traced back to its source.
+India holds four of the world's 36 biodiversity hotspots, yet the evidence needed to judge which
+species are declining, where, and why is scattered across occurrence archives, Red List assessments,
+protected-area registers, climate grids and satellite forest records. BioIndia brings these sources
+into a single spatial database and asks three questions of them:
+
+1. **Where is biodiversity recorded,** and how well is it covered by protected areas?
+2. **Which species may be at risk,** including those without a current assessment?
+3. **What could follow if a species is lost,** given the interactions documented for it?
+
+Every figure in the platform is computed from cited sources, and every output carries its standing:
+observed data, official assessment, derived metric, model prediction, scenario simulation or
+experimental index.
 
 <div align="center">
 
-| 🦋 **188** | 📍 **1,398,890** | 🗺️ **36** | 🌳 **118,686** | 🕸️ **13,469** |
+| 188 | 1,398,890 | 36 | 118,686 | 13,469 |
 |:---:|:---:|:---:|:---:|:---:|
-| India-native species | quality-controlled records | states & UTs | 5 km land-use cells | documented interactions |
+| India-native species | quality-controlled records | states and union territories | 5 km land-use cells | documented species interactions |
 
 </div>
 
-## 🧭 Explore the dashboard
+<br>
 
-| Section | What you can do |
+## Where biodiversity is recorded
+
+<p align="center"><img src="docs/figures/record-density-map.svg" alt="Map of India showing the density of 1.4 million GBIF occurrence records on a 0.25 degree grid" width="100%"></p>
+
+Records concentrate in the Western Ghats, the south and around major cities, a pattern that reflects
+where people observe as much as where species live. Analyses that depend on location use only records
+placed within 10 km, and report how many records were left out.
+
+## From raw download to analysis-ready data
+
+<p align="center"><img src="docs/figures/pipeline-funnel.svg" alt="Funnel from 4.7 million downloaded GBIF records to 1.4 million loaded records" width="100%"></p>
+
+The pipeline screens records for missing or implausible coordinates and dates, captive and fossil
+specimens and flagged geography; caps the most-recorded species with a reproducible hashed sample;
+then removes duplicate uploads, zoo locations and points outside India in PostGIS. Each exclusion is
+logged with its reason.
+
+## Which species may be at risk
+
+<p align="center"><img src="docs/figures/model-performance.svg" alt="Precision-recall AUC of three models against a chance baseline, and SHAP feature importance" width="100%"></p>
+
+A random forest, selected over logistic regression and gradient boosting by repeated cross-validation,
+estimates the probability that a species is threatened from its recorded range, climate niche,
+protection and land-use context. It reaches a PR-AUC of 0.48 against a chance level of 0.16. Features
+that would leak the answer, such as location precision, which publishers deliberately blur for
+threatened species, are excluded. Predictions are explained with SHAP and are never presented as Red
+List assessments.
+
+## Pressure on habitats
+
+<p align="center"><img src="docs/figures/forest-loss.svg" alt="Tree-cover loss by state 2015 to 2024 and national annual loss 2001 to 2024" width="100%"></p>
+
+Thirty-metre forest-change data and settlement layers are summarised to 5 km cells and joined to the
+places each species is recorded. Recent loss, relative to year-2000 cover, is highest in the north-eastern states. Because tree cover
+includes plantations and loss includes harvest cycles, these figures measure pressure on places rather
+than the destruction of natural forest.
+
+## What the dashboard offers
+
+| Section | Purpose |
 |---|---|
-| 🗺️ **GIS Atlas** | Map every record by species, state, year and location accuracy (obscured points are marked) |
-| 🔥 **Hotspots** | Find the 0.75° grid cells where records concentrate, with protected-area cover |
-| 🤖 **AI Risk** | See which species a machine-learning model rates as likely threatened, and why |
-| 🔍 **Explainable AI** | SHAP explanations for every prediction, globally and per species |
-| 🐘 **Species Intelligence** | Profiles of the five flagships: records, states, protection, trends, model risk |
-| 📈 **Trends** | Records per year since 2000, as a recording-effort index |
-| 🌦️ **Climate & land use** | Temperature, rainfall, elevation, tree cover, forest loss and built-up land where species live |
-| 🕸️ **Cascade** | Remove a species and simulate which dependent species could follow |
-| 📄 **Reports** | Generate a data-backed biodiversity report for any state |
+| GIS atlas | Every record by species, state, year and location accuracy, with obscured points marked |
+| Concentration zones | Grid cells where records concentrate, with protected-area cover |
+| Risk and explainability | Model-predicted vulnerability for unassessed species, with per-species SHAP explanations |
+| Species intelligence | Profiles of five flagship species: records, distribution, protection, trends and model risk |
+| Trends | Records per year since 2000, read as a recording-effort index |
+| Climate and land use | Temperature, rainfall, elevation, tree cover, forest loss and built-up land where species occur |
+| Cascade simulator | Removes a species and traces which dependent taxa could follow, with sensitivity to the threshold |
+| Regional reports | A data-derived report for any state, with the evidence behind every statement |
 
-> The hosted site is a static snapshot. Run the stack locally (below) for the live API.
+The hosted dashboard is a static snapshot; the full platform runs locally against the live API.
 
-## 🏗️ How it fits together
+## Architecture
 
 ```mermaid
 flowchart LR
     subgraph Sources
-        G[GBIF<br>4.7M records]
+        G[GBIF occurrences]
         I[IUCN Red List]
-        P[OSM + WDPA<br>protected areas]
+        P[OpenStreetMap and WDPA]
         W[WorldClim]
-        H[Hansen forest change<br>+ GHSL]
-        L[GloBI<br>interactions]
+        H[Hansen forest change and GHSL]
+        L[GloBI interactions]
     end
-    S[Python pipeline<br>20 steps] --> D[(PostGIS)]
-    G & I & P & W & H & L --> S
-    D --> A[FastAPI<br>40+ endpoints]
-    D --> M[Risk model<br>RF · XGBoost · SHAP]
+    G & I & P & W & H & L --> S[Python pipeline, 20 steps]
+    S --> D[(PostGIS)]
+    D --> M[Risk model with SHAP]
     M --> D
-    A --> UI[Dashboard<br>Leaflet + JS]
-    A --> X[Static export] --> GP[GitHub Pages]
+    D --> A[FastAPI service]
+    A --> UI[Dashboard]
+    A --> X[Static export]
+    X --> GP[GitHub Pages]
 ```
 
-| Layer | Where | Highlights |
-|---|---|---|
-| **Dashboard** | `BioIndia_v3_Complete.html`, `bioindia-phase*.js` | Static HTML/JS + Leaflet; live API or static snapshot |
-| **API** | `backend/app/` | FastAPI, Alembic migrations, 106 tests |
-| **Database** | PostGIS 3.4 in Docker | Occurrences, assessments, protected areas, grids, interactions, model registry, land use |
-| **Pipeline** | `scripts/`, run by `scripts/run_pipeline.py` | Reproducible, seeded, every step writes a report |
-
-## 🔬 Science first
-
-Every output is labelled for what it is, so a prediction is never mistaken for a fact:
-
-| Label | Meaning |
+| Layer | Implementation |
 |---|---|
-| **Observed data** | GBIF records, protected areas, climate and land-use rasters as published |
-| **Official assessment** | IUCN Red List category, imported with provenance |
-| **MODEL PREDICTION** | Output of the extinction-vulnerability model, never an IUCN status |
-| **SCENARIO SIMULATION** | Cascade output under stated assumptions, never a forecast |
-| **EXPERIMENTAL RESEARCH METRIC** | The IBVCI and CIPI indices developed in this project |
+| Dashboard | Static HTML and JavaScript with Leaflet; reads the API or a static snapshot |
+| Service | FastAPI with Alembic migrations; more than 40 endpoints |
+| Database | PostgreSQL 16 with PostGIS 3.4 |
+| Analysis | pandas, GeoPandas, rasterio, scikit-learn, XGBoost, SHAP, NetworkX |
+| Delivery | Docker Compose with nginx; a static export for GitHub Pages |
+| Quality | 106 automated tests across the API and the data-quality rules |
 
-**The risk model** is a random forest chosen over logistic regression and XGBoost by repeated
-cross-validation: PR-AUC **0.48 ± 0.14** against a chance level of 0.16, ROC-AUC 0.72, trained on 168
-species. Features that would leak the answer (such as location precision, which publishers blur for
-threatened species) are deliberately excluded. Full methods, every quality rule and all limitations
-are in **[docs/METHODS.md](docs/METHODS.md)**.
-
-## 🚀 Quick start
+## Running the platform
 
 ```bash
 docker compose --profile app up -d --build
 ```
 
-Then open **http://localhost:8080** (API docs at http://localhost:8080/docs). The database must first
-be filled by the pipeline.
+The dashboard is then served at `http://localhost:8080`, with interactive API documentation at
+`/docs`. The database is populated by the pipeline described below.
 
 <details>
-<summary><b>🛠️ Full setup and pipeline</b></summary>
+<summary><strong>Full setup and data pipeline</strong></summary>
 
 <br>
 
-Needs Python 3.12+ (results produced with 3.14.3) and Docker Desktop, plus about 12 GB of disk.
+Requires Python 3.12 or later (results were produced with 3.14.3), Docker Desktop and about 12 GB of
+disk space.
 
 ```bash
 python -m venv .venv
 .venv/Scripts/python -m pip install -r requirements-pipeline.txt
 docker compose up -d postgis
-.venv/Scripts/python scripts/run_pipeline.py          # --list shows the 20 steps, --from <step> resumes
+.venv/Scripts/python scripts/run_pipeline.py
 ```
 
-`requirements-lock.txt` pins the exact versions behind the reported results.
+`run_pipeline.py --list` shows the twenty steps and `--from <step>` resumes part-way.
+`requirements-lock.txt` pins the exact package versions behind the reported results. Sampling,
+cross-validation and index sensitivity use fixed seeds.
 
-For development, run the API and dashboard separately:
+For development, run the service and dashboard separately:
 
 ```bash
 .venv/Scripts/python -m uvicorn app.main:app --app-dir backend --port 8000
-.venv/Scripts/python -m http.server 5500              # open http://127.0.0.1:5500/BioIndia_v3_Complete.html
+.venv/Scripts/python -m http.server 5500
 ```
 
-To rebuild the GitHub Pages snapshot:
+Regenerate the figures in this document and the static snapshot with:
 
 ```bash
-.venv/Scripts/python scripts/export_static_site.py    # writes site/, published on the gh-pages branch
+.venv/Scripts/python scripts/make_readme_figures.py
+.venv/Scripts/python scripts/export_static_site.py
 ```
 
 </details>
 
 <details>
-<summary><b>📚 Data sources and licences</b></summary>
+<summary><strong>Data sources and licences</strong></summary>
 
 <br>
 
-| Source | Licence / terms |
-|---|---|
-| GBIF occurrence download [10.15468/dl.dvgq2s](https://doi.org/10.15468/dl.dvgq2s) | Mixed CC0 / CC BY / CC BY-NC |
-| IUCN Red List export (2026-10-21) | Non-commercial research; no redistribution |
-| OpenStreetMap India (Geofabrik) | ODbL 1.0 |
-| WDPA India (Oct 2026) | Non-commercial; no redistribution |
-| WorldClim 2.1 | Fick & Hijmans (2017) |
-| Hansen Global Forest Change 2000–2024 v1.12 | CC BY 4.0 |
-| GHSL R2023A built-up and population | CC BY 4.0 |
-| geoBoundaries India ADM1 | CC BY 2.5 IN |
-| Natural Earth | Public domain |
-| GloBI interactions | Per-source licences |
+| Source | Use | Terms |
+|---|---|---|
+| GBIF occurrence download, [doi:10.15468/dl.dvgq2s](https://doi.org/10.15468/dl.dvgq2s) | Species records | CC0, CC BY and CC BY-NC by dataset |
+| IUCN Red List (export of 21 October 2026) | Official categories, model labels | Non-commercial research; no redistribution |
+| OpenStreetMap, Geofabrik India extract | Wildlife protected areas, tiger reserves | ODbL 1.0 |
+| WDPA, October 2026 | Reserved forests, other designations | Non-commercial; no redistribution |
+| WorldClim 2.1 | Climate normals, elevation | Fick and Hijmans (2017) |
+| Hansen Global Forest Change 2000–2024, v1.12 | Tree cover and loss | CC BY 4.0 |
+| GHSL R2023A | Built-up surface, population | CC BY 4.0 |
+| geoBoundaries | State boundaries | CC BY 2.5 IN |
+| Natural Earth | Neighbouring countries | Public domain |
+| GloBI | Documented species interactions | Per-source licences |
 
-Raw data, IUCN and WDPA files and trained models are not in this repository. The public dashboard
-does not show Red List categories from the IUCN export, only the five flagship categories from the
-project's own reference list.
+Raw data, Red List and WDPA files and trained models are not distributed with this repository. The
+public dashboard withholds Red List categories drawn from the IUCN export.
 
 </details>
 
 <details>
-<summary><b>🔌 API reference</b> (prefix <code>/api/v1</code>)</summary>
+<summary><strong>API reference</strong></summary>
 
 <br>
+
+All routes are under `/api/v1`.
 
 | Area | Routes |
 |---|---|
-| Species | `/species`, `/species/search`, `/species/{id}` and `/occurrences`, `/trend`, `/intelligence`, `/conservation`, `/environment`, `/land-pressure`, `/protection` |
+| Species | `/species`, `/species/search`, `/species/{id}`, with `/occurrences`, `/trend`, `/intelligence`, `/conservation`, `/environment`, `/land-pressure`, `/protection` |
 | Map | `/map/occurrences`, `/map/hotspots`, `/gis/state-boundaries` |
-| Analytics | `/analytics/hotspots`, `/conservation-priority`, `/threatened-species`, `/biodiversity-trends` |
+| Analytics | `/analytics/hotspots`, `/analytics/conservation-priority`, `/analytics/threatened-species`, `/analytics/biodiversity-trends` |
 | Land use | `/land-use/states`, `/land-use/states/{state}` |
 | Network | `/network/species/{id}`, `/network/ecosystem/{region}` |
 | Model | `/prediction/ranking`, `/prediction/species/{id}/explanation`, `/model-info`, `/model-performance` |
 | Scenarios | `POST /simulation/extinction-cascade` |
-| Indices | `/indices/ibvci`, `/indices/cipi` (custom `weights=name:value,...`) |
+| Indices | `/indices/ibvci`, `/indices/cipi`, with configurable weights |
 | Reports | `POST /reports/regional` |
 
 </details>
 
 <details>
-<summary><b>🧪 Tests</b></summary>
+<summary><strong>Tests</strong></summary>
 
 <br>
 
 ```bash
-cd backend && ../.venv/Scripts/python -m pytest -q     # API, against the loaded database
-.venv/Scripts/python -m pytest -q scripts/tests        # quality rules, no data needed
+cd backend && ../.venv/Scripts/python -m pytest -q
+.venv/Scripts/python -m pytest -q scripts/tests
 ```
+
+Service tests run against the loaded database and skip any stage that has not been built; the
+data-quality tests need no data.
 
 </details>
 
-## ⚠️ Know the limits
+## Interpreting the results
 
-- 📊 **Records are not populations.** They show where people look, not how many animals there are.
-- 🏷️ **The five flagships' IUCN categories are unverified**: the IUCN export does not include them.
-- 🤖 **The model is uncertain.** It is trained on 168 species and is not an IUCN assessment.
-- 🔥 **"Hotspots" are record concentration zones**, not recognised biodiversity hotspots.
-- 🌳 **Forest means tree cover**, plantations included; loss includes harvest and natural disturbance.
-- 🕸️ **Cascades are scenarios** over documented interactions, which favour well-studied species.
+- **Records are not populations.** Occurrence counts show where people observe, not how many
+  individuals exist; missing records do not imply absence.
+- **Model output is not an assessment.** The risk model is trained on 168 species and its
+  probabilities are better read as rankings than as calibrated chances.
+- **Concentration zones are not hotspots** in the recognised conservation sense.
+- **Tree cover is not natural forest.** Plantations are included, and loss includes harvest and
+  natural disturbance.
+- **Cascades are scenarios.** They rest on documented interactions, which are incomplete and favour
+  well-studied taxa.
+- **Five flagship categories are unverified;** the IUCN export used here does not include them.
 
-<div align="center">
+The full account of methods, quality rules and limitations is in [docs/METHODS.md](docs/METHODS.md).
+
+<br>
 
 ---
 
-**MSc project by [deepaksharma0801](https://github.com/deepaksharma0801)** · roadmap in `ste project roadmap.docx`
-
-*Occurrence data: GBIF.org (2026), https://doi.org/10.15468/dl.dvgq2s*
-
-</div>
+<sub>Occurrence data: GBIF.org (2026), GBIF Occurrence Download, https://doi.org/10.15468/dl.dvgq2s.
+Forest change: Hansen et al. (2013), *Science* 342, 850–853. Settlements: European Commission JRC,
+GHSL R2023A. Climate: Fick and Hijmans (2017). Protected areas: © OpenStreetMap contributors (ODbL)
+and UNEP-WCMC and IUCN, Protected Planet. Interactions: Global Biotic Interactions (GloBI).</sub>

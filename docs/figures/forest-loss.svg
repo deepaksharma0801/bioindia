@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="470" viewBox="0 0 900 470" role="img">
+<rect width="900" height="470" rx="10" fill="#08111c"/>
+<rect x="0.5" y="0.5" width="899" height="469" rx="10" fill="none" stroke="#16283a"/>
+<text x="32.0" y="44.0" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#ddeaf5" text-anchor="start" font-weight="normal">Tree-cover loss across India, 2001–2024</text>
+<text x="32.0" y="68.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#a8c4d8" text-anchor="start" font-weight="normal">25,548 km² lost from 402,363 km² of year-2000 tree cover (≥ 30% canopy), from 30 m Hansen Global Forest Change, aggregated to 5 km cells</text>
+<text x="32.0" y="452.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">Source: Hansen et al. (2013) Global Forest Change v1.12, CC BY 4.0. Tree cover includes plantations; loss includes harvest and natural disturbance; regrowth is not subtracted.</text>
+<text x="32.0" y="108.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#ddeaf5" text-anchor="start" font-weight="normal">Loss 2015–2024, % of 2000 tree cover (top 12 states)</text>
+<text x="182.0" y="140.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Tripura</text>
+<path d="M192.0,129.0 H388.0 Q392.0,129.0 392.0,133.0 V140.0 Q392.0,144.0 388.0,144.0 H192.0 Z" fill="#3aa898"/>
+<text x="400.0" y="140.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">14.4%</text>
+<text x="182.0" y="164.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Mizoram</text>
+<path d="M192.0,153.0 H377.2 Q381.2,153.0 381.2,157.0 V164.0 Q381.2,168.0 377.2,168.0 H192.0 Z" fill="#3aa898"/>
+<text x="389.2" y="164.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">13.6%</text>
+<text x="182.0" y="188.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Nagaland</text>
+<path d="M192.0,177.0 H335.8 Q339.8,177.0 339.8,181.0 V188.0 Q339.8,192.0 335.8,192.0 H192.0 Z" fill="#3aa898"/>
+<text x="347.8" y="188.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">10.7%</text>
+<text x="182.0" y="212.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Manipur</text>
+<path d="M192.0,201.0 H318.8 Q322.8,201.0 322.8,205.0 V212.0 Q322.8,216.0 318.8,216.0 H192.0 Z" fill="#2f8a7d"/>
+<text x="330.8" y="212.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">9.4%</text>
+<text x="182.0" y="236.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Meghalaya</text>
+<path d="M192.0,225.0 H313.5 Q317.5,225.0 317.5,229.0 V236.0 Q317.5,240.0 313.5,240.0 H192.0 Z" fill="#2f8a7d"/>
+<text x="325.5" y="236.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">9.0%</text>
+<text x="182.0" y="260.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Assam</text>
+<path d="M192.0,249.0 H272.8 Q276.8,249.0 276.8,253.0 V260.0 Q276.8,264.0 272.8,264.0 H192.0 Z" fill="#2f8a7d"/>
+<text x="284.8" y="260.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">6.1%</text>
+<text x="182.0" y="284.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Odisha</text>
+<path d="M192.0,273.0 H230.0 Q234.0,273.0 234.0,277.0 V284.0 Q234.0,288.0 230.0,288.0 H192.0 Z" fill="#2f8a7d"/>
+<text x="242.0" y="284.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">3.0%</text>
+<text x="182.0" y="308.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Kerala</text>
+<path d="M192.0,297.0 H227.2 Q231.2,297.0 231.2,301.0 V308.0 Q231.2,312.0 227.2,312.0 H192.0 Z" fill="#2f8a7d"/>
+<text x="239.2" y="308.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">2.8%</text>
+<text x="182.0" y="332.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Arunachal Pradesh</text>
+<path d="M192.0,321.0 H217.6 Q221.6,321.0 221.6,325.0 V332.0 Q221.6,336.0 217.6,336.0 H192.0 Z" fill="#2f8a7d"/>
+<text x="229.6" y="332.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">2.1%</text>
+<text x="182.0" y="356.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Andhra Pradesh</text>
+<path d="M192.0,345.0 H211.2 Q215.2,345.0 215.2,349.0 V356.0 Q215.2,360.0 211.2,360.0 H192.0 Z" fill="#2f8a7d"/>
+<text x="223.2" y="356.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">1.7%</text>
+<text x="182.0" y="380.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Tamil Nadu</text>
+<path d="M192.0,369.0 H207.2 Q211.2,369.0 211.2,373.0 V380.0 Q211.2,384.0 207.2,384.0 H192.0 Z" fill="#2f8a7d"/>
+<text x="219.2" y="380.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">1.4%</text>
+<text x="182.0" y="404.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="end" font-weight="normal">Karnataka</text>
+<path d="M192.0,393.0 H206.5 Q210.5,393.0 210.5,397.0 V404.0 Q210.5,408.0 206.5,408.0 H192.0 Z" fill="#2f8a7d"/>
+<text x="218.5" y="404.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#a8c4d8" text-anchor="start" font-weight="normal">1.3%</text>
+<text x="480.0" y="108.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#ddeaf5" text-anchor="start" font-weight="normal">National tree-cover loss per year (km²)</text>
+<line x1="520" y1="348.0" x2="860" y2="348.0" stroke="#1a2b3c" stroke-width="1"/>
+<text x="512.0" y="352.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="end" font-weight="normal">0</text>
+<line x1="520" y1="298.0" x2="860" y2="298.0" stroke="#1a2b3c" stroke-width="1"/>
+<text x="512.0" y="302.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="end" font-weight="normal">500</text>
+<line x1="520" y1="248.0" x2="860" y2="248.0" stroke="#1a2b3c" stroke-width="1"/>
+<text x="512.0" y="252.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="end" font-weight="normal">1,000</text>
+<line x1="520" y1="198.0" x2="860" y2="198.0" stroke="#1a2b3c" stroke-width="1"/>
+<text x="512.0" y="202.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="end" font-weight="normal">1,500</text>
+<line x1="520" y1="148.0" x2="860" y2="148.0" stroke="#1a2b3c" stroke-width="1"/>
+<text x="512.0" y="152.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="end" font-weight="normal">2,000</text>
+<path d="M526.0,348.0 V288.0 Q526.0,284.0 530.0,284.0 H532.8 Q536.8,284.0 536.8,288.0 V348.0 Z" fill="#2f8a7d"/>
+<text x="531.4" y="364.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="middle" font-weight="normal">2001</text>
+<path d="M539.8,348.0 V297.6 Q539.8,293.6 543.8,293.6 H546.5 Q550.5,293.6 550.5,297.6 V348.0 Z" fill="#2f8a7d"/>
+<path d="M553.5,348.0 V303.0 Q553.5,299.0 557.5,299.0 H560.2 Q564.2,299.0 564.2,303.0 V348.0 Z" fill="#2f8a7d"/>
+<path d="M567.2,348.0 V275.6 Q567.2,271.6 571.2,271.6 H574.0 Q578.0,271.6 578.0,275.6 V348.0 Z" fill="#2f8a7d"/>
+<path d="M581.0,348.0 V287.9 Q581.0,283.9 585.0,283.9 H587.8 Q591.8,283.9 591.8,287.9 V348.0 Z" fill="#2f8a7d"/>
+<path d="M594.8,348.0 V282.3 Q594.8,278.3 598.8,278.3 H601.5 Q605.5,278.3 605.5,282.3 V348.0 Z" fill="#2f8a7d"/>
+<path d="M608.5,348.0 V276.3 Q608.5,272.3 612.5,272.3 H615.2 Q619.2,272.3 619.2,276.3 V348.0 Z" fill="#2f8a7d"/>
+<path d="M622.2,348.0 V264.0 Q622.2,260.0 626.2,260.0 H629.0 Q633.0,260.0 633.0,264.0 V348.0 Z" fill="#2f8a7d"/>
+<text x="627.6" y="364.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="middle" font-weight="normal">2008</text>
+<path d="M636.0,348.0 V270.5 Q636.0,266.5 640.0,266.5 H642.8 Q646.8,266.5 646.8,270.5 V348.0 Z" fill="#2f8a7d"/>
+<path d="M649.8,348.0 V299.3 Q649.8,295.3 653.8,295.3 H656.5 Q660.5,295.3 660.5,299.3 V348.0 Z" fill="#2f8a7d"/>
+<path d="M663.5,348.0 V261.7 Q663.5,257.7 667.5,257.7 H670.2 Q674.2,257.7 674.2,261.7 V348.0 Z" fill="#2f8a7d"/>
+<path d="M677.2,348.0 V254.7 Q677.2,250.7 681.2,250.7 H684.0 Q688.0,250.7 688.0,254.7 V348.0 Z" fill="#2f8a7d"/>
+<path d="M691.0,348.0 V268.3 Q691.0,264.3 695.0,264.3 H697.8 Q701.8,264.3 701.8,268.3 V348.0 Z" fill="#2f8a7d"/>
+<path d="M704.8,348.0 V208.3 Q704.8,204.3 708.8,204.3 H711.5 Q715.5,204.3 715.5,208.3 V348.0 Z" fill="#2f8a7d"/>
+<path d="M718.5,348.0 V231.2 Q718.5,227.2 722.5,227.2 H725.2 Q729.2,227.2 729.2,231.2 V348.0 Z" fill="#2f8a7d"/>
+<path d="M732.2,348.0 V170.5 Q732.2,166.5 736.2,166.5 H739.0 Q743.0,166.5 743.0,170.5 V348.0 Z" fill="#2f8a7d"/>
+<text x="737.6" y="364.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="middle" font-weight="normal">2016</text>
+<path d="M746.0,348.0 V154.3 Q746.0,150.3 750.0,150.3 H752.8 Q756.8,150.3 756.8,154.3 V348.0 Z" fill="#3aa898"/>
+<path d="M759.8,348.0 V214.4 Q759.8,210.4 763.8,210.4 H766.5 Q770.5,210.4 770.5,214.4 V348.0 Z" fill="#2f8a7d"/>
+<path d="M773.5,348.0 V225.7 Q773.5,221.7 777.5,221.7 H780.2 Q784.2,221.7 784.2,225.7 V348.0 Z" fill="#2f8a7d"/>
+<path d="M787.2,348.0 V207.9 Q787.2,203.9 791.2,203.9 H794.0 Q798.0,203.9 798.0,207.9 V348.0 Z" fill="#2f8a7d"/>
+<path d="M801.0,348.0 V213.4 Q801.0,209.4 805.0,209.4 H807.8 Q811.8,209.4 811.8,213.4 V348.0 Z" fill="#2f8a7d"/>
+<path d="M814.8,348.0 V224.5 Q814.8,220.5 818.8,220.5 H821.5 Q825.5,220.5 825.5,224.5 V348.0 Z" fill="#2f8a7d"/>
+<path d="M828.5,348.0 V202.0 Q828.5,198.0 832.5,198.0 H835.2 Q839.2,198.0 839.2,202.0 V348.0 Z" fill="#2f8a7d"/>
+<path d="M842.2,348.0 V211.8 Q842.2,207.8 846.2,207.8 H849.0 Q853.0,207.8 853.0,211.8 V348.0 Z" fill="#2f8a7d"/>
+<text x="847.6" y="364.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="middle" font-weight="normal">2024</text>
+<text x="751.4" y="142.3" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#ddeaf5" text-anchor="end" font-weight="normal">2017: 1,977 km²</text>
+</svg>

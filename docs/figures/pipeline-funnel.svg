@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="350" viewBox="0 0 900 350" role="img">
+<rect width="900" height="350" rx="10" fill="#08111c"/>
+<rect x="0.5" y="0.5" width="899" height="349" rx="10" fill="none" stroke="#16283a"/>
+<text x="32.0" y="44.0" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#ddeaf5" text-anchor="start" font-weight="normal">From raw download to analysis-ready data</text>
+<text x="32.0" y="68.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#a8c4d8" text-anchor="start" font-weight="normal">Every exclusion is logged with its reason; coordinate uncertainty is kept as a quality class on every record</text>
+<text x="32.0" y="332.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">Source: data/analytics/screening_report.json and load_report.json. Sampling uses a SHA-256 hash of a fixed seed and the GBIF ID.</text>
+<text x="196.0" y="117.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#ddeaf5" text-anchor="end" font-weight="normal">GBIF download</text>
+<path d="M210.0,100.0 H846.0 Q850.0,100.0 850.0,104.0 V120.0 Q850.0,124.0 846.0,124.0 H210.0 Z" fill="#3f586c"/>
+<text x="840.0" y="117.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddeaf5" text-anchor="end" font-weight="normal">4,743,495</text>
+<text x="210.0" y="142.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f8ca4" text-anchor="start" font-weight="normal">4.7 million India records for 188 species</text>
+<text x="196.0" y="169.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#ddeaf5" text-anchor="end" font-weight="normal">Record-level screen</text>
+<path d="M210.0,152.0 H844.3 Q848.3,152.0 848.3,156.0 V172.0 Q848.3,176.0 844.3,176.0 H210.0 Z" fill="#2f8a7d"/>
+<text x="838.3" y="169.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddeaf5" text-anchor="end" font-weight="normal">4.7M</text>
+<text x="210.0" y="194.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f8ca4" text-anchor="start" font-weight="normal">−12,668: missing coordinates or dates, captive, fossil, flagged geography</text>
+<text x="196.0" y="221.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#ddeaf5" text-anchor="end" font-weight="normal">Per-species cap</text>
+<path d="M210.0,204.0 H408.1 Q412.1,204.0 412.1,208.0 V224.0 Q412.1,228.0 408.1,228.0 H210.0 Z" fill="#2f8a7d"/>
+<text x="422.1" y="221.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddeaf5" text-anchor="start" font-weight="normal">1.5M</text>
+<text x="210.0" y="246.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f8ca4" text-anchor="start" font-weight="normal">−3,233,259: reproducible sample capping the 14 most-recorded species at 72,000 records each</text>
+<text x="196.0" y="273.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#ddeaf5" text-anchor="end" font-weight="normal">Spatial rules</text>
+<path d="M210.0,256.0 H394.7 Q398.7,256.0 398.7,260.0 V276.0 Q398.7,280.0 394.7,280.0 H210.0 Z" fill="#3aa898"/>
+<text x="408.7" y="273.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddeaf5" text-anchor="start" font-weight="normal">1.4M</text>
+<text x="210.0" y="298.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f8ca4" text-anchor="start" font-weight="normal">−98,678: duplicate uploads, zoo locations, points outside India</text>
+</svg>

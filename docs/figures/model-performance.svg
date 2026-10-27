@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" role="img">
+<rect width="900" height="400" rx="10" fill="#08111c"/>
+<rect x="0.5" y="0.5" width="899" height="399" rx="10" fill="none" stroke="#16283a"/>
+<text x="32.0" y="44.0" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#ddeaf5" text-anchor="start" font-weight="normal">Extinction-vulnerability model</text>
+<text x="32.0" y="68.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#a8c4d8" text-anchor="start" font-weight="normal">Predicting IUCN threatened status (CR/EN/VU) for 168 species (27 threatened); repeated stratified 5-fold cross-validation</text>
+<text x="32.0" y="382.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">Model predictions are not IUCN assessments. SHAP values explain the model, not ecological causes.</text>
+<text x="32.0" y="110.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#ddeaf5" text-anchor="start" font-weight="normal">Precision-recall AUC (mean ± 1 SD)</text>
+<line x1="172.0" y1="128" x2="172.0" y2="300" stroke="#1a2b3c" stroke-width="1"/>
+<text x="172.0" y="318.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="middle" font-weight="normal">0.0</text>
+<line x1="234.9" y1="128" x2="234.9" y2="300" stroke="#1a2b3c" stroke-width="1"/>
+<text x="234.9" y="318.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="middle" font-weight="normal">0.2</text>
+<line x1="297.7" y1="128" x2="297.7" y2="300" stroke="#1a2b3c" stroke-width="1"/>
+<text x="297.7" y="318.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="middle" font-weight="normal">0.4</text>
+<line x1="360.6" y1="128" x2="360.6" y2="300" stroke="#1a2b3c" stroke-width="1"/>
+<text x="360.6" y="318.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="middle" font-weight="normal">0.6</text>
+<text x="160.0" y="162.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#a8c4d8" text-anchor="end" font-weight="normal">Logistic regression</text>
+<path d="M172.0,146.0 H294.0 Q298.0,146.0 298.0,150.0 V164.0 Q298.0,168.0 294.0,168.0 H172.0 Z" fill="#3f586c"/>
+<line x1="252.8" y1="157" x2="343.3" y2="157" stroke="#a8c4d8" stroke-width="1.5"/>
+<line x1="252.8" y1="152" x2="252.8" y2="162" stroke="#a8c4d8" stroke-width="1.5"/>
+<line x1="343.3" y1="152" x2="343.3" y2="162" stroke="#a8c4d8" stroke-width="1.5"/>
+<text x="351.3" y="162.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">0.40</text>
+<text x="160.0" y="214.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#ddeaf5" text-anchor="end" font-weight="normal">Random forest</text>
+<path d="M172.0,198.0 H319.2 Q323.2,198.0 323.2,202.0 V216.0 Q323.2,220.0 319.2,220.0 H172.0 Z" fill="#3aa898"/>
+<line x1="280.4" y1="209" x2="366.1" y2="209" stroke="#a8c4d8" stroke-width="1.5"/>
+<line x1="280.4" y1="204" x2="280.4" y2="214" stroke="#a8c4d8" stroke-width="1.5"/>
+<line x1="366.1" y1="204" x2="366.1" y2="214" stroke="#a8c4d8" stroke-width="1.5"/>
+<text x="374.1" y="214.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#ddeaf5" text-anchor="start" font-weight="normal">0.48</text>
+<text x="160.0" y="266.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12.5" fill="#a8c4d8" text-anchor="end" font-weight="normal">XGBoost</text>
+<path d="M172.0,250.0 H309.6 Q313.6,250.0 313.6,254.0 V268.0 Q313.6,272.0 309.6,272.0 H172.0 Z" fill="#3f586c"/>
+<line x1="275.3" y1="261" x2="352.0" y2="261" stroke="#a8c4d8" stroke-width="1.5"/>
+<line x1="275.3" y1="256" x2="275.3" y2="266" stroke="#a8c4d8" stroke-width="1.5"/>
+<line x1="352.0" y1="256" x2="352.0" y2="266" stroke="#a8c4d8" stroke-width="1.5"/>
+<text x="360.0" y="266.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">0.45</text>
+<line x1="222.5" y1="134" x2="222.5" y2="300" stroke="#b08c33" stroke-width="2"/>
+<text x="228.5" y="296.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#a8c4d8" text-anchor="start" font-weight="normal">chance 0.16</text>
+<text x="172.0" y="346.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">Selected: Random forest · ROC-AUC 0.72</text>
+<text x="470.0" y="110.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#ddeaf5" text-anchor="start" font-weight="normal">What drives the predictions (mean |SHAP|)</text>
+<text x="470.0" y="147.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">Temperature niche breadth</text>
+<path d="M685.0,135.0 H831.0 Q835.0,135.0 835.0,139.0 V147.0 Q835.0,151.0 831.0,151.0 H685.0 Z" fill="#3aa898"/>
+<text x="843.0" y="147.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">0.067</text>
+<text x="470.0" y="177.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">Taxonomic group: fishes</text>
+<path d="M685.0,165.0 H763.3 Q767.3,165.0 767.3,169.0 V177.0 Q767.3,181.0 763.3,181.0 H685.0 Z" fill="#2f8a7d"/>
+<text x="775.3" y="177.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">0.036</text>
+<text x="470.0" y="207.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">Tree cover where recorded</text>
+<path d="M685.0,195.0 H762.0 Q766.0,195.0 766.0,199.0 V207.0 Q766.0,211.0 762.0,211.0 H685.0 Z" fill="#2f8a7d"/>
+<text x="774.0" y="207.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">0.036</text>
+<text x="470.0" y="237.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">Precipitation niche breadth</text>
+<path d="M685.0,225.0 H750.9 Q754.9,225.0 754.9,229.0 V237.0 Q754.9,241.0 750.9,241.0 H685.0 Z" fill="#2f8a7d"/>
+<text x="762.9" y="237.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">0.031</text>
+<text x="470.0" y="267.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">Mean elevation of records</text>
+<path d="M685.0,255.0 H742.6 Q746.6,255.0 746.6,259.0 V267.0 Q746.6,271.0 742.6,271.0 H685.0 Z" fill="#2f8a7d"/>
+<text x="754.6" y="267.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">0.027</text>
+<text x="470.0" y="297.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">Recent forest loss where recorded</text>
+<path d="M685.0,285.0 H729.3 Q733.3,285.0 733.3,289.0 V297.0 Q733.3,301.0 729.3,301.0 H685.0 Z" fill="#2f8a7d"/>
+<text x="741.3" y="297.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">0.021</text>
+<text x="470.0" y="327.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#a8c4d8" text-anchor="start" font-weight="normal">Concentration in one district</text>
+<path d="M685.0,315.0 H725.7 Q729.7,315.0 729.7,319.0 V327.0 Q729.7,331.0 725.7,331.0 H685.0 Z" fill="#2f8a7d"/>
+<text x="737.7" y="327.0" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#6f8ca4" text-anchor="start" font-weight="normal">0.020</text>
+</svg>
