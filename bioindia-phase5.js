@@ -392,23 +392,157 @@
   }
 
   // ── Ecosystem: extinction cascade scenario simulator ──
+  // The illustrative food web above stays as it is; this adds the scenario on documented interactions
+  // below it, with an animated view: the removed species at the centre, its documented dependents
+  // around it, and the taxa that would lose too much of their resources fading out.
+  var cascadeAnim = null;
+
+  function animateCascade(canvas, data) {
+    if (cascadeAnim) cancelAnimationFrame(cascadeAnim);
+    var ratio = window.devicePixelRatio || 1;
+    var W = canvas.clientWidth || 900, H = Math.round(Math.min(520, Math.max(380, W * 0.5)));
+    canvas.style.height = H + "px";
+    canvas.width = Math.round(W * ratio); canvas.height = Math.round(H * ratio);
+    var ctx = canvas.getContext("2d");
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+    var lostStep = {};
+    data.potentially_secondarily_lost.forEach(function (group) {
+      group.taxa.forEach(function (t) { if (!(t.taxon in lostStep)) lostStep[t.taxon] = group.step; });
+    });
+    var direct = data.directly_dependent_taxa.slice().sort(function (a, b) {
+      return (b.taxon in lostStep) - (a.taxon in lostStep) || b.share_of_resources_lost - a.share_of_resources_lost;
+    }).slice(0, 72);
+    var directNames = {};
+    direct.forEach(function (t) { directNames[t.taxon] = true; });
+    var outer = [];
+    data.potentially_secondarily_lost.forEach(function (group) {
+      group.taxa.forEach(function (t) { if (!directNames[t.taxon] && outer.length < 60) outer.push(Object.assign({ step: group.step }, t)); });
+    });
+
+    var cx = W / 2, cy = H / 2 - 6, r1 = Math.min(W, H) * 0.34, r2 = Math.min(W, H) * 0.45;
+    function ring(list, radius, offset) {
+      return list.map(function (t, i) {
+        var angle = offset + (i / Math.max(1, list.length)) * Math.PI * 2;
+        return { t: t, x: cx + Math.cos(angle) * radius * (W > H ? 1.35 : 1), y: cy + Math.sin(angle) * radius,
+                 lost: t.taxon in lostStep, step: lostStep[t.taxon] || t.step || 1, phase: Math.random() * 6.28 };
+      });
+    }
+    var inner = ring(direct, r1, -Math.PI / 2), far = ring(outer, r2, -Math.PI / 2 + 0.05);
+    var nodes = inner.concat(far);
+    // Losses ripple around the ring, step by step, starting after the species is removed.
+    nodes.forEach(function (n, i) { n.delay = 2 + (n.step - 1) * 1.2 + i * 0.035; });
+    var centreName = data.species.common_name || data.species.scientific_name;
+    var start = performance.now();
+    var tip = document.querySelector(".cascade-tip") || document.body.appendChild(Object.assign(document.createElement("div"), { className: "cascade-tip" }));
+
+    canvas.onmousemove = function (event) {
+      var box = canvas.getBoundingClientRect(), mx = event.clientX - box.left, my = event.clientY - box.top;
+      var hit = nodes.find(function (n) { return Math.hypot(n.x - mx, n.y - my) < 8; });
+      if (!hit && Math.hypot(cx - mx, cy - my) < 26) hit = { centre: true };
+      if (!hit) { tip.style.display = "none"; return; }
+      tip.innerHTML = hit.centre ? "<b>" + esc(centreName) + "</b><br>Removed in this scenario" :
+        "<i>" + esc(hit.t.taxon) + "</i><br>" + pct(hit.t.share_of_resources_lost) + " of documented resources lost" +
+        (hit.lost ? " · potentially lost (step " + hit.step + ")" : " · persists") +
+        (hit.t.low_confidence_single_resource ? "<br>Low confidence: one documented resource" : "");
+      tip.style.display = "block"; tip.style.left = (event.clientX + 14) + "px"; tip.style.top = (event.clientY + 12) + "px";
+    };
+    canvas.onmouseleave = function () { tip.style.display = "none"; };
+
+    function frame(now) {
+      var t = (now - start) / 1000;
+      var removed = Math.min(1, Math.max(0, (t - 1.2) / 0.8));       // centre fades between 1.2 s and 2 s
+      ctx.clearRect(0, 0, W, H);
+      var bg = ctx.createRadialGradient(cx, cy, 10, cx, cy, Math.max(W, H) * 0.7);
+      bg.addColorStop(0, "#0a1a2c"); bg.addColorStop(1, "#030810");
+      ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+
+      // Links from the removed species to its direct dependents.
+      inner.forEach(function (n, i) {
+        var appear = Math.min(1, Math.max(0, (t - i * 0.012) / 0.6));
+        var fade = n.lost ? Math.min(1, Math.max(0, (t - n.delay) / 0.8)) : 0;
+        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(n.x, n.y);
+        ctx.setLineDash(removed > 0 ? [3, 5] : []);
+        ctx.strokeStyle = removed > 0 ? "rgba(220,80,100," + (0.35 * appear * (1 - fade * 0.7)) + ")" : "rgba(74,186,168," + 0.22 * appear + ")";
+        ctx.lineWidth = 1; ctx.stroke(); ctx.setLineDash([]);
+        if (removed === 0) {  // resources flow from the species to its dependents until it is removed
+          var p = (t * 0.6 + i * 0.07) % 1;
+          ctx.beginPath(); ctx.arc(cx + (n.x - cx) * p, cy + (n.y - cy) * p, 1.6, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(143,220,205," + 0.8 * appear + ")"; ctx.fill();
+        }
+      });
+
+      // Ring guides and labels.
+      ctx.strokeStyle = "rgba(42,138,122,.08)"; ctx.lineWidth = 1;
+      [r1, r2].forEach(function (r) { ctx.beginPath(); ctx.ellipse(cx, cy, r * (W > H ? 1.35 : 1), r, 0, 0, Math.PI * 2); ctx.stroke(); });
+      ctx.font = "9px Cinzel, serif"; ctx.fillStyle = "rgba(168,196,216,.4)"; ctx.textAlign = "left";
+      ctx.fillText("INNER RING · DIRECT DEPENDENTS (" + data.directly_dependent_taxa.length + ")", 14, 20);
+      if (far.length) ctx.fillText("OUTER RING · LATER-STEP LOSSES", 14, 34);
+
+      nodes.forEach(function (n, i) {
+        var appear = Math.min(1, Math.max(0, (t - 0.2 - i * 0.008) / 0.5));
+        var fade = n.lost ? Math.min(1, Math.max(0, (t - n.delay) / 0.8)) : 0;
+        var wobble = Math.sin(t * 1.2 + n.phase) * 1.5;
+        var colour = fade > 0 ? "220,80,100" : "74,186,168";
+        var radius = n.t.low_confidence_single_resource ? 4 : 5;
+        ctx.globalAlpha = appear * (1 - fade * 0.65);
+        var glow = ctx.createRadialGradient(n.x, n.y + wobble, 0, n.x, n.y + wobble, radius * 3);
+        glow.addColorStop(0, "rgba(" + colour + ",.45)"); glow.addColorStop(1, "rgba(" + colour + ",0)");
+        ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(n.x, n.y + wobble, radius * 3, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(n.x, n.y + wobble, radius, 0, Math.PI * 2);
+        if (n.t.low_confidence_single_resource) { ctx.strokeStyle = "rgb(" + colour + ")"; ctx.lineWidth = 1.5; ctx.stroke(); }
+        else { ctx.fillStyle = "rgb(" + colour + ")"; ctx.fill(); }
+        ctx.globalAlpha = 1;
+      });
+
+      // The removed species.
+      var pulse = 1 + Math.sin(t * 3) * 0.04;
+      ctx.globalAlpha = 1 - removed * 0.75;
+      var core = ctx.createRadialGradient(cx, cy, 0, cx, cy, 46);
+      core.addColorStop(0, removed > 0 ? "rgba(220,80,100,.55)" : "rgba(74,186,168,.5)"); core.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = core; ctx.beginPath(); ctx.arc(cx, cy, 46 * pulse, 0, Math.PI * 2); ctx.fill();
+      ctx.beginPath(); ctx.arc(cx, cy, 20, 0, Math.PI * 2);
+      ctx.strokeStyle = removed > 0 ? "#dc5064" : "#4abaa8"; ctx.lineWidth = 2; ctx.stroke();
+      if (removed > 0) {
+        ctx.beginPath(); ctx.moveTo(cx - 9, cy - 9); ctx.lineTo(cx + 9, cy + 9); ctx.moveTo(cx + 9, cy - 9); ctx.lineTo(cx - 9, cy + 9); ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+      ctx.font = "12px Cinzel, serif"; ctx.fillStyle = "#ddeaf5"; ctx.textAlign = "center";
+      ctx.fillText(centreName.toUpperCase(), cx, cy + 40);
+      ctx.font = "italic 13px 'EB Garamond', serif"; ctx.fillStyle = "rgba(168,196,216,.6)";
+      ctx.fillText(removed < 1 ? "resources reach " + data.directly_dependent_taxa.length + " documented dependents" :
+        "removed — " + data.summary.potentially_secondarily_lost + " taxa potentially lost", cx, cy + 58);
+
+      // Running tally in the corner once the cascade starts.
+      var shown = nodes.filter(function (n) { return n.lost && t > n.delay; }).length;
+      if (removed > 0) {
+        ctx.font = "9px Cinzel, serif"; ctx.textAlign = "right"; ctx.fillStyle = "rgba(240,140,150,.85)";
+        ctx.fillText("POTENTIALLY LOST: " + Math.min(shown, data.summary.potentially_secondarily_lost), W - 14, 20);
+        ctx.fillStyle = "rgba(143,220,205,.8)";
+        ctx.fillText("PERSIST: " + nodes.filter(function (n) { return !n.lost; }).length, W - 14, 34);
+      }
+      cascadeAnim = requestAnimationFrame(frame);
+    }
+    cascadeAnim = requestAnimationFrame(frame);
+  }
+
   function liveEcosystem() {
-    var section = document.getElementById("ecosystem");
-    var canvas = document.getElementById("ecoCanvas");
-    if (!section || !canvas) return;
-    var host = canvas.parentElement;
-    // Stop the demo food-web animation before its canvas is removed.
-    if (typeof eAnim !== "undefined" && eAnim) cancelAnimationFrame(eAnim);
+    var host = document.getElementById("ecoScenario");
+    if (!host) return;
     host.innerHTML =
-      '<div style="max-width:1000px;margin:0 auto;padding:28px 32px;text-align:left;background:linear-gradient(135deg,rgba(6,12,20,.96),rgba(8,16,32,.96));' +
-      'border:1px solid rgba(42,138,122,.25);box-shadow:0 20px 60px rgba(0,0,0,.5)">' +
+      '<div class="eco-panel"><div class="eco-head"><span class="eco-kicker">Part 2 · Scenario on documented interactions</span>' +
+      '<span class="eco-sub">Remove a species and see which taxa that depend on it could follow, using interactions recorded in GloBI.</span></div>' +
       '<div class="report-controls">' +
       '<div class="gis-filter-group"><label>Remove species</label><select class="gis-select" id="cascadeSpecies">' +
       FLAGSHIPS.map(function (sp) { return '<option value="' + sp.id + '">' + esc(sp.name) + "</option>"; }).join("") +
       '<option value="ardeola_grayii">Indian Pond-heron</option><option value="pavo_cristatus">Indian Peafowl</option></select></div>' +
       '<div class="gis-filter-group"><label>Loss threshold</label><select class="gis-select" id="cascadeThreshold">' +
       '<option value="0.25">25% of resources</option><option value="0.5" selected>50% of resources</option><option value="0.75">75% of resources</option></select></div>' +
-      '<button class="gen-report-btn" id="cascadeRun">Run scenario</button></div><div id="cascadeOutput"></div></div>';
+      '<button class="gen-report-btn" id="cascadeRun">Run scenario</button></div>' +
+      '<canvas id="cascadeCanvas" aria-label="Animated cascade scenario"></canvas>' +
+      '<div class="eco-legend"><span><i style="background:#4abaa8"></i>Dependent taxon that persists</span>' +
+      '<span><i style="background:#dc5064"></i>Potentially lost</span><span><i style="border:1.5px solid #4abaa8"></i>Only one documented resource (low confidence)</span></div>' +
+      '<div id="cascadeOutput"></div></div>';
     async function run() {
       var output = document.getElementById("cascadeOutput");
       output.innerHTML = '<div style="' + NOTE_STYLE + '">Running scenario…</div>';
@@ -421,10 +555,11 @@
           output.innerHTML = '<div style="' + NOTE_STYLE + '">' + esc(data.result) + "</div>";
           return;
         }
+        animateCascade(document.getElementById("cascadeCanvas"), data);
         var s = data.summary, change = data.connectivity_change;
         function kpi(value, label) { return '<div class="report-kpi"><div class="report-kpi-val">' + esc(value) + '</div><div class="report-kpi-label">' + esc(label) + "</div></div>"; }
         output.innerHTML =
-          '<div class="report-badge">SCENARIO SIMULATION — not a prediction</div><div class="report-kpis">' +
+          '<div class="report-badge" style="margin-top:14px">SCENARIO SIMULATION — not a prediction</div><div class="report-kpis">' +
           kpi(s.directly_dependent_taxa, "Directly dependent taxa") + kpi(s.potentially_secondarily_lost, "Potentially secondarily lost") +
           kpi(s.of_which_low_confidence_single_resource, "Low-confidence (single resource)") + kpi(change.dependency_links_lost, "Dependency links lost") + "</div>" +
           '<div class="report-section"><h4>Sensitivity to the threshold</h4><div style="' + NOTE_STYLE + '">' +
