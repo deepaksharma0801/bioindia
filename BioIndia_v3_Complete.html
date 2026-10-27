@@ -468,8 +468,20 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .si-partner span:first-child{font-style:italic;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .si-partner span:last-child{font-family:'Cinzel',serif;font-size:.5rem;color:rgba(168,196,216,.45);white-space:nowrap;}
 .si-loading{padding:60px 20px;text-align:center;font-family:'EB Garamond',serif;font-style:italic;color:rgba(168,196,216,.45);}
+/* Ecosystem section: illustrative food web and scenario panels */
+.eco-panel{position:relative;z-index:2;max-width:1040px;margin:0 auto;padding:22px 26px 24px;background:linear-gradient(135deg,rgba(6,12,20,.96),rgba(8,16,32,.96));border:1px solid rgba(42,138,122,.25);box-shadow:0 20px 60px rgba(0,0,0,.5);}
+.eco-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-bottom:14px;text-align:left;}
+.eco-kicker{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--teal-l);}
+.eco-sub{font-family:'EB Garamond',serif;font-style:italic;font-size:.92rem;color:rgba(168,196,216,.55);}
+#ecoCanvas{display:block;margin:0 auto;border:1px solid rgba(42,138,122,.2);max-width:100%;}
+.eco-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-top:12px;font-family:'Cinzel',serif;font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(168,196,216,.5);}
+.eco-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;vertical-align:middle;}
+.eco-legend i.dash{width:16px;height:0;border-radius:0;border-top:1px dashed #dc5064;}
+#ecoScenario{max-width:1040px;margin:28px auto 0;}
+#cascadeCanvas{display:block;width:100%;border:1px solid rgba(42,138,122,.2);margin:18px 0 6px;}
+.cascade-tip{position:fixed;z-index:9999;pointer-events:none;padding:6px 10px;background:rgba(4,10,18,.95);border:1px solid rgba(74,186,168,.4);font-family:'EB Garamond',serif;font-size:.85rem;color:var(--parchment);max-width:280px;display:none;}
 /* Phones and narrow tablets: stack the two-column sections (kept last so it overrides the base grid rules). */
-@media(max-width:900px){#forest-scroll{overflow-x:clip;}.report-risk-list{grid-template-columns:1fr;}.report-risk-item{min-width:0;}.si-browser{grid-template-columns:1fr;}.si-rail{border-right:none;border-bottom:1px solid rgba(42,138,122,.15);}.si-rail{contain:none;min-height:0;}.si-list{max-height:260px;flex:none;}.si-head,.si-mid,.si-cards{grid-template-columns:1fr;}.si-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}.si-detail{padding:20px 16px;}.hotspot-grid{grid-template-columns:1fr;}.hotspot-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.hm-metric{min-width:0;}.ai-grid,.env-grid,.xai-grid{grid-template-columns:1fr;}.si-content.active{grid-template-columns:1fr;}.report-controls{grid-template-columns:1fr;}.report-kpis{grid-template-columns:1fr 1fr;}.hm-grid{grid-template-columns:repeat(3,minmax(0,1fr));}.hm-score{font-size:.8rem;}#hero{overflow-x:clip;}.ts-stats{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:900px){#forest-scroll{overflow-x:clip;}.eco-panel{padding:16px 12px;}.report-risk-list{grid-template-columns:1fr;}.report-risk-item{min-width:0;}.si-browser{grid-template-columns:1fr;}.si-rail{border-right:none;border-bottom:1px solid rgba(42,138,122,.15);}.si-rail{contain:none;min-height:0;}.si-list{max-height:260px;flex:none;}.si-head,.si-mid,.si-cards{grid-template-columns:1fr;}.si-kpis{grid-template-columns:repeat(2,minmax(0,1fr));}.si-detail{padding:20px 16px;}.hotspot-grid{grid-template-columns:1fr;}.hotspot-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.hm-metric{min-width:0;}.ai-grid,.env-grid,.xai-grid{grid-template-columns:1fr;}.si-content.active{grid-template-columns:1fr;}.report-controls{grid-template-columns:1fr;}.report-kpis{grid-template-columns:1fr 1fr;}.hm-grid{grid-template-columns:repeat(3,minmax(0,1fr));}.hm-score{font-size:.8rem;}#hero{overflow-x:clip;}.ts-stats{grid-template-columns:repeat(2,minmax(0,1fr));}}
 </style>
 <script>window.BIOINDIA_STATIC = {date: "2026-10-27"};</script>
 <style>.sp-st.s-\-{opacity:.5}</style>
@@ -750,10 +762,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   <div style="text-align:center;max-width:680px;margin:0 auto 44px;">
     <span class="sec-label reveal">Extinction Cascade Simulator</span>
     <h2 class="sec-title reveal">The Web of <em>Life</em></h2>
-    <p class="sec-body reveal" style="margin:0 auto">Remove a species and trace which dependent taxa could follow, using interactions documented in the Global Biotic Interactions database. Each run is a scenario, not a forecast.</p>
+    <p class="sec-body reveal" style="margin:0 auto">Two views of the same question. First, an illustrative food web you can disturb to see how losses travel. Then a scenario on real interactions documented in the Global Biotic Interactions database: remove a species and watch which dependent taxa could follow. Each run is a scenario, not a forecast.</p>
   </div>
-  <div style="text-align:center" class="reveal">
-    <canvas id="ecoCanvas" height="480"></canvas>
+  <div class="eco-panel reveal">
+    <div class="eco-head"><span class="eco-kicker">Part 1 · Illustrative food web</span><span class="eco-sub">A teaching model of how a loss travels through a food web. Species and links are simplified, not computed from data.</span></div>
+    <canvas id="ecoCanvas"></canvas>
+    <div class="eco-legend"><span><i style="background:#8fdccd"></i>Energy flowing along a feeding link</span><span><i style="background:#dc5064"></i>Species lost</span><span><i class="dash"></i>Broken link</span></div>
     <div class="eco-btns">
       <button class="eco-btn" onclick="ecoReset()">↺ Restore Ecosystem</button>
       <button class="eco-btn danger" onclick="ecoRemoveApex()">Remove Apex Predator</button>
@@ -762,6 +776,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
     </div>
     <div id="ecoMsg"></div>
   </div>
+  <div id="ecoScenario"></div>
 </section>
 
 <!-- HOTSPOT DETECTION -->
@@ -1434,87 +1449,155 @@ Object.entries(ECO_IMG_MAP).forEach(([k, src]) => {
   const i = new Image(); i.src = src; ECO_LOADED[k] = i;
 });
 const ECO_LK = [[0,4],[0,5],[0,3],[1,4],[1,5],[5,8],[5,9],[3,8],[3,9],[4,8],[4,9],[2,8],[2,9],[6,10],[6,11],[7,4],[7,3],[11,8],[11,9],[12,10],[12,11]];
-let eNodes=[], eCtx, eAnim;
+// Illustrative food web: species sit on trophic levels, energy particles flow along feeding links,
+// and removed species flash red before fading. A teaching model, not data.
+const ECO_LEVELS = ['Apex predators', 'Predators, omnivores & scavengers', 'Large herbivores & prey', 'Aquatic life & insects', 'Plants & decomposers'];
+const ECO_ROLE_LEVEL = {apex:0, predator:1, omnivore:1, scavenger:1, avian:1, herbivore:2, prey:2, aquatic:3, insect:3, flora:4, decomp:4};
+let eNodes=[], eCtx, eAnim, eTimers=[];
 
 function initEco() {
   const cv = document.getElementById('ecoCanvas');
-  cv.width = Math.min(900, cv.offsetWidth || 900);
-  cv.height = 480;
-  eCtx = cv.getContext('2d');
+  if (!cv) return;
+  const fit = () => {
+    const ratio = window.devicePixelRatio || 1;
+    const w = Math.min(980, cv.parentElement.clientWidth || 900);
+    const h = Math.round(w < 600 ? w * 1.15 : w * 0.52);  // taller on phones so the levels stay readable
+    cv.style.width = w + 'px'; cv.style.height = h + 'px';
+    cv.width = Math.round(w * ratio); cv.height = Math.round(h * ratio);
+    eCtx = cv.getContext('2d'); eCtx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    ecoLayout();
+  };
+  fit();
   ecoReset();
-  window.addEventListener('resize', () => { cv.width = Math.min(900, cv.offsetWidth); });
+  window.addEventListener('resize', fit);
 }
-function ecoReset() {
+
+function ecoSize() {
   const cv = document.getElementById('ecoCanvas');
-  const W = cv.width, H = cv.height;
-  eNodes = ECO_SP.map((s,i) => ({
-    ...s, id:i, alive:true, opacity:1,
-    x: 60 + (W-120)*((i%7)/6),
-    y: 60 + (H-120)*Math.floor(i/7)*(i>6?1:0),
-    vx:(Math.random()-.5)*.38, vy:(Math.random()-.5)*.38,
-  }));
-  if(eAnim) cancelAnimationFrame(eAnim);
-  drawEco();
-  setEMsg('✦ Ecosystem in balance — 13 species · 21 ecological links active');
+  return cv ? {W: parseFloat(cv.style.width) || 900, H: parseFloat(cv.style.height) || 470} : {W: 900, H: 470};
 }
-function setEMsg(m){ document.getElementById('ecoMsg').textContent=m; }
+
+function ecoLayout() {
+  const {W, H} = ecoSize();
+  const rows = ECO_LEVELS.map(() => []);
+  eNodes.forEach(n => rows[ECO_ROLE_LEVEL[n.role] ?? 2].push(n));
+  const left = W < 600 ? 10 : 150, right = W < 600 ? 10 : 40;
+  rows.forEach((row, level) => row.forEach((n, i) => {
+    n.ax = left + (W - left - right) * (i + 1) / (row.length + 1);
+    n.ay = 46 + (H - 92) * level / (ECO_LEVELS.length - 1);
+    if (n.x == null) { n.x = n.ax; n.y = n.ay; }
+  }));
+}
+
+function ecoReset() {
+  eTimers.forEach(clearTimeout); eTimers = [];
+  eNodes = ECO_SP.map((s, i) => ({...s, id: i, alive: true, opacity: 1, fade: 0, phase: Math.random() * 6.28}));
+  ecoLayout();
+  if (eAnim) cancelAnimationFrame(eAnim);
+  drawEco();
+  setEMsg('Ecosystem in balance — 13 species, 21 feeding links. Remove a group to watch the cascade.');
+}
+
+function setEMsg(m) { const el = document.getElementById('ecoMsg'); if (el) el.innerHTML = m; }
+
+function ecoKill(filter, message) {
+  eNodes.filter(n => n.alive && filter(n)).forEach(n => { n.alive = false; n.fade = 1; });
+  setEMsg(message);
+}
+
+function ecoLater(ms, fn) { eTimers.push(setTimeout(fn, ms)); }
+
 function drawEco() {
   const cv = document.getElementById('ecoCanvas');
-  const W=cv.width, H=cv.height, ctx=eCtx;
-  ctx.fillStyle='#040a14'; ctx.fillRect(0,0,W,H);
-  ctx.strokeStyle='rgba(42,138,122,.06)'; ctx.lineWidth=1;
-  for(let x=0;x<W;x+=55){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke();}
-  for(let y=0;y<H;y+=55){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke();}
-  ECO_LK.forEach(([a,b])=>{
-    const na=eNodes[a],nb=eNodes[b];
-    if(!na.alive||!nb.alive)return;
-    ctx.beginPath();ctx.moveTo(na.x,na.y);ctx.lineTo(nb.x,nb.y);
-    ctx.strokeStyle='rgba(42,138,122,.15)';ctx.lineWidth=1;ctx.stroke();
+  if (!cv || !eCtx) return;
+  const {W, H} = ecoSize(), ctx = eCtx, t = performance.now() / 1000;
+  const bg = ctx.createLinearGradient(0, 0, 0, H);
+  bg.addColorStop(0, '#071222'); bg.addColorStop(1, '#030810');
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+
+  // Trophic bands and their labels.
+  ECO_LEVELS.forEach((label, level) => {
+    const y = 46 + (H - 92) * level / (ECO_LEVELS.length - 1);
+    ctx.strokeStyle = 'rgba(42,138,122,.08)'; ctx.lineWidth = 1;
+    const narrow = W < 600;
+    ctx.beginPath(); ctx.moveTo(narrow ? 8 : 130, y); ctx.lineTo(W - (narrow ? 8 : 20), y); ctx.stroke();
+    ctx.font = (narrow ? '7px' : '9px') + ' Cinzel, serif'; ctx.fillStyle = 'rgba(168,196,216,.38)'; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+    if (narrow) ctx.fillText(label.toUpperCase(), 8, y - 30);
+    else label.split(', ').forEach((part, k, all) => ctx.fillText(part.toUpperCase() + (k < all.length - 1 ? ',' : ''), 14, y + (k - (all.length - 1) / 2) * 11));
   });
-  eNodes.forEach(n=>{
-    n.x+=n.vx; n.y+=n.vy;
-    if(n.x<n.sz||n.x>W-n.sz)n.vx*=-1;
-    if(n.y<n.sz||n.y>H-n.sz)n.vy*=-1;
-    if(!n.alive){n.opacity=Math.max(0,n.opacity-.004);if(n.opacity<=0)return;}
-    ctx.globalAlpha=n.opacity;
-    const g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.sz*2.4);
-    g.addColorStop(0,n.col+'55');g.addColorStop(1,'transparent');
-    ctx.fillStyle=g;ctx.beginPath();ctx.arc(n.x,n.y,n.sz*2.4,0,Math.PI*2);ctx.fill();
-    // Draw circular clip with image or emoji fallback
-    ctx.save();
-    ctx.beginPath();ctx.arc(n.x,n.y,n.sz,0,Math.PI*2);ctx.clip();
-    if (n.img && ECO_LOADED[n.img] && ECO_LOADED[n.img].complete) {
-      ctx.drawImage(ECO_LOADED[n.img], n.x-n.sz, n.y-n.sz, n.sz*2, n.sz*2);
+
+  eNodes.forEach(n => {
+    if (!n.alive) n.opacity = Math.max(0, n.opacity - 0.006);
+    n.x = n.ax + Math.sin(t * 0.7 + n.phase) * 5;
+    n.y = n.ay + Math.cos(t * 0.55 + n.phase * 1.3) * 4;
+  });
+
+  // Feeding links: teal with flowing particles while both ends live; red and fading once either is lost.
+  ECO_LK.forEach(([a, b], k) => {
+    const na = eNodes[a], nb = eNodes[b];
+    if (!na || !nb) return;
+    const visible = Math.min(na.opacity, nb.opacity);
+    if (visible <= 0.02) return;
+    const broken = !na.alive || !nb.alive;
+    ctx.beginPath(); ctx.moveTo(na.x, na.y); ctx.lineTo(nb.x, nb.y);
+    ctx.setLineDash(broken ? [4, 5] : []);
+    ctx.strokeStyle = broken ? `rgba(220,80,100,${0.45 * visible})` : 'rgba(74,186,168,.22)';
+    ctx.lineWidth = broken ? 1.2 : 1; ctx.stroke(); ctx.setLineDash([]);
+    if (!broken) {
+      const p = (t * 0.35 + k * 0.137) % 1;  // energy flows from food (b) to consumer (a)
+      const px = nb.x + (na.x - nb.x) * p, py = nb.y + (na.y - nb.y) * p;
+      ctx.beginPath(); ctx.arc(px, py, 1.8, 0, Math.PI * 2); ctx.fillStyle = 'rgba(143,220,205,.85)'; ctx.fill();
+    }
+  });
+
+  eNodes.forEach(n => {
+    if (n.opacity <= 0) return;
+    const r = n.sz * (n.alive ? 1 : 0.7 + 0.3 * n.opacity);
+    ctx.globalAlpha = n.opacity;
+    const glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r * 2.4);
+    glow.addColorStop(0, (n.alive ? n.col : '#dc5064') + '55'); glow.addColorStop(1, 'transparent');
+    ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(n.x, n.y, r * 2.4, 0, Math.PI * 2); ctx.fill();
+    ctx.save(); ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, Math.PI * 2); ctx.clip();
+    const img = n.img && ECO_LOADED[n.img];
+    if (img && img.complete && img.naturalWidth) {
+      ctx.drawImage(img, n.x - r, n.y - r, r * 2, r * 2);
+      if (!n.alive) { ctx.fillStyle = 'rgba(120,20,40,.45)'; ctx.fillRect(n.x - r, n.y - r, r * 2, r * 2); }
     } else {
-      ctx.fillStyle=n.col+'44';ctx.fill();
-      ctx.font=`${n.sz*1.4}px serif`;ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillStyle='#fff';ctx.fillText(n.e,n.x,n.y);
+      ctx.fillStyle = n.col + '66'; ctx.fill();
+      ctx.font = `${r * 1.2}px serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = '#fff'; ctx.fillText(n.e, n.x, n.y);
     }
     ctx.restore();
-    ctx.beginPath();ctx.arc(n.x,n.y,n.sz,0,Math.PI*2);
-    ctx.strokeStyle=n.col;ctx.lineWidth=1.5;ctx.stroke();
-    ctx.font='8px Cinzel,serif';ctx.fillStyle='rgba(168,196,216,.5)';ctx.textAlign='center';ctx.textBaseline='top';
-    ctx.fillText(n.n,n.x,n.y+n.sz+4);
-    ctx.globalAlpha=1;
+    ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
+    ctx.strokeStyle = n.alive ? n.col : `rgba(240,90,110,${0.5 + 0.5 * Math.sin(t * 8)})`; ctx.lineWidth = n.alive ? 1.6 : 2.4; ctx.stroke();
+    ctx.font = '9px Cinzel, serif'; ctx.fillStyle = n.alive ? 'rgba(221,234,245,.75)' : 'rgba(240,140,150,.8)';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'top'; ctx.fillText(n.n, n.x, n.y + r + 5);
+    ctx.globalAlpha = 1;
   });
-  eAnim=requestAnimationFrame(drawEco);
+  eAnim = requestAnimationFrame(drawEco);
 }
-function ecoRemoveApex(){
-  eNodes.filter(n=>n.role==='apex'&&n.alive).forEach(n=>n.alive=false);
-  setEMsg('&#9888; Apex predators removed — prey species unchecked. Vegetation collapse imminent...');
-  setTimeout(()=>{eNodes.filter(n=>n.role==='prey'&&n.alive).forEach(n=>n.alive=false);setEMsg('&#9658; Cascade: Prey over-grazed flora. Herbivores now starving...');setTimeout(()=>{eNodes.filter(n=>n.role==='herbivore'&&n.alive).forEach(n=>n.alive=false);setEMsg('&#10007; Full collapse — only decomposers and aquatics survive. The cascade is complete.');},3200);},3000);
+
+function ecoRemoveApex() {
+  ecoReset();
+  ecoKill(n => n.role === 'apex', '&#9888; Apex predators removed — deer and other prey are no longer kept in check.');
+  ecoLater(2600, () => ecoKill(n => n.role === 'flora', '&#9658; Over-grazing strips the bamboo and grassland.'));
+  ecoLater(5200, () => ecoKill(n => ['herbivore', 'prey', 'insect'].includes(n.role), '&#9658; With the plants gone, herbivores and insects decline.'));
+  ecoLater(7800, () => setEMsg('&#10007; Illustrative collapse: only the species that do not depend on the lost plants and prey remain. Press Restore to start again.'));
 }
-function ecoRemovePlant(){
-  eNodes.filter(n=>n.role==='flora'&&n.alive).forEach(n=>n.alive=false);
-  setEMsg('&#9888; Keystone flora removed — herbivores losing food source...');
-  setTimeout(()=>{eNodes.filter(n=>['herbivore','prey','insect'].includes(n.role)&&n.alive).forEach(n=>n.alive=false);setEMsg('&#9658; Cascade: Herbivores and insects gone — predators now starving...');setTimeout(()=>{eNodes.filter(n=>['apex','predator','scavenger','omnivore'].includes(n.role)&&n.alive).forEach(n=>n.alive=false);setEMsg('&#10007; Ecosystem collapse. Only aquatic and decomposer species remain.');},3000);},3000);
+
+function ecoRemovePlant() {
+  ecoReset();
+  ecoKill(n => n.role === 'flora', '&#9888; Keystone plants removed — herbivores lose their food.');
+  ecoLater(2600, () => ecoKill(n => ['herbivore', 'prey', 'insect'].includes(n.role), '&#9658; Herbivores and insects decline, and predators begin to starve.'));
+  ecoLater(5200, () => ecoKill(n => ['apex', 'predator', 'omnivore'].includes(n.role), '&#10007; Illustrative collapse: the predators follow. Press Restore to start again.'));
 }
-function ecoAdd(){
-  const news=[{n:'Cheetah',e:'🐈',role:'apex',col:'#d04020',sz:20},{n:'Hornbill',e:'🦤',role:'avian',col:'#6040d0',sz:16}];
-  const s=news[Math.floor(Math.random()*news.length)];
-  const cv=document.getElementById('ecoCanvas');
-  eNodes.push({...s,id:eNodes.length,alive:true,opacity:1,x:120+Math.random()*(cv.width-240),y:60+Math.random()*(cv.height-120),vx:(Math.random()-.5)*.38,vy:(Math.random()-.5)*.38});
-  setEMsg('✦ '+s.n+' reintroduced — ecosystem adapting...');
+
+function ecoAdd() {
+  const options = [{n:'Cheetah', e:'🐈', role:'apex', col:'#d04020', sz:20}, {n:'Hornbill', e:'🦤', role:'avian', col:'#6040d0', sz:16}];
+  const s = options.find(o => !eNodes.some(n => n.n === o.n));
+  if (!s) { setEMsg('Both reintroductions are already in the web.'); return; }
+  eNodes.push({...s, id: eNodes.length, alive: true, opacity: 1, fade: 0, phase: Math.random() * 6.28});
+  ecoLayout();
+  setEMsg('&#10022; ' + s.n + ' reintroduced — the web gains a new ' + (s.role === 'apex' ? 'apex predator' : 'seed disperser') + '.');
 }
 
 // =========================================================
@@ -2270,7 +2353,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script src="bioindia-phase2.js?v=6"></script>
 <script src="bioindia-phase3.js?v=5"></script>
-<script src="bioindia-phase5.js?v=8"></script>
+<script src="bioindia-phase5.js?v=9"></script>
 <div style="position:relative;z-index:2;padding:14px 16px 18px;background:rgba(4,10,18,.92);font:11px/1.4 Georgia,serif;color:rgba(168,196,216,.75);text-align:center">Static snapshot of 2026-10-27. GBIF.org occurrence download https://doi.org/10.15468/dl.dvgq2s; Hansen et al. Global Forest Change; GHSL; OpenStreetMap contributors (ODbL). IUCN Red List categories are not shown, except the five flagships (unverified reference list). Model outputs are not IUCN assessments.</div>
 </body>
 </html>
