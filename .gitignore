@@ -30,3 +30,6 @@ __pycache__/
 
 # Trained model artifacts (reproducible from scripts/phase14_train_risk_model.py)
 /models/
+
+# Static GitHub Pages build (scripts/export_static_site.py); published on the gh-pages branch
+/site/

@@ -20,7 +20,21 @@
     return value == null ? "—" : Math.round(value * 100) + "%";
   }
 
+  // Static hosting: API answers were exported to snapshot/ by scripts/export_static_site.py.
+  // The file name must match snapshot_key() there.
+  function snapshotKey(path, body) {
+    var key = path.replace(/^\//, "");
+    if (body) key += "__" + Object.keys(body).sort().map(function (k) { return k + "-" + body[k]; }).join("_");
+    return key.replace(/[^A-Za-z0-9\/._-]/g, "_") + ".json";
+  }
+
   async function request(path, options) {
+    if (window.BIOINDIA_STATIC) {
+      var body = options && options.body ? JSON.parse(options.body) : null;
+      var response = await fetch("snapshot/v1/" + snapshotKey(path, body));
+      if (!response.ok) throw new Error("Not included in this snapshot (" + response.status + ")");
+      return response.json();
+    }
     var bases = apiBase !== null ? [apiBase] : API_BASES;
     for (var i = 0; i < bases.length; i += 1) {
       try {
@@ -48,7 +62,7 @@
     if (note && !section.querySelector(".live-data-notice")) {
       var badge = document.createElement("div");
       badge.className = "live-data-notice";
-      badge.textContent = note;
+      badge.textContent = window.BIOINDIA_STATIC ? note.replace(/^Live /, "Snapshot " + window.BIOINDIA_STATIC.date + " · ") : note;
       badge.style.cssText = "margin:0 auto 18px;max-width:900px;padding:8px 14px;border:1px solid rgba(74,186,168,.45);" +
         "color:rgba(116,234,210,.9);font-family:'Cinzel',serif;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;text-align:center";
       section.insertBefore(badge, section.firstChild);
@@ -263,6 +277,8 @@
     var canvas = document.getElementById("ecoCanvas");
     if (!section || !canvas) return;
     var host = canvas.parentElement;
+    // Stop the demo food-web animation before its canvas is removed.
+    if (typeof eAnim !== "undefined" && eAnim) cancelAnimationFrame(eAnim);
     host.innerHTML =
       '<div class="report-controls" style="flex-wrap:wrap;gap:12px;display:flex;align-items:flex-end">' +
       '<div class="gis-filter-group"><label>Remove species</label><select class="gis-select" id="cascadeSpecies">' +

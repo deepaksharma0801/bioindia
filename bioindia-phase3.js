@@ -6,6 +6,7 @@
   }
 
   function buildCandidates() {
+    if (window.BIOINDIA_STATIC) return ["data/processed/" + OCCURRENCE_FILE];
     var urls = [];
     var apiBases = [];
 
@@ -137,7 +138,7 @@
     }, 0);
 
     tweakMapSectionCopy(payload.sourceMode || "occurrence exports", totalPoints);
-    updateBadge("Live data: GBIF occurrences (PostGIS)");
+    updateBadge(window.BIOINDIA_STATIC ? "Snapshot: GBIF occurrences (" + window.BIOINDIA_STATIC.date + ")" : "Live data: GBIF occurrences (PostGIS)");
     window.BioIndiaPhase3 = payload;
     return true;
   }

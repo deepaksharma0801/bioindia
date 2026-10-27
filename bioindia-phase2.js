@@ -80,6 +80,8 @@
   }
 
   function buildFetchCandidates(fileName) {
+    // Static hosting (GitHub Pages): only the exported snapshot exists.
+    if (window.BIOINDIA_STATIC) return ["data/processed/" + fileName];
     var urls = [];
     var apiBases = [];
 
@@ -493,7 +495,7 @@
       PHASE2.connected = true;
       PHASE2.stateSpecies = stateSpecies;
       rerenderLoadedSections();
-      setBadge("Live data: GBIF occurrences (PostGIS)", true);
+      setBadge(window.BIOINDIA_STATIC ? "Snapshot: GBIF occurrences (" + window.BIOINDIA_STATIC.date + ")" : "Live data: GBIF occurrences (PostGIS)", true);
     } else if (hotspots) {
       renderDynamicHotspots();
       setBadge("Partial live data", true);

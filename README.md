@@ -95,6 +95,18 @@ For development, run the two servers from `.claude/launch.json` instead:
 
 and open http://127.0.0.1:5500/BioIndia_v3_Complete.html (set `DATABASE_URL` for the API).
 
+### Static snapshot (GitHub Pages)
+
+```bash
+.venv/Scripts/python scripts/export_static_site.py
+```
+
+This writes `site/`: the dashboard plus the API answers it uses (every state report and the offered
+cascade scenarios) as JSON, so it runs with no server. The published copy sets `window.BIOINDIA_STATIC`,
+which makes the scripts read `data/processed/` and `snapshot/v1/` instead of the API. Red List
+categories from the IUCN export are not published (IUCN terms); the five flagship categories (unverified
+reference list) are. The snapshot is published on the `gh-pages` branch.
+
 ## API (prefix `/api/v1`, interactive docs at `/docs`)
 
 | Area | Routes |
