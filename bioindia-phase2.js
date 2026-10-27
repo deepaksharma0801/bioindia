@@ -1,16 +1,14 @@
 (function () {
   var DATA_FILE_NAMES = {
     stateSpecies: "state_species.json",
-    hotspots: "hotspots.geojson",
-    watchlist: "watchlist.json"
+    hotspots: "hotspots.geojson"
   };
 
   var PHASE2 = {
     connected: false,
     sources: {},
     stateSpecies: null,
-    hotspots: null,
-    watchlist: null
+    hotspots: null
   };
 
   var STATUS_COLORS = {
@@ -331,50 +329,6 @@
     });
   }
 
-  function renderDynamicRiskCards() {
-    var grid = document.getElementById("aiRiskGrid");
-    if (!grid || !Array.isArray(PHASE2.watchlist) || !PHASE2.watchlist.length) return;
-
-    grid.innerHTML = "";
-
-    PHASE2.watchlist.slice(0, 6).forEach(function (item) {
-      var risk = Math.round(safeNumber(item.predicted_worsening_prob, 0) * 100);
-      var level = risk >= 70 ? "high" : (risk >= 45 ? "med" : "low");
-      var riskClass = level === "high" ? "risk-high" : (level === "med" ? "risk-med" : "risk-low");
-      var confidence = Math.round(safeNumber(item.priority_score, 0) * 100);
-      var factors = Array.isArray(item.key_drivers) ? item.key_drivers : ["High composite extinction risk"];
-      var note = item.note ? (
-        '<div style="margin-top:12px;font-family:\'EB Garamond\',serif;font-style:italic;font-size:.88rem;line-height:1.6;color:rgba(168,196,216,.55)">' +
-        escapeHtml(item.note) +
-        "</div>"
-      ) : "";
-      var card = document.createElement("div");
-      card.className = "ai-card";
-      card.innerHTML =
-        "<h3>" + spImgFixed(item.emoji || "", 22, 22, "vertical-align:middle;border-radius:2px;margin-right:7px;border:1px solid rgba(42,138,122,.25);") +
-        " " + escapeHtml(item.common_name || item.scientific_name || "Watchlist Species") + " — Watchlist Signal</h3>" +
-        '<div class="risk-meter ' + riskClass + '">' +
-        '<div class="risk-label"><span>Predicted Worsening Probability</span><span>' + escapeHtml(item.iucn_category || "Tracked") + "</span></div>" +
-        '<div class="risk-track"><div class="risk-fill" style="width:0%" data-w="' + risk + '"></div></div>' +
-        '<div class="risk-pct">' + risk + "%</div></div>" +
-        '<div style="font-family:\'Cinzel\',serif;font-size:.5rem;letter-spacing:.2em;color:rgba(168,196,216,.4);margin:12px 0 6px">Key Drivers</div>' +
-        '<div class="ai-factors">' + factors.map(function (factor) {
-          return '<span class="ai-factor">' + escapeHtml(factor) + "</span>";
-        }).join("") + "</div>" +
-        note +
-        '<div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">' +
-        '<div class="confidence-badge">Priority score: ' + confidence + "%</div>" +
-        '<div style="font-family:\'Cinzel\',serif;font-size:.48rem;color:rgba(168,196,216,.3);letter-spacing:.1em">Generated watchlist</div></div>';
-      grid.appendChild(card);
-    });
-
-    setTimeout(function () {
-      document.querySelectorAll(".risk-fill[data-w]").forEach(function (el) {
-        el.style.width = el.dataset.w + "%";
-      });
-    }, 250);
-  }
-
   function deriveReportRecommendations(entries, risk) {
     var recommendations = [];
     if (risk >= 70) recommendations.push("Prioritize rapid risk monitoring for the highest-pressure habitats.");
@@ -520,7 +474,6 @@
     rerenderHeatmap();
     renderDynamicDataCharts();
     renderDynamicHotspots();
-    renderDynamicRiskCards();
     updateReportDataFromState();
     refreshReportStateOptions();
     refreshMapStateIfNeeded();
@@ -533,19 +486,16 @@
 
     var stateSpecies = await loadJsonWithFallback(DATA_FILE_NAMES.stateSpecies);
     var hotspots = await loadJsonWithFallback(DATA_FILE_NAMES.hotspots);
-    var watchlist = await loadJsonWithFallback(DATA_FILE_NAMES.watchlist);
 
     PHASE2.hotspots = hotspots;
-    PHASE2.watchlist = watchlist;
 
     if (stateSpecies && resetStateDb(stateSpecies)) {
       PHASE2.connected = true;
       PHASE2.stateSpecies = stateSpecies;
       rerenderLoadedSections();
       setBadge("Live data: GBIF occurrences (PostGIS)", true);
-    } else if (hotspots || watchlist) {
+    } else if (hotspots) {
       renderDynamicHotspots();
-      renderDynamicRiskCards();
       setBadge("Partial live data", true);
     }
 

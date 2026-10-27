@@ -86,6 +86,16 @@ class ScreenTests(unittest.TestCase):
         self.assertEqual(screen(gbif_row(locality="Lalbagh Botanical Garden", **plant), SPECIES_BY_KEY)[1], "captive_locality_text")
         self.assertIsNone(screen(gbif_row(locality="Silent Valley", **plant), SPECIES_BY_KEY)[1])
 
+    def test_ebird_records_get_assumed_moderate_precision(self) -> None:
+        ebird = {"datasetKey": "4fa7b334-ce0d-4e88-aaae-2e0c138d049e", "coordinateUncertaintyInMeters": "", "issue": ""}
+        record, _ = screen(gbif_row(**ebird), SPECIES_BY_KEY)
+        self.assertEqual(record["coordinate_uncertainty_class"], "moderate")
+        self.assertIn("uncertainty_assumed_ebird_protocol", record["quality_flags"])
+        rounded, _ = screen(gbif_row(**{**ebird, "issue": "COORDINATE_ROUNDED"}), SPECIES_BY_KEY)
+        self.assertEqual(rounded["coordinate_uncertainty_class"], "unknown")
+        other, _ = screen(gbif_row(datasetKey="other", coordinateUncertaintyInMeters="", issue=""), SPECIES_BY_KEY)
+        self.assertEqual(other["coordinate_uncertainty_class"], "unknown")
+
     def test_uncertainty_classes(self) -> None:
         self.assertEqual(uncertainty_class(None), "unknown")
         self.assertEqual(uncertainty_class(30), "precise")

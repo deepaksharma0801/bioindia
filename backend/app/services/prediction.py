@@ -27,7 +27,18 @@ FEATURE_DESCRIPTIONS = {
     "temperature_niche_breadth_c": "spread of annual mean temperature at records (90th minus 10th percentile)",
     "log_precipitation_niche_breadth_mm": "log spread of annual precipitation at records",
     "mean_elevation_m": "mean elevation of records",
+    "forest_2000_share_occupied_cells": "tree cover in 2000 in the ~5 km cells with records",
+    "recent_forest_loss_share_occupied_cells": "tree-cover loss 2015-2024 (share of 2000 tree cover) in the ~5 km cells with records",
+    "built_up_share_occupied_cells": "built-up share of land in the ~5 km cells with records (human pressure)",
 }
+
+
+def describe(feature: str) -> str:
+    if feature in FEATURE_DESCRIPTIONS:
+        return FEATURE_DESCRIPTIONS[feature]
+    if feature.startswith("group_"):
+        return "taxonomic group: " + feature.removeprefix("group_").replace("_", " ")
+    return feature.replace("_", " ")
 
 
 def current_model() -> dict[str, Any] | None:
@@ -44,7 +55,7 @@ def model_info() -> dict[str, Any] | None:
         "model_type": model["model_type"],
         "target": model["target"],
         "trained_at": model["trained_at"].isoformat(),
-        "features": [{"name": name, "description": FEATURE_DESCRIPTIONS.get(name, "taxonomic group indicator")} for name in model["features"]],
+        "features": [{"name": name, "description": describe(name)} for name in model["features"]],
         "training_data": model["training_data"],
         "disclaimer": DISCLAIMER,
     }
@@ -55,6 +66,31 @@ def model_performance() -> dict[str, Any] | None:
     if model is None:
         return None
     return {"model_version": model["model_version"], **model["metrics"], "disclaimer": DISCLAIMER}
+
+
+def prediction_ranking(limit: int, unlabelled_only: bool) -> dict[str, Any] | None:
+    model = current_model()
+    if model is None:
+        return None
+    rows = fetch_all(
+        """SELECT p.species_id, s.common_name, s.scientific_name, s.class_name, p.predicted_probability, p.prediction_type,
+                  p.shap_contributions, s.current_iucn_status AS reported_category,
+                  (SELECT ca.iucn_category FROM conservation_assessments AS ca WHERE ca.species_id = s.species_id
+                   ORDER BY ca.assessment_year DESC LIMIT 1) AS official_iucn_category
+           FROM species_risk_predictions AS p JOIN species AS s ON s.species_id = p.species_id
+           WHERE p.model_version = %(version)s AND (NOT %(unlabelled)s OR p.prediction_type = 'unlabelled')
+           ORDER BY p.predicted_probability DESC LIMIT %(limit)s""",
+        {"version": model["model_version"], "unlabelled": unlabelled_only, "limit": limit},
+    )
+    selected = model["metrics"]["selected_model"]
+    return {
+        "model_version": model["model_version"],
+        "model_performance": {"pr_auc": model["metrics"]["candidates"][selected]["pr_auc"], "roc_auc": model["metrics"]["candidates"][selected]["roc_auc"],
+                              "pr_auc_baseline": model["metrics"]["pr_auc_baseline_prevalence"]},
+        "species": [{**row, "top_contributions": [{"feature": name, "description": describe(name), "shap_value": value}
+                                                   for name, value in (row.pop("shap_contributions") or {}).items()]} for row in rows],
+        "disclaimer": DISCLAIMER,
+    }
 
 
 def species_prediction(species_id: str, with_explanation: bool = False) -> dict[str, Any] | None:
@@ -86,7 +122,7 @@ def species_prediction(species_id: str, with_explanation: bool = False) -> dict[
     if with_explanation:
         payload["features"] = row["features"]
         payload["top_contributions"] = [
-            {"feature": name, "description": FEATURE_DESCRIPTIONS.get(name, "taxonomic group indicator"), "shap_value": value,
+            {"feature": name, "description": describe(name), "shap_value": value,
              "direction": "raises predicted risk" if value > 0 else "lowers predicted risk"}
             for name, value in (row["shap_contributions"] or {}).items()
         ]

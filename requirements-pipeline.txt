@@ -1,0 +1,15 @@
+# Data pipeline (scripts/) and tests, on top of the API requirements.
+# Exact versions used for the thesis results are in requirements-lock.txt.
+-r backend/requirements.txt
+pandas>=2.2,<4.0
+geopandas>=1.0,<2.0
+pyogrio>=0.9,<1.0
+shapely>=2.0,<3.0
+pyproj>=3.6,<4.0
+requests>=2.31,<3.0
+scikit-learn>=1.5,<2.0
+xgboost>=2.1,<4.0
+shap>=0.46,<1.0
+joblib>=1.4,<2.0
+pytest>=8.0,<10.0
+httpx>=0.27,<1.0

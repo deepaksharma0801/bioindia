@@ -50,8 +50,10 @@ SEED = 20261027
 THREATENED = {"CR", "EN", "VU"}
 NOT_THREATENED = {"LC", "NT"}
 RECENT_FROM, EARLIER_FROM = 2016, 2006
-GROUPS = {"Aves": "birds", "Mammalia": "mammals", "Reptilia": "reptiles", "Amphibia": "amphibians",
-          "Actinopterygii": "fishes", "Chondrichthyes": "fishes", "Elasmobranchii": "fishes"}
+# GBIF's backbone splits reptiles into Squamata/Testudines/Crocodylia instead of Reptilia.
+GROUPS = {"Aves": "birds", "Mammalia": "mammals", "Reptilia": "reptiles", "Squamata": "reptiles", "Testudines": "reptiles",
+          "Crocodylia": "reptiles", "Amphibia": "amphibians", "Actinopterygii": "fishes", "Chondrichthyes": "fishes",
+          "Elasmobranchii": "fishes"}
 SPECIMEN_TYPES = {"PRESERVED_SPECIMEN", "MATERIAL_SAMPLE", "MATERIAL_CITATION", "FOSSIL_SPECIMEN", "LIVING_SPECIMEN"}
 
 
@@ -104,11 +106,20 @@ PROTECTION_FEATURES_SQL = """
 """
 
 
+# Phase 10 land-use conditions in the 0.05-degree cells each species occupies (records within 10 km).
+LAND_FEATURES_SQL = """
+    SELECT species_id, forest_2000_share, recent_forest_loss_share, built_up_share FROM species_land_pressure
+"""
+
+
 def record_level_features() -> pd.DataFrame:
     """Range from all loaded records (coarse grid), protection and climate niche from records within 10 km."""
     with psycopg.connect(DATABASE_URL) as connection:
         ranges = pd.DataFrame(connection.execute(RANGE_FEATURES_SQL).fetchall(), columns=["species_id", "cells", "eoo_km2"]).set_index("species_id")
         protection = pd.DataFrame(connection.execute(PROTECTION_FEATURES_SQL).fetchall(), columns=["species_id", "pa_share"]).set_index("species_id")
+        land = pd.DataFrame(connection.execute(LAND_FEATURES_SQL).fetchall(),
+                            columns=["species_id", "forest_2000_share_occupied_cells", "recent_forest_loss_share_occupied_cells",
+                                     "built_up_share_occupied_cells"]).set_index("species_id").astype(float)
     features = pd.DataFrame(index=ranges.index)
     features["log_occupied_cells_50km"] = np.log1p(ranges["cells"].astype(float))
     features["log_eoo_km2"] = np.log1p(ranges["eoo_km2"].astype(float))
@@ -120,7 +131,7 @@ def record_level_features() -> pd.DataFrame:
             "log_precipitation_niche_breadth_mm": np.log1p(profiles["annual_precipitation_mm_p90"] - profiles["annual_precipitation_mm_p10"]),
             "mean_elevation_m": profiles["elevation_m"],
         }), how="outer")
-    return features
+    return features.join(land, how="left")
 
 
 def build_table(include_record_features: bool = True) -> pd.DataFrame:
@@ -246,7 +257,7 @@ def main() -> None:
         "unlabelled_species_predicted": len(unlabelled),
         "label_source": "conservation_assessments (IUCN Red List export retrieved 2026-10-21)",
         "feature_source": "GBIF occurrence search facets for India" + ("" if args.summary_features_only else
-                          "; range from all loaded records on a ~50 km grid; protected-area and climate-niche features from records located within 10 km; no location-precision flag (leakage guard)"),
+                          "; range from all loaded records on a ~50 km grid; protected-area, climate-niche and land-use (Hansen forest change, GHSL built-up) features from records located within 10 km; no location-precision flag (leakage guard)"),
         "excluded_from_training": "Data Deficient species and species without a verified assessment",
     }
     rows = []

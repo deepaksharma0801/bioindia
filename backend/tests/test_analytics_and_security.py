@@ -87,6 +87,14 @@ class SecurityTests(unittest.TestCase):
         self.assertIsNone(other.headers.get("access-control-allow-origin"))
         self.assertIsNone(allowed.headers.get("access-control-allow-credentials"))
 
+    def test_cors_preflight_allows_post_for_the_dashboard_only(self) -> None:
+        def preflight(origin: str, method: str):
+            return self.client.options("/api/v1/reports/regional", headers={"Origin": origin, "Access-Control-Request-Method": method})
+
+        self.assertEqual(preflight("http://127.0.0.1:5500", "POST").status_code, 200)
+        self.assertNotEqual(preflight("https://example.com", "POST").status_code, 200)
+        self.assertNotEqual(preflight("http://127.0.0.1:5500", "DELETE").status_code, 200)
+
     def test_output_endpoint_serves_only_dashboard_files(self) -> None:
         listed = {item["name"] for item in self.client.get("/api/datasets/outputs").json()["outputs"]}
         self.assertEqual(listed, {"state_species.json", "occurrence_points.json", "hotspots.geojson"})

@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .config import CORS_ORIGINS
-from .routers import analytics, datasets, gis, health, network, pipeline, prediction, species
+from .routers import analytics, datasets, gis, health, indices, land_use, network, pipeline, prediction, reports, simulation, species
 from .services.db import DatabaseUnavailable
 
 
@@ -12,13 +12,13 @@ app = FastAPI(
     version="0.1.0",
     description="Phase 1 foundation API for the BioIndia biodiversity project.",
 )
-
+# The API stores nothing and uses no cookies; POST is only used for scenario and report requests, so credentials are not allowed.
 # The API is read-only and uses no cookies, so credentials are not allowed.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
     allow_credentials=False,
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -37,6 +37,10 @@ app.include_router(gis.map_router, prefix="/api")
 app.include_router(analytics.router, prefix="/api")
 app.include_router(network.router, prefix="/api")
 app.include_router(prediction.router, prefix="/api")
+app.include_router(simulation.router, prefix="/api")
+app.include_router(indices.router, prefix="/api")
+app.include_router(reports.router, prefix="/api")
+app.include_router(land_use.router, prefix="/api")
 
 
 @app.get("/")

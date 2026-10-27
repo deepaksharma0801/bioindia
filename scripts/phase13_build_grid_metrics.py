@@ -20,6 +20,7 @@ from pathlib import Path
 import psycopg
 
 from db_schema import ensure_schema
+from phase10_build_land_use_grid import update_grid_cells
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -99,6 +100,10 @@ def main() -> None:
             for pa_class in COVERAGE_CLASSES:
                 cursor.execute(COVERAGE_SQL.format(column=f"{pa_class}_pct"), {"pa_class": pa_class})
                 print(f"  {pa_class} coverage computed ({time.monotonic() - started:.0f}s)", flush=True)
+            cursor.execute("SELECT EXISTS (SELECT 1 FROM land_use_cells)")
+            if cursor.fetchone()[0]:
+                update_grid_cells(connection)
+                print(f"  land-use columns computed ({time.monotonic() - started:.0f}s)", flush=True)
             cursor.execute(
                 "SELECT COUNT(*) FILTER (WHERE threatened_species > 0), BOOL_AND(threatened_status_verified), "
                 "ROUND(AVG(wildlife_pa_pct)::numeric, 1)::float FROM analytics_grid_cells"

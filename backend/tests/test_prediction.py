@@ -54,6 +54,16 @@ class PredictionApiTests(unittest.TestCase):
         self.assertIn(performance["selected_model"], performance["candidates"])
         self.assertGreater(performance["candidates"][performance["selected_model"]]["pr_auc"]["mean"], performance["pr_auc_baseline_prevalence"])
 
+    def test_ranking_is_sorted_and_filtered(self) -> None:
+        payload = self.client.get("/api/v1/prediction/ranking?limit=10&unlabelled_only=true").json()
+        probabilities = [item["predicted_probability"] for item in payload["species"]]
+
+        self.assertIn("not an official IUCN", payload["disclaimer"])
+        self.assertEqual(probabilities, sorted(probabilities, reverse=True))
+        self.assertTrue(all(item["prediction_type"] == "unlabelled" for item in payload["species"]))
+        self.assertGreater(payload["model_performance"]["pr_auc"]["mean"], payload["model_performance"]["pr_auc_baseline"])
+        self.assertEqual(self.client.get("/api/v1/prediction/ranking?limit=0").status_code, 422)
+
     def test_unknown_species_is_404(self) -> None:
         self.assertEqual(self.client.get("/api/v1/prediction/species/lion").status_code, 404)
 

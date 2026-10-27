@@ -1,37 +1,61 @@
+# Local deployment: PostGIS, the API and the dashboard behind nginx.
+#   docker compose up -d postgis                     -> database only (development)
+#   docker compose --profile app up -d --build       -> also API and dashboard, at http://localhost:8080
+# The database must be filled by the pipeline (python scripts/run_pipeline.py) before the API has data.
 services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: bioindia-postgis
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bioindia}
+      POSTGRES_USER: ${POSTGRES_USER:-bioindia}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bioindia}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - bioindia_postgis_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-bioindia} -d ${POSTGRES_DB:-bioindia}"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
   api:
     build:
       context: ./backend
     container_name: bioindia-api
     environment:
       BIOINDIA_PROJECT_ROOT: /workspace
-      DATABASE_URL: postgresql://bioindia:bioindia@postgis:5432/bioindia
+      DATABASE_URL: postgresql://${POSTGRES_USER:-bioindia}:${POSTGRES_PASSWORD:-bioindia}@postgis:5432/${POSTGRES_DB:-bioindia}
+      BIOINDIA_CORS_ORIGINS: http://localhost:8080,http://127.0.0.1:5500,http://localhost:5500
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     volumes:
-      - ./:/workspace
+      # Read-only: the API reads pipeline outputs in data/ (served only through fixed endpoints).
+      - ./:/workspace:ro
     depends_on:
       postgis:
         condition: service_healthy
     restart: unless-stopped
+    profiles: ["app"]
 
-  postgis:
-    image: postgis/postgis:16-3.4
-    container_name: bioindia-postgis
-    environment:
-      POSTGRES_DB: bioindia
-      POSTGRES_USER: bioindia
-      POSTGRES_PASSWORD: bioindia
+  web:
+    image: nginx:1.27-alpine
+    container_name: bioindia-web
     ports:
-      - "5432:5432"
+      - "127.0.0.1:8080:80"
     volumes:
-      - bioindia_postgis_data:/var/lib/postgresql/data
+      - ./deploy/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./BioIndia_v3_Complete.html:/usr/share/nginx/html/BioIndia_v3_Complete.html:ro
+      - ./bioindia-phase2.js:/usr/share/nginx/html/bioindia-phase2.js:ro
+      - ./bioindia-phase3.js:/usr/share/nginx/html/bioindia-phase3.js:ro
+      - ./bioindia-phase5.js:/usr/share/nginx/html/bioindia-phase5.js:ro
+    depends_on:
+      api:
+        condition: service_healthy
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U bioindia -d bioindia"]
-      interval: 5s
-      timeout: 5s
-      retries: 12
+    profiles: ["app"]
 
 volumes:
   bioindia_postgis_data:

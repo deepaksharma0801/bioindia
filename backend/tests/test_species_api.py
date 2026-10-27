@@ -92,8 +92,9 @@ class SpeciesApiTests(unittest.TestCase):
         payload = response.json()
         self.assertFalse(payload["conservation_assessment"]["official_assessment_verified"])
         self.assertIn("not population-abundance estimates", payload["occurrence_history"]["note"])
-        self.assertEqual(payload["data_gaps"]["environmental_exposure"], "not yet integrated")
-        self.assertFalse(payload["derived_watchlist_signal"]["available"])
+        self.assertIn("no climate-change projections", payload["data_gaps"]["environmental_exposure"])
+        self.assertIn("not an official IUCN", payload["derived_watchlist_signal"]["note"])
+        self.assertGreater(payload["land_pressure"]["profile"]["occupied_cells"], 0)
         self.assertGreater(payload["protected_area_coverage"]["records_used"]["count"], 0)
 
     def test_gis_hotspots_and_boundary_metadata_are_available(self) -> None:
@@ -132,11 +133,12 @@ class SpeciesApiTests(unittest.TestCase):
         self.assertGreater(payload["profile"]["sampled_occurrence_count"], 0)
         self.assertGreater(payload["profile"]["annual_mean_temperature_c"], 10)
 
-    def test_land_pressure_is_explicitly_unavailable_without_an_authorized_import(self) -> None:
-        response = self.client.get("/api/v1/species/tiger/land-pressure")
+    def test_land_pressure_profile_uses_the_land_use_grid(self) -> None:
+        payload = self.client.get("/api/v1/species/tiger/land-pressure").json()
 
-        self.assertEqual(response.status_code, 503)
-        self.assertIn("not available", response.json()["detail"])
+        self.assertGreater(payload["profile"]["forest_2000_share"], 0)
+        self.assertTrue(0 <= payload["profile"]["forest_loss_share"] <= 1)
+        self.assertIn("tree cover, not natural forest", payload["metadata"]["forest_definition"])
 
 
 class WithoutDatabaseTests(unittest.TestCase):

@@ -8,6 +8,7 @@ from .conservation import official_assessment
 from .db import fetch_all
 from .environment import species_environment
 from .land_pressure import species_land_pressure
+from .prediction import species_prediction
 from .protection import species_protection
 
 
@@ -252,17 +253,23 @@ def species_intelligence(species_id: str) -> dict[str, Any] | None:
         },
         "protected_area_coverage": species_protection(species_id),
         "habitat": {"available": False, "reported_summary": None, "source": None},
-        "derived_watchlist_signal": {
-            "available": False,
-            "note": "No model-based risk signal yet; the extinction-vulnerability model is a later phase.",
-        },
+        "land_pressure": species_land_pressure(species_id),
+        "derived_watchlist_signal": _watchlist_signal(species_id),
         "data_gaps": {
             "population_trend": "not available from occurrence records",
-            "habitat": "not yet integrated",
-            "environmental_exposure": "not yet integrated",
-            "documented_ecological_network": "not yet integrated",
+            "habitat": "IUCN habitat classifications are not imported",
+            "environmental_exposure": "baseline climate (WorldClim 1970-2000) and land-use conditions only; no climate-change projections",
         },
     }
+
+
+def _watchlist_signal(species_id: str) -> dict[str, Any]:
+    prediction = species_prediction(species_id)
+    if prediction is None:
+        return {"available": False, "note": "No current extinction-vulnerability model prediction for this species."}
+    return {"available": True, "predicted_threatened_probability": prediction["predicted_threatened_probability"],
+            "prediction_type": prediction["prediction_type"], "model_version": prediction["model_version"],
+            "note": prediction["disclaimer"]}
 
 
 def _assessment_note(assessment: dict[str, Any] | None) -> str:

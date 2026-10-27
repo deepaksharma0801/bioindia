@@ -42,6 +42,7 @@ def hotspot_geojson(limit: int = HOTSPOT_LIMIT) -> dict[str, Any] | None:
     rows = fetch_all(HOTSPOT_QUERY, {"grid": GRID_SIZE_DEGREES, "limit": limit})
     if not rows:
         return None
+    tracked = fetch_all("SELECT count(*) AS n FROM species AS s WHERE EXISTS (SELECT 1 FROM occurrences AS o WHERE o.species_id = s.species_id)")[0]["n"]
     features = []
     for rank, row in enumerate(rows, start=1):
         lon, lat, size = row["lon_min"], row["lat_min"], GRID_SIZE_DEGREES
@@ -63,17 +64,17 @@ def hotspot_geojson(limit: int = HOTSPOT_LIMIT) -> dict[str, Any] | None:
                 "gap_status": "record concentration zone",
                 "centroid_lat": round(lat + size / 2, 3),
                 "centroid_lon": round(lon + size / 2, 3),
-                "summary": f"{row['species_richness']} of the 5 tracked species and {row['record_count']} occurrence records; wildlife protected areas cover {row['pa_coverage_pct']}% of the cell.",
+                "summary": f"{row['species_richness']} of the {tracked} tracked species and {row['record_count']} occurrence records; wildlife protected areas cover {row['pa_coverage_pct']}% of the cell.",
             },
         })
     return {
         "type": "FeatureCollection",
         "features": features,
         "metadata": {
-            "source": "GBIF occurrence records loaded into PostGIS (https://doi.org/10.15468/dl.5vweks)",
+            "source": "GBIF occurrence records loaded into PostGIS (https://doi.org/10.15468/dl.dvgq2s)",
             "method": f"{GRID_SIZE_DEGREES}-degree grid; cells ranked by occurrence-record count, then observed species; score = records / busiest cell x 100",
             "protected_area_coverage": "share of the cell's area inside OpenStreetMap wildlife protected areas",
-            "scope": "five tracked species",
+            "scope": f"{tracked} tracked species with loaded records",
             "caveat": "These are data-derived record concentration zones, not officially recognised biodiversity hotspots. Scores summarize occurrence records, not population abundance or biodiversity completeness, and reflect where people record more.",
         },
     }

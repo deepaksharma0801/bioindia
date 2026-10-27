@@ -85,6 +85,11 @@ def captive_locality(row: dict[str, str]) -> bool:
 # proportional across places and years and identical on every run. Species under the cap keep everything.
 DEFAULT_CAP_PER_SPECIES = 72_000
 SAMPLE_SEED = "bioindia-2026"
+# eBird (EOD) never publishes coordinate uncertainty. Its records are checklist locations, not
+# obscured points (eBird withholds sensitive species instead of blurring them), and its protocol
+# keeps checklists under ~8 km, so unrounded eBird records are classed 'moderate' (<= 10 km) with a
+# flag marking the class as assumed.
+EBIRD_DATASET_KEY = "4fa7b334-ce0d-4e88-aaae-2e0c138d049e"
 EARLIEST_YEAR = 1700
 PRECISE_M = 1_000
 MODERATE_M = 10_000
@@ -171,6 +176,9 @@ def screen(row: dict[str, str], species_by_key: dict[str, str]) -> tuple[dict[st
     uncertainty = float(row["coordinateUncertaintyInMeters"]) if row.get("coordinateUncertaintyInMeters") else None
     certainty = uncertainty_class(uncertainty)
     flags = [f"uncertainty_{certainty}", f"date_precision_{precision}"]
+    if uncertainty is None and row.get("datasetKey") == EBIRD_DATASET_KEY and "COORDINATE_ROUNDED" not in issues:
+        certainty = "moderate"
+        flags = ["uncertainty_assumed_ebird_protocol", f"date_precision_{precision}"]
     if "COORDINATE_ROUNDED" in issues:
         flags.append("coordinate_rounded")
     if row.get("basisOfRecord") in {"PRESERVED_SPECIMEN", "MATERIAL_SAMPLE", "MATERIAL_CITATION"}:
@@ -232,12 +240,28 @@ def iucn_common_names() -> dict[str, str]:
     return names
 
 
+def iucn_taxonomy_by_taxon() -> dict[str, dict[str, str]]:
+    with (IUCN_DIR / "taxonomy.csv").open(encoding="utf-8") as handle:
+        return {
+            row["internalTaxonId"]: {
+                "kingdom": row["kingdomName"].title(), "phylum": row["phylumName"].title(), "class": row["className"].title(),
+                "order": row["orderName"].title(), "family": row["familyName"].title(), "genus": row["genusName"],
+            }
+            for row in csv.DictReader(handle)
+        }
+
+
 def species_master(species: list[dict[str, str]], taxonomy: dict[str, dict[str, str]], doi: str) -> list[dict[str, object]]:
+    """GBIF Backbone taxonomy first; IUCN taxonomy fills gaps (GBIF gives ray-finned fishes no class,
+    and species without India records get no taxonomy from the download)."""
     common = iucn_common_names()
+    iucn = iucn_taxonomy_by_taxon()
     master = []
     for item in species:
         flagship = FLAGSHIP_REFERENCE.get(item["species_id"])
-        gbif = taxonomy.get(item["gbif_species_key"], {})
+        fallback = iucn.get(item["iucn_taxon_id"], {})
+        gbif = {rank: taxonomy.get(item["gbif_species_key"], {}).get(rank) or fallback.get(rank)
+                for rank in ("kingdom", "phylum", "class", "order", "family", "genus")}
         name = item["scientific_name"]
         master.append({
             "species_id": item["species_id"],

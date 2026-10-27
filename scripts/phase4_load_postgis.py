@@ -69,12 +69,15 @@ SPATIAL_SQL = [
     ("states", """UPDATE occurrences_staging AS o SET state = s.state
                   FROM reference_states_sub AS s
                   WHERE o.exclusion_reason IS NULL AND ST_Intersects(s.geom, o.geom)"""),
+    # Nearest state within the tolerance. The 8 nearest subdivided pieces come from the spatial index
+    # (planar <->), then the exact geodesic distance decides; this matched the earlier full geodesic scan
+    # on all 5,807 coastal records of the thesis run while taking seconds instead of ~48 minutes.
     ("coastal", f"""UPDATE occurrences_staging AS o SET state = (
-                       SELECT s.state FROM reference_states_sub AS s
-                       WHERE ST_DWithin(s.geom::geography, o.geom::geography, {COASTAL_TOLERANCE_M})
-                       ORDER BY ST_Distance(s.geom::geography, o.geom::geography) LIMIT 1)
-                   WHERE o.exclusion_reason IS NULL AND o.state IS NULL
-                     AND ST_DWithin(o.geom, (SELECT ST_Collect(geom) FROM reference_states), 0.2)"""),
+                       SELECT n.state FROM (
+                           SELECT s.state, s.geom FROM reference_states_sub AS s ORDER BY s.geom <-> o.geom LIMIT 8) AS n
+                       WHERE ST_DWithin(n.geom::geography, o.geom::geography, {COASTAL_TOLERANCE_M})
+                       ORDER BY ST_Distance(n.geom::geography, o.geom::geography) LIMIT 1)
+                   WHERE o.exclusion_reason IS NULL AND o.state IS NULL"""),
     ("outside_india", "UPDATE occurrences_staging SET exclusion_reason = 'coordinate_outside_india' WHERE exclusion_reason IS NULL AND state IS NULL"),
     ("duplicates", """WITH ranked AS (
                          SELECT occurrence_id,
