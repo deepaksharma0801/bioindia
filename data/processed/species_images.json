@@ -1,0 +1,1627 @@
+{
+ "source": "Wikimedia Commons, via the lead image of each species' English Wikipedia article",
+ "licence_rule": "public domain, CC0, CC BY or CC BY-SA only; credit shown with each image",
+ "retrieved": "2026-10-29",
+ "images": {
+  "acanthodactylus_cantoris": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Acanthodactylus_cantoris.jpeg/500px-Acanthodactylus_cantoris.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Acanthodactylus_cantoris.jpeg",
+   "artist": "Omid Mozaffari",
+   "licence": "CC0",
+   "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "file": "Acanthodactylus cantoris.jpeg",
+   "article": "https://en.wikipedia.org/wiki/Indian_fringe-fingered_lizard",
+   "matched_by": "scientific name"
+  },
+  "acanthurus_tristis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Acanthurus_tristis_340437241.jpg/500px-Acanthurus_tristis_340437241.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Acanthurus_tristis_340437241.jpg",
+   "artist": "portioid",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Acanthurus tristis 340437241.jpg",
+   "article": "https://en.wikipedia.org/wiki/Acanthurus_tristis",
+   "matched_by": "scientific name"
+  },
+  "acer_caesium": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Acer_caesium.jpg/500px-Acer_caesium.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Acer_caesium.jpg",
+   "artist": "Jagdish Singh Negi - https://www.inaturalist.org/people/negi",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0",
+   "file": "Acer caesium.jpg",
+   "article": "https://en.wikipedia.org/wiki/Acer_caesium",
+   "matched_by": "scientific name"
+  },
+  "aeschynomene_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Aeschynomene_indica_pod.jpg/500px-Aeschynomene_indica_pod.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Aeschynomene_indica_pod.jpg",
+   "artist": "Macleay Grass Man",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "file": "Aeschynomene indica pod.jpg",
+   "article": "https://en.wikipedia.org/wiki/Aeschynomene_indica",
+   "matched_by": "scientific name"
+  },
+  "albizia_lebbeck": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Starr_080531-4752_Albizia_lebbeck.jpg/500px-Starr_080531-4752_Albizia_lebbeck.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Starr_080531-4752_Albizia_lebbeck.jpg",
+   "artist": "Forest & Kim Starr",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "file": "Starr 080531-4752 Albizia lebbeck.jpg",
+   "article": "https://en.wikipedia.org/wiki/Albizia_lebbeck",
+   "matched_by": "scientific name"
+  },
+  "alectis_indica": {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/84/Diamond_trevally_juvenile.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Diamond_trevally_juvenile.jpg",
+   "artist": "Kare Kare",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Diamond trevally juvenile.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_threadfish",
+   "matched_by": "scientific name"
+  },
+  "amblypharyngodon_microlepis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Amblypharyngodon_microlepis_Day_135.jpg/500px-Amblypharyngodon_microlepis_Day_135.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Amblypharyngodon_microlepis_Day_135.jpg",
+   "artist": "Francis Day",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Amblypharyngodon microlepis Day 135.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_carplet",
+   "matched_by": "scientific name"
+  },
+  "anas_poecilorhyncha": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Indian_Spot-billed_Duck_Anas_poecilorhyncha_by_Dr._Raju_Kasambe_DSCN3821_%2811%29.jpg/500px-Indian_Spot-billed_Duck_Anas_poecilorhyncha_by_Dr._Raju_Kasambe_DSCN3821_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Spot-billed_Duck_Anas_poecilorhyncha_by_Dr._Raju_Kasambe_DSCN3821_(11).jpg",
+   "artist": "Dr. Raju Kasambe",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Spot-billed Duck Anas poecilorhyncha by Dr. Raju Kasambe DSCN3821 (11).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_spot-billed_duck",
+   "matched_by": "scientific name"
+  },
+  "anguilla_bengalensis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Anguilla_bengalensis_bengalensis.jpg/500px-Anguilla_bengalensis_bengalensis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Anguilla_bengalensis_bengalensis.jpg",
+   "artist": "Nandini Velho at Pakke Tiger Reserve",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Anguilla bengalensis bengalensis.jpg",
+   "article": "https://en.wikipedia.org/wiki/Anguilla_bengalensis",
+   "matched_by": "scientific name"
+  },
+  "anoectochilus_elatus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Anoectochilus_elatus-1-chemunji-kerala-India_-_cropped.jpg/500px-Anoectochilus_elatus-1-chemunji-kerala-India_-_cropped.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Anoectochilus_elatus-1-chemunji-kerala-India_-_cropped.jpg",
+   "artist": "Yercaud-elango",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Anoectochilus elatus-1-chemunji-kerala-India - cropped.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "antennarius_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Antennarius_indicus2.jpg/500px-Antennarius_indicus2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Antennarius_indicus2.jpg",
+   "artist": "Ferosekhan",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "file": "Antennarius indicus2.jpg",
+   "article": "https://en.wikipedia.org/wiki/Antennarius_indicus",
+   "matched_by": "scientific name"
+  },
+  "ardeola_grayii": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Indian_pond_heron_%28Ardeola_grayii%29_non_breeding.jpg/500px-Indian_pond_heron_%28Ardeola_grayii%29_non_breeding.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_pond_heron_(Ardeola_grayii)_non_breeding.jpg",
+   "artist": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian pond heron (Ardeola grayii) non breeding.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_pond_heron",
+   "matched_by": "scientific name"
+  },
+  "ardeotis_nigriceps": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Ardeotis_nigriceps%2C_Desert_National_Park%2C_Rajasthan%2C_India_1.jpg/500px-Ardeotis_nigriceps%2C_Desert_National_Park%2C_Rajasthan%2C_India_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Ardeotis_nigriceps,_Desert_National_Park,_Rajasthan,_India_1.jpg",
+   "artist": "Original: SVKMBFLY; this edit: MPF",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Ardeotis nigriceps, Desert National Park, Rajasthan, India 1.jpg",
+   "article": "https://en.wikipedia.org/wiki/Great_Indian_bustard",
+   "matched_by": "scientific name"
+  },
+  "bear": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Sloth_Bear_Washington_DC.JPG/500px-Sloth_Bear_Washington_DC.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Sloth_Bear_Washington_DC.JPG",
+   "artist": "Asiir",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Sloth Bear Washington DC.JPG",
+   "article": "https://en.wikipedia.org/wiki/Sloth_bear",
+   "matched_by": "scientific name"
+  },
+  "benthobatis_moresbyi": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Benthobatis_moresbyi.jpg/500px-Benthobatis_moresbyi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Benthobatis_moresbyi.jpg",
+   "artist": "A. C. Chowdhary",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Benthobatis moresbyi.jpg",
+   "article": "https://en.wikipedia.org/wiki/Benthobatis_moresbyi",
+   "matched_by": "scientific name"
+  },
+  "berberis_aristata": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/BerberisAculeata.jpg/500px-BerberisAculeata.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:BerberisAculeata.jpg",
+   "artist": "L. Shyamal",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "BerberisAculeata.jpg",
+   "article": "https://en.wikipedia.org/wiki/Berberis_aristata",
+   "matched_by": "scientific name"
+  },
+  "berberis_lycium": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Berberis_lycium_2016-05-17_0757.jpg/500px-Berberis_lycium_2016-05-17_0757.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Berberis_lycium_2016-05-17_0757.jpg",
+   "artist": "Salicyna",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Berberis lycium 2016-05-17 0757.jpg",
+   "article": "https://en.wikipedia.org/wiki/Berberis_lycium",
+   "matched_by": "scientific name"
+  },
+  "boiga_trigonata": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Common_Cat_Snake_02.jpg/500px-Common_Cat_Snake_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Common_Cat_Snake_02.jpg",
+   "artist": "Jidnesh Doshi",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Common Cat Snake 02.jpg",
+   "article": "https://en.wikipedia.org/wiki/Boiga_trigonata",
+   "matched_by": "scientific name"
+  },
+  "boiga_westermanni": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Indian_egg_eater_snake_Elachistodon_westermanni_by_Krishna_Khan_Amravati.jpg/500px-Indian_egg_eater_snake_Elachistodon_westermanni_by_Krishna_Khan_Amravati.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_egg_eater_snake_Elachistodon_westermanni_by_Krishna_Khan_Amravati.jpg",
+   "artist": "Ashahar alias Krishna Khan",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian egg eater snake Elachistodon westermanni by Krishna Khan Amravati.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_egg-eating_snake",
+   "matched_by": "scientific name"
+  },
+  "boswellia_serrata": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Boswellia_serrata_%28Salai%29_in_Kinnarsani_WS%2C_AP_W2_IMG_5840.jpg/500px-Boswellia_serrata_%28Salai%29_in_Kinnarsani_WS%2C_AP_W2_IMG_5840.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Boswellia_serrata_(Salai)_in_Kinnarsani_WS,_AP_W2_IMG_5840.jpg",
+   "artist": "J.M.Garg",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Boswellia serrata (Salai) in Kinnarsani WS, AP W2 IMG 5840.jpg",
+   "article": "https://en.wikipedia.org/wiki/Boswellia_serrata",
+   "matched_by": "scientific name"
+  },
+  "burhinus_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Indian_stone-curlew_in_Nasirpur%2C_Patiala_01_%28cropped%29.jpg/500px-Indian_stone-curlew_in_Nasirpur%2C_Patiala_01_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_stone-curlew_in_Nasirpur,_Patiala_01_(cropped).jpg",
+   "artist": "Satdeep Gill",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian stone-curlew in Nasirpur, Patiala 01 (cropped).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_stone-curlew",
+   "matched_by": "scientific name"
+  },
+  "calodactylodes_aureus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Golden_Gecko_Habitat.jpg/500px-Golden_Gecko_Habitat.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Golden_Gecko_Habitat.jpg",
+   "artist": "Sachinraoherps121",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Golden Gecko Habitat.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_golden_gecko",
+   "matched_by": "scientific name"
+  },
+  "canis_lupus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Canis_lupus_lupus_in_Alpenzoo%2C_Innsbruck.jpg/500px-Canis_lupus_lupus_in_Alpenzoo%2C_Innsbruck.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Canis_lupus_lupus_in_Alpenzoo,_Innsbruck.jpg",
+   "artist": "Wilfredor",
+   "licence": "CC0",
+   "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "file": "Canis lupus lupus in Alpenzoo, Innsbruck.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "caprimulgus_asiaticus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Caprimulgus_asiaticus.jpg/500px-Caprimulgus_asiaticus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Caprimulgus_asiaticus.jpg",
+   "artist": "Klamul",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0",
+   "file": "Caprimulgus asiaticus.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_nightjar",
+   "matched_by": "scientific name"
+  },
+  "cephaloscyllium_silasi": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Cephaloscyllium_silasi_quilon.jpg/500px-Cephaloscyllium_silasi_quilon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Cephaloscyllium_silasi_quilon.jpg",
+   "artist": "K.V. Akhilesh",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "file": "Cephaloscyllium silasi quilon.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_swellshark",
+   "matched_by": "scientific name"
+  },
+  "chelonia_mydas": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Green_sea_turtle_%28Chelonia_mydas%29_Moorea.jpg/500px-Green_sea_turtle_%28Chelonia_mydas%29_Moorea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Green_sea_turtle_(Chelonia_mydas)_Moorea.jpg",
+   "artist": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Green sea turtle (Chelonia mydas) Moorea.jpg",
+   "article": "https://en.wikipedia.org/wiki/Green_sea_turtle",
+   "matched_by": "scientific name"
+  },
+  "chitra_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Dudhwalive_chitra.JPG/500px-Dudhwalive_chitra.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Dudhwalive_chitra.JPG",
+   "artist": "User:Shailendra Singh",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "file": "Dudhwalive chitra.JPG",
+   "article": "https://en.wikipedia.org/wiki/Indian_narrow-headed_softshell_turtle",
+   "matched_by": "scientific name"
+  },
+  "chlorurus_strongylocephalus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Chlorurus_strongylocephalus_473622089_%28cropped%29.jpg/500px-Chlorurus_strongylocephalus_473622089_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Chlorurus_strongylocephalus_473622089_(cropped).jpg",
+   "artist": "Darren Obbard",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0",
+   "file": "Chlorurus strongylocephalus 473622089 (cropped).jpg",
+   "article": "https://en.wikipedia.org/wiki/Chlorurus_strongylocephalus",
+   "matched_by": "scientific name"
+  },
+  "chrysopelea_taprobanica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Chrysopelea_taprobanica.jpg/500px-Chrysopelea_taprobanica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Chrysopelea_taprobanica.jpg",
+   "artist": "Gihan Jayaweera",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Chrysopelea taprobanica.jpg",
+   "article": "https://en.wikipedia.org/wiki/Chrysopelea_taprobanica",
+   "matched_by": "scientific name"
+  },
+  "citrus_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Citrus_indica_Tanaka.jpg/500px-Citrus_indica_Tanaka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Citrus_indica_Tanaka.jpg",
+   "artist": "Naturalis Biodiversity Center",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Citrus indica Tanaka.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "clanga_hastata": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Indian_Spotted_Eagle_near_Nalsarovar_Bird_Sanctuary.jpg/500px-Indian_Spotted_Eagle_near_Nalsarovar_Bird_Sanctuary.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Spotted_Eagle_near_Nalsarovar_Bird_Sanctuary.jpg",
+   "artist": "Ikshan Ganpathi",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Spotted Eagle near Nalsarovar Bird Sanctuary.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_spotted_eagle",
+   "matched_by": "scientific name"
+  },
+  "colebrookea_oppositifolia": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Colebrookea_oppositifolia_Sm._%2851959044522%29.jpg/500px-Colebrookea_oppositifolia_Sm._%2851959044522%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Colebrookea_oppositifolia_Sm._(51959044522).jpg",
+   "artist": "Dinesh Valke from Thane, India",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "file": "Colebrookea oppositifolia Sm. (51959044522).jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "commiphora_berryi": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Commiphora_berryi-1-yercaud-salem-India.jpg/500px-Commiphora_berryi-1-yercaud-salem-India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Commiphora_berryi-1-yercaud-salem-India.jpg",
+   "artist": "Yercaud-elango",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Commiphora berryi-1-yercaud-salem-India.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "copsychus_fulicatus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Indian_Robin_%28Copsychus_fulicatus%29%2C_Koottanad%2C_Palakkad_district%2C_Kerala_1.jpg/500px-Indian_Robin_%28Copsychus_fulicatus%29%2C_Koottanad%2C_Palakkad_district%2C_Kerala_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Robin_(Copsychus_fulicatus),_Koottanad,_Palakkad_district,_Kerala_1.jpg",
+   "artist": "Shino jacob koottanad",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Robin (Copsychus fulicatus), Koottanad, Palakkad district, Kerala 1.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_robin",
+   "matched_by": "scientific name"
+  },
+  "coracias_benghalensis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Indian_roller_-_Timbi_Lake%2C_Vadodara_2023-12-03.jpg/500px-Indian_roller_-_Timbi_Lake%2C_Vadodara_2023-12-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_roller_-_Timbi_Lake,_Vadodara_2023-12-03.jpg",
+   "artist": "Mahmadanesh",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0",
+   "file": "Indian roller - Timbi Lake, Vadodara 2023-12-03.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_roller",
+   "matched_by": "scientific name"
+  },
+  "coracina_macei": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Indian_cuckooshrike_-_Vadodara_2021-10-27.jpg/500px-Indian_cuckooshrike_-_Vadodara_2021-10-27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_cuckooshrike_-_Vadodara_2021-10-27.jpg",
+   "artist": "Mahmadanesh",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0",
+   "file": "Indian cuckooshrike - Vadodara 2021-10-27.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_cuckooshrike",
+   "matched_by": "scientific name"
+  },
+  "corchorus_aestuans": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Corchorus_aestuans%2C_East_Indian_Mallow%2C_Jute%2C_West_African_mallow_2.jpg/500px-Corchorus_aestuans%2C_East_Indian_Mallow%2C_Jute%2C_West_African_mallow_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Corchorus_aestuans,_East_Indian_Mallow,_Jute,_West_African_mallow_2.jpg",
+   "artist": "Renjusplace",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Corchorus aestuans, East Indian Mallow, Jute, West African mallow 2.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "corylus_jacquemontii": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Corylus_jacquemontii_%287788844336%29.jpg/500px-Corylus_jacquemontii_%287788844336%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Corylus_jacquemontii_(7788844336).jpg",
+   "artist": "Dinesh Valke from Thane, India",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "file": "Corylus jacquemontii (7788844336).jpg",
+   "article": "https://en.wikipedia.org/wiki/Corylus_jacquemontii",
+   "matched_by": "scientific name"
+  },
+  "croc": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Mugger_crocodile_%28Crocodylus_palustris%29_Gal_Oya.jpg/500px-Mugger_crocodile_%28Crocodylus_palustris%29_Gal_Oya.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Mugger_crocodile_(Crocodylus_palustris)_Gal_Oya.jpg",
+   "artist": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Mugger crocodile (Crocodylus palustris) Gal Oya.jpg",
+   "article": "https://en.wikipedia.org/wiki/Mugger_crocodile",
+   "matched_by": "scientific name"
+  },
+  "cuculus_micropterus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Indian_cuckoo_%28Cuculus_micropterus%29_46_%28cropped%29.jpg/500px-Indian_cuckoo_%28Cuculus_micropterus%29_46_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_cuckoo_(Cuculus_micropterus)_46_(cropped).jpg",
+   "artist": "Creepanta",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian cuckoo (Cuculus micropterus) 46 (cropped).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_cuckoo",
+   "matched_by": "scientific name"
+  },
+  "cursorius_coromandelicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Indian_Courser_in_Bhigwan_August_2025_by_Tisha_Mukherjee_07.jpg/500px-Indian_Courser_in_Bhigwan_August_2025_by_Tisha_Mukherjee_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Courser_in_Bhigwan_August_2025_by_Tisha_Mukherjee_07.jpg",
+   "artist": "Tisha Mukherjee",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Courser in Bhigwan August 2025 by Tisha Mukherjee 07.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_courser",
+   "matched_by": "scientific name"
+  },
+  "cyrtodactylus_albofasciatus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Cyrtodactylus_albofasciatus_-_Close-up_-_Shreeram_M_V_-_Jog%2C_Karnataka%2C_India.jpg/500px-Cyrtodactylus_albofasciatus_-_Close-up_-_Shreeram_M_V_-_Jog%2C_Karnataka%2C_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Cyrtodactylus_albofasciatus_-_Close-up_-_Shreeram_M_V_-_Jog,_Karnataka,_India.jpg",
+   "artist": "Mvshreeram",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Cyrtodactylus albofasciatus - Close-up - Shreeram M V - Jog, Karnataka, India.jpg",
+   "article": "https://en.wikipedia.org/wiki/Cyrtodactylus_albofasciatus",
+   "matched_by": "scientific name"
+  },
+  "cyrtodactylus_deccanensis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Deccan_ground_gecko_Geckoella_deccanensis_by_Krishna_Khan.jpg/500px-Deccan_ground_gecko_Geckoella_deccanensis_by_Krishna_Khan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Deccan_ground_gecko_Geckoella_deccanensis_by_Krishna_Khan.jpg",
+   "artist": "Ashaharkhan786",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Deccan ground gecko Geckoella deccanensis by Krishna Khan.jpg",
+   "article": "https://en.wikipedia.org/wiki/Cyrtodactylus_deccanensis",
+   "matched_by": "scientific name"
+  },
+  "decapterus_russelli": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Derus_u0.png/500px-Derus_u0.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Derus_u0.png",
+   "artist": "Unknown author",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Derus u0.png",
+   "article": "https://en.wikipedia.org/wiki/Decapterus_russelli",
+   "matched_by": "scientific name"
+  },
+  "dermochelys_coriacea": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Leatherback_sea_turtle_Tinglar%2C_USVI_%285839996547%29.jpg/500px-Leatherback_sea_turtle_Tinglar%2C_USVI_%285839996547%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Leatherback_sea_turtle_Tinglar,_USVI_(5839996547).jpg",
+   "artist": "U.S. Fish and Wildlife Service Southeast Region",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Leatherback sea turtle Tinglar, USVI (5839996547).jpg",
+   "article": "https://en.wikipedia.org/wiki/Leatherback_sea_turtle",
+   "matched_by": "scientific name"
+  },
+  "drosera_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Drosera_indica_%28Gawati_Davbindu%29_in_Narsghapur%2C_AP_W_IMG_0951.jpg/500px-Drosera_indica_%28Gawati_Davbindu%29_in_Narsghapur%2C_AP_W_IMG_0951.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Drosera_indica_(Gawati_Davbindu)_in_Narsghapur,_AP_W_IMG_0951.jpg",
+   "artist": "J.M.Garg",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Drosera indica (Gawati Davbindu) in Narsghapur, AP W IMG 0951.jpg",
+   "article": "https://en.wikipedia.org/wiki/Drosera_indica",
+   "matched_by": "scientific name"
+  },
+  "duttaphrynus_parietalis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/BufoParietalis1.jpg/500px-BufoParietalis1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:BufoParietalis1.jpg",
+   "artist": "Shyamal",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "BufoParietalis1.jpg",
+   "article": "https://en.wikipedia.org/wiki/Duttaphrynus_parietalis",
+   "matched_by": "scientific name"
+  },
+  "elaeocarpus_floribundus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Elaeocarpus_floribundus_04.JPG/500px-Elaeocarpus_floribundus_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Elaeocarpus_floribundus_04.JPG",
+   "artist": "Forestowlet",
+   "licence": "CC0",
+   "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "file": "Elaeocarpus floribundus 04.JPG",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "elephant": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Elephas_maximus_%28Bandipur%29.jpg/500px-Elephas_maximus_%28Bandipur%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Elephas_maximus_(Bandipur).jpg",
+   "artist": "Yathin S Krishnappa",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Elephas maximus (Bandipur).jpg",
+   "article": "https://en.wikipedia.org/wiki/Asian_elephant",
+   "matched_by": "scientific name"
+  },
+  "equus_hemionus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Asiatic_Wild_Ass.jpeg/500px-Asiatic_Wild_Ass.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Asiatic_Wild_Ass.jpeg",
+   "artist": "Sumeet Moghe",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Asiatic Wild Ass.jpeg",
+   "article": "https://en.wikipedia.org/wiki/Indian_wild_ass",
+   "matched_by": "common name"
+  },
+  "eublepharis_fuscus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/West_Indian_leopard_gecko_Eublepharis_fuscus_by_Krishna_Khan_Amravati.jpg/500px-West_Indian_leopard_gecko_Eublepharis_fuscus_by_Krishna_Khan_Amravati.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:West_Indian_leopard_gecko_Eublepharis_fuscus_by_Krishna_Khan_Amravati.jpg",
+   "artist": "Ashahar alias Krishna Khan",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "West Indian leopard gecko Eublepharis fuscus by Krishna Khan Amravati.jpg",
+   "article": "https://en.wikipedia.org/wiki/West_Indian_leopard_gecko",
+   "matched_by": "scientific name"
+  },
+  "eublepharis_hardwickii": {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/84/Eublepharis_hardwickii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Eublepharis_hardwickii.jpg",
+   "artist": "Unknown author",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Eublepharis hardwickii.jpg",
+   "article": "https://en.wikipedia.org/wiki/East_Indian_leopard_gecko",
+   "matched_by": "scientific name"
+  },
+  "euodice_malabarica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Indian_Silverbill3.jpg/500px-Indian_Silverbill3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Silverbill3.jpg",
+   "artist": "Swamy HKM",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Silverbill3.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_silverbill",
+   "matched_by": "scientific name"
+  },
+  "eutropis_carinata": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Keeled_Indian_Mabuya_%28Eutropis_carinata%29.jpg/500px-Keeled_Indian_Mabuya_%28Eutropis_carinata%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Keeled_Indian_Mabuya_(Eutropis_carinata).jpg",
+   "artist": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Keeled Indian Mabuya (Eutropis carinata).jpg",
+   "article": "https://en.wikipedia.org/wiki/Eutropis_carinata",
+   "matched_by": "scientific name"
+  },
+  "fimbristylis_ferruginea": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Description_de_l%27%C3%89gypte_%28Pl._6%29_%289301601178%29.jpg/500px-Description_de_l%27%C3%89gypte_%28Pl._6%29_%289301601178%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Description_de_l%27%C3%89gypte_(Pl._6)_(9301601178).jpg",
+   "artist": "Blondeau, Alexandre; Fourier, Jean Baptiste Joseph; France.; France.; France.; Institut d'Egypte (1798-1801); Jacotin, P",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Description de l'Égypte (Pl. 6) (9301601178).jpg",
+   "article": "https://en.wikipedia.org/wiki/Fimbristylis_ferruginea",
+   "matched_by": "scientific name"
+  },
+  "fraxinus_floribunda": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Fraxinus_floribunda_Bra37.png/500px-Fraxinus_floribunda_Bra37.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Fraxinus_floribunda_Bra37.png",
+   "artist": "Unknown author",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Fraxinus floribunda Bra37.png",
+   "article": "https://en.wikipedia.org/wiki/Fraxinus_floribunda",
+   "matched_by": "scientific name"
+  },
+  "gardenia_latifolia": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Papra_tree_Bhopal1.JPG/500px-Papra_tree_Bhopal1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Papra_tree_Bhopal1.JPG",
+   "artist": "LRBurdak",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Papra tree Bhopal1.JPG",
+   "article": "https://en.wikipedia.org/wiki/Gardenia_latifolia",
+   "matched_by": "scientific name"
+  },
+  "geochelone_elegans": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Indian_star_tortoise_%282016%29_7365.jpg/500px-Indian_star_tortoise_%282016%29_7365.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_star_tortoise_(2016)_7365.jpg",
+   "artist": "Davidvraju",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian star tortoise (2016) 7365.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_star_tortoise",
+   "matched_by": "scientific name"
+  },
+  "golunda_ellioti": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Indian_Bush_Rat_at_Keoladeo_National_Park%2C_Bharatpur%2C_India.jpg/500px-Indian_Bush_Rat_at_Keoladeo_National_Park%2C_Bharatpur%2C_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Bush_Rat_at_Keoladeo_National_Park,_Bharatpur,_India.jpg",
+   "artist": "Aranyaparva",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Indian Bush Rat at Keoladeo National Park, Bharatpur, India.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_bush_rat",
+   "matched_by": "scientific name"
+  },
+  "gracupica_contra": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Asian_pied_starlings_%28Gracupica_contra%29.jpg/500px-Asian_pied_starlings_%28Gracupica_contra%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Asian_pied_starlings_(Gracupica_contra).jpg",
+   "artist": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Asian pied starlings (Gracupica contra).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_pied_myna",
+   "matched_by": "scientific name"
+  },
+  "graminicola_bengalensis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Indian_Grassbird_Wiki_Loves_Birds_Nepal_%28cropped%29.jpg/500px-Indian_Grassbird_Wiki_Loves_Birds_Nepal_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Grassbird_Wiki_Loves_Birds_Nepal_(cropped).jpg",
+   "artist": "Jyotendra 2019",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Grassbird Wiki Loves Birds Nepal (cropped).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_grassbird",
+   "matched_by": "scientific name"
+  },
+  "gudusia_chapra": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Clupea_chapra_Achilles_161.jpg/500px-Clupea_chapra_Achilles_161.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Clupea_chapra_Achilles_161.jpg",
+   "artist": "C. Achilles",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Clupea chapra Achilles 161.jpg",
+   "article": "https://en.wikipedia.org/wiki/Gudusia_chapra",
+   "matched_by": "scientific name"
+  },
+  "gymnothorax_tile": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Gymnothorax_tile.jpg/500px-Gymnothorax_tile.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Gymnothorax_tile.jpg",
+   "artist": "Tess Reloep",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Gymnothorax tile.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_mud_moray_eel",
+   "matched_by": "scientific name"
+  },
+  "gyps_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Indian_vulture_%28Gyps_indicus%29_Photograph_by_Shantanu_Kuveskar.jpg/500px-Indian_vulture_%28Gyps_indicus%29_Photograph_by_Shantanu_Kuveskar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_vulture_(Gyps_indicus)_Photograph_by_Shantanu_Kuveskar.jpg",
+   "artist": "Shantanu Kuveskar",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian vulture (Gyps indicus) Photograph by Shantanu Kuveskar.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_vulture",
+   "matched_by": "scientific name"
+  },
+  "halichoeres_vrolikii": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Halichoeres_vrolikii.jpg/500px-Halichoeres_vrolikii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Halichoeres_vrolikii.jpg",
+   "artist": "Rainer Kretzberg",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "file": "Halichoeres vrolikii.jpg",
+   "article": "https://en.wikipedia.org/wiki/Halichoeres_chrysotaenia",
+   "matched_by": "scientific name"
+  },
+  "halieutaea_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Halieutaea_indica2.jpg/500px-Halieutaea_indica2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Halieutaea_indica2.jpg",
+   "artist": "Mohammad Moazzam Khan with hamid Badar Osmany",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "file": "Halieutaea indica2.jpg",
+   "article": "https://en.wikipedia.org/wiki/Halieutaea_indica",
+   "matched_by": "scientific name"
+  },
+  "hoplobatrachus_tigerinus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Hoplobatrachus_tigerinus%2CAlapuzha.jpg/500px-Hoplobatrachus_tigerinus%2CAlapuzha.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Hoplobatrachus_tigerinus,Alapuzha.jpg",
+   "artist": "Danielnasika1",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Hoplobatrachus tigerinus,Alapuzha.jpg",
+   "article": "https://en.wikipedia.org/wiki/Hoplobatrachus_tigerinus",
+   "matched_by": "scientific name"
+  },
+  "hylarana_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Indosylvirana_indica_-_Shreeram_MV_-_Agumbe.jpg/500px-Indosylvirana_indica_-_Shreeram_MV_-_Agumbe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indosylvirana_indica_-_Shreeram_MV_-_Agumbe.jpg",
+   "artist": "Mvshreeram",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indosylvirana indica - Shreeram MV - Agumbe.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indosylvirana_indica",
+   "matched_by": "scientific name"
+  },
+  "hystrix_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Weissschwanzstachelschwein_Hystrix_indica_Tierpark_Hellabrunn-12_%28cropped%29.jpg/500px-Weissschwanzstachelschwein_Hystrix_indica_Tierpark_Hellabrunn-12_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Weissschwanzstachelschwein_Hystrix_indica_Tierpark_Hellabrunn-12_(cropped).jpg",
+   "artist": "Rufus46",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Weissschwanzstachelschwein Hystrix indica Tierpark Hellabrunn-12 (cropped).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_crested_porcupine",
+   "matched_by": "scientific name"
+  },
+  "ichthyocampus_carce": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Ichthyocampus_carce.jpg/500px-Ichthyocampus_carce.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Ichthyocampus_carce.jpg",
+   "artist": "AravindManoj",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Ichthyocampus carce.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "lannea_coromandelica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Lannea_coromandelica_%28Wodier_Tree%29_in_Hyderabad_W2_IMG_5634.jpg/500px-Lannea_coromandelica_%28Wodier_Tree%29_in_Hyderabad_W2_IMG_5634.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Lannea_coromandelica_(Wodier_Tree)_in_Hyderabad_W2_IMG_5634.jpg",
+   "artist": "J.M.Garg",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Lannea coromandelica (Wodier Tree) in Hyderabad W2 IMG 5634.jpg",
+   "article": "https://en.wikipedia.org/wiki/Lannea_coromandelica",
+   "matched_by": "scientific name"
+  },
+  "larvivora_brunnea": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Larvivora_brunnea%2C_male%2C_Nandi_Hills.jpg/500px-Larvivora_brunnea%2C_male%2C_Nandi_Hills.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Larvivora_brunnea,_male,_Nandi_Hills.jpg",
+   "artist": "shrikant rao from bangalore, india",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "file": "Larvivora brunnea, male, Nandi Hills.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_blue_robin",
+   "matched_by": "scientific name"
+  },
+  "lepus_nigricollis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Indian_hare_by_N_A_Nazeer.jpg/500px-Indian_hare_by_N_A_Nazeer.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_hare_by_N_A_Nazeer.jpg",
+   "artist": "N.A.Nazeer",
+   "licence": "CC BY-SA 2.5 in",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.5/in/deed.en",
+   "file": "Indian hare by N A Nazeer.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_hare",
+   "matched_by": "scientific name"
+  },
+  "limnophila_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Limnophila_indica_kz03.jpg/500px-Limnophila_indica_kz03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Limnophila_indica_kz03.jpg",
+   "artist": "Krzysztof Ziarnek, Kenraiz",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Limnophila indica kz03.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "lissemys_punctata": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Lissemys_punctata_andersoni.jpg/500px-Lissemys_punctata_andersoni.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Lissemys_punctata_andersoni.jpg",
+   "artist": "Harikrishnan S",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Lissemys punctata andersoni.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_flapshell_turtle",
+   "matched_by": "scientific name"
+  },
+  "loliolus_hardwickei": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Naturalis_Biodiversity_Center_-_RMNH.MOL.311282_-_Loliolus_hardwickei_%28Gray%2C_1849%29_-_Loliginidae_-_Mollusc_shell.jpeg/500px-Naturalis_Biodiversity_Center_-_RMNH.MOL.311282_-_Loliolus_hardwickei_%28Gray%2C_1849%29_-_Loliginidae_-_Mollusc_shell.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Naturalis_Biodiversity_Center_-_RMNH.MOL.311282_-_Loliolus_hardwickei_(Gray,_1849)_-_Loliginidae_-_Mollusc_shell.jpeg",
+   "artist": "Gray, 1849",
+   "licence": "CC0",
+   "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "file": "Naturalis Biodiversity Center - RMNH.MOL.311282 - Loliolus hardwickei (Gray, 1849) - Loliginidae - Mollusc shell.jpeg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "mangifera_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Mangoes_%28Magnifera_indica%29_from_India.jpg/500px-Mangoes_%28Magnifera_indica%29_from_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Mangoes_(Magnifera_indica)_from_India.jpg",
+   "artist": "Billjones94",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Mangoes (Magnifera indica) from India.jpg",
+   "article": "https://en.wikipedia.org/wiki/Mangifera_indica",
+   "matched_by": "scientific name"
+  },
+  "manis_crassicaudata": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Scaly_ant_eater_by_Dushy_Ranetunge_2.jpg/500px-Scaly_ant_eater_by_Dushy_Ranetunge_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Scaly_ant_eater_by_Dushy_Ranetunge_2.jpg",
+   "artist": "Dushy Ranetunge",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Scaly ant eater by Dushy Ranetunge 2.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_pangolin",
+   "matched_by": "scientific name"
+  },
+  "melanobatrachus_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Melanobatrachus_indicus_%283%29.jpg/500px-Melanobatrachus_indicus_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Melanobatrachus_indicus_(3).jpg",
+   "artist": "Davidvraju",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Melanobatrachus indicus (3).jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "melanochelys_trijuga": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Little_Gal-ibba_%28Melanochelys_trijuga%29.jpg/500px-Little_Gal-ibba_%28Melanochelys_trijuga%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Little_Gal-ibba_(Melanochelys_trijuga).jpg",
+   "artist": "Rasikamt",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Little Gal-ibba (Melanochelys trijuga).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_black_turtle",
+   "matched_by": "scientific name"
+  },
+  "melanophidium_wynaudense": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Melanophidium_wynaudense.jpg/500px-Melanophidium_wynaudense.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Melanophidium_wynaudense.jpg",
+   "artist": "Gowdagirishc",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Melanophidium wynaudense.jpg",
+   "article": "https://en.wikipedia.org/wiki/Melanophidium_wynaudense",
+   "matched_by": "scientific name"
+  },
+  "melichthys_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Melichthys_indicus_Maldives.JPG/500px-Melichthys_indicus_Maldives.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Melichthys_indicus_Maldives.JPG",
+   "artist": "Julien Bidet for MDC Seamarc",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Melichthys indicus Maldives.JPG",
+   "article": "https://en.wikipedia.org/wiki/Indian_triggerfish",
+   "matched_by": "scientific name"
+  },
+  "meriones_hurrianae": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Indian_Desert_Jird.jpeg/500px-Indian_Desert_Jird.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Desert_Jird.jpeg",
+   "artist": "Sumeet Moghe",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Indian Desert Jird.jpeg",
+   "article": "https://en.wikipedia.org/wiki/Indian_desert_jird",
+   "matched_by": "scientific name"
+  },
+  "micryletta_aishani": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Holotype_of_Micryletta_aishani.png/500px-Holotype_of_Micryletta_aishani.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Holotype_of_Micryletta_aishani.png",
+   "artist": "Abhijit Das​, Sonali Garg​, Amir Hamidy, Eric N. Smith, S. D. Biju",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Holotype of Micryletta aishani.png",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "mimusops_elengi": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Spanish_cherry.jpg/500px-Spanish_cherry.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Spanish_cherry.jpg",
+   "artist": "Vengolis",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Spanish cherry.jpg",
+   "article": "https://en.wikipedia.org/wiki/Mimusops_elengi",
+   "matched_by": "scientific name"
+  },
+  "mirafra_erythroptera": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Indian_Bushlark_in_Bhigwan_August_2025_by_Tisha_Mukherjee_05.jpg/500px-Indian_Bushlark_in_Bhigwan_August_2025_by_Tisha_Mukherjee_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Bushlark_in_Bhigwan_August_2025_by_Tisha_Mukherjee_05.jpg",
+   "artist": "Tisha Mukherjee",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Bushlark in Bhigwan August 2025 by Tisha Mukherjee 05.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_bush_lark",
+   "matched_by": "scientific name"
+  },
+  "morenia_petersi": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Morenia_petersi.jpg/500px-Morenia_petersi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Morenia_petersi.jpg",
+   "artist": "Philbert Charles Berjeau",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Morenia petersi.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_eyed_turtle",
+   "matched_by": "scientific name"
+  },
+  "morus_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Morus_indica.jpg/500px-Morus_indica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Morus_indica.jpg",
+   "artist": "Dinesh Valke",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "file": "Morus indica.jpg",
+   "article": "https://en.wikipedia.org/wiki/Morus_indica",
+   "matched_by": "scientific name"
+  },
+  "moschiola_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Indian_Chevrotain.jpg/500px-Indian_Chevrotain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Chevrotain.jpg",
+   "artist": "(c) awayk3n, some rights reserved (CC BY)",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0",
+   "file": "Indian Chevrotain.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_spotted_chevrotain",
+   "matched_by": "scientific name"
+  },
+  "mulloidichthys_ayliffe": {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/60/Mulloidichthys_ayliffe%2C_techobanine_Matutu%C3%ADne_District%2C_Mozambique_imported_from_iNaturalist_photo_61111300_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Mulloidichthys_ayliffe,_techobanine_Matutu%C3%ADne_District,_Mozambique_imported_from_iNaturalist_photo_61111300_(cropped).jpg",
+   "artist": "(c) Georgina Jones, some rights reserved (CC BY-SA)",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Mulloidichthys ayliffe, techobanine Matutuíne District, Mozambique imported from iNaturalist photo 61111300 (cropped).jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "musa_mannii": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Musa_mannii.JPG/500px-Musa_mannii.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Musa_mannii.JPG",
+   "artist": "Ulf Eliasson",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Musa mannii.JPG",
+   "article": "https://en.wikipedia.org/wiki/Musa_mannii",
+   "matched_by": "scientific name"
+  },
+  "naja_naja": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Indian_Cobra%2C_crop.jpg/500px-Indian_Cobra%2C_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Cobra,_crop.jpg",
+   "artist": "Pavan Kumar N",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Indian Cobra, crop.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_cobra",
+   "matched_by": "scientific name"
+  },
+  "nardostachys_jatamansi": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Nardostachys_jatamansi_cultivated_outdoors_in_Yaroslavl_Oblast_with_developing_inflorescence.jpg/500px-Nardostachys_jatamansi_cultivated_outdoors_in_Yaroslavl_Oblast_with_developing_inflorescence.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Nardostachys_jatamansi_cultivated_outdoors_in_Yaroslavl_Oblast_with_developing_inflorescence.jpg",
+   "artist": "Plantagenet",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Nardostachys jatamansi cultivated outdoors in Yaroslavl Oblast with developing inflorescence.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "nephropsis_stewarti": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Nephropsis_stewarti_Takeshima.jpg/500px-Nephropsis_stewarti_Takeshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Nephropsis_stewarti_Takeshima.jpg",
+   "artist": "タウナギ",
+   "licence": "CC0",
+   "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "file": "Nephropsis stewarti Takeshima.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "nilssonia_gangetica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Indian_softshell_turtle_2024_%28cropped%29.jpg/500px-Indian_softshell_turtle_2024_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_softshell_turtle_2024_(cropped).jpg",
+   "artist": "Gurung pratap",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian softshell turtle 2024 (cropped).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_softshell_turtle",
+   "matched_by": "scientific name"
+  },
+  "nilssonia_hurum": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Nilssonia_hurum_Hardwicke.jpg/500px-Nilssonia_hurum_Hardwicke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Nilssonia_hurum_Hardwicke.jpg",
+   "artist": "Thomas Hardwicke",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Nilssonia hurum Hardwicke.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_peacock_softshell_turtle",
+   "matched_by": "scientific name"
+  },
+  "ocyceros_birostris": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Indian_Grey_Hornbill_I_IMG_4051.jpg/500px-Indian_Grey_Hornbill_I_IMG_4051.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Grey_Hornbill_I_IMG_4051.jpg",
+   "artist": "J.M.Garg",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Indian Grey Hornbill I IMG 4051.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_grey_hornbill",
+   "matched_by": "scientific name"
+  },
+  "oriolus_kundoo": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/IndianGoldenOriole_M.jpg/500px-IndianGoldenOriole_M.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:IndianGoldenOriole_M.jpg",
+   "artist": "Swardeepak",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0",
+   "file": "IndianGoldenOriole M.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_golden_oriole",
+   "matched_by": "scientific name"
+  },
+  "oroxylum_indicum": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Oroxylum_indicum_01.jpg/500px-Oroxylum_indicum_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Oroxylum_indicum_01.jpg",
+   "artist": "Vinayaraj",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Oroxylum indicum 01.jpg",
+   "article": "https://en.wikipedia.org/wiki/Oroxylum_indicum",
+   "matched_by": "scientific name"
+  },
+  "oryzias_dancena": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Adult_male_Oryzias_Dancena.png/500px-Adult_male_Oryzias_Dancena.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Adult_male_Oryzias_Dancena.png",
+   "artist": "Yusuke Takehana, Kiyoshi Naruse, Mitsuru Sakaizumi, H-J Chen",
+   "licence": "CC BY 2.5",
+   "licence_url": "https://creativecommons.org/licenses/by/2.5",
+   "file": "Adult male Oryzias Dancena.png",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "oryzias_setnai": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Oryzias_setnai.jpg/500px-Oryzias_setnai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Oryzias_setnai.jpg",
+   "artist": "Beta Mahatvaraj",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Oryzias setnai.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "otus_bakkamoena": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Indian_Scops_Owl_%28Otus_bakkamoena%29_by_Shantanu_Kuveskar.jpg/500px-Indian_Scops_Owl_%28Otus_bakkamoena%29_by_Shantanu_Kuveskar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Scops_Owl_(Otus_bakkamoena)_by_Shantanu_Kuveskar.jpg",
+   "artist": "Shantanu Kuveskar",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Scops Owl (Otus bakkamoena) by Shantanu Kuveskar.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_scops_owl",
+   "matched_by": "scientific name"
+  },
+  "pachypterus_atherinoides": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Pseudotropius_atherinoides_Day_109.jpg/500px-Pseudotropius_atherinoides_Day_109.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Pseudotropius_atherinoides_Day_109.jpg",
+   "artist": "Francis Day",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Pseudotropius atherinoides Day 109.jpg",
+   "article": "https://en.wikipedia.org/wiki/Pachypterus_atherinoides",
+   "matched_by": "scientific name"
+  },
+  "pangshura_tecta": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Indian_roofed_turtle.jpg/500px-Indian_roofed_turtle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_roofed_turtle.jpg",
+   "artist": "CLPramod",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian roofed turtle.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_roofed_turtle",
+   "matched_by": "scientific name"
+  },
+  "pangshura_tentoria": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Indian_tent_turtle_%28Pangshura_tentoria_tentoria%29.jpg/500px-Indian_tent_turtle_%28Pangshura_tentoria_tentoria%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_tent_turtle_(Pangshura_tentoria_tentoria).jpg",
+   "artist": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian tent turtle (Pangshura tentoria tentoria).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_tent_turtle",
+   "matched_by": "scientific name"
+  },
+  "panthera_pardus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Common_leopard_%28Phalanta_phalantha%29_Lumbini.jpg/500px-Common_leopard_%28Phalanta_phalantha%29_Lumbini.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Common_leopard_(Phalanta_phalantha)_Lumbini.jpg",
+   "artist": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Common leopard (Phalanta phalantha) Lumbini.jpg",
+   "article": "https://en.wikipedia.org/wiki/Phalanta_phalantha",
+   "matched_by": "common name"
+  },
+  "parambassis_ranga": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Parambassis_ranga_2.jpg/500px-Parambassis_ranga_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Parambassis_ranga_2.jpg",
+   "artist": "opencage",
+   "licence": "CC BY-SA 2.5",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.5",
+   "file": "Parambassis ranga 2.jpg",
+   "article": "https://en.wikipedia.org/wiki/Parambassis_ranga",
+   "matched_by": "scientific name"
+  },
+  "parupeneus_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Mulloidichthys_vanicolensis%2C_Jemeluk_Wall%2C_Amed%2C_Bali%2C_Indonesia_imported_from_iNaturalist_photo_429994681.jpg/500px-Mulloidichthys_vanicolensis%2C_Jemeluk_Wall%2C_Amed%2C_Bali%2C_Indonesia_imported_from_iNaturalist_photo_429994681.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Mulloidichthys_vanicolensis,_Jemeluk_Wall,_Amed,_Bali,_Indonesia_imported_from_iNaturalist_photo_429994681.jpg",
+   "artist": "(c) Bernard DUPONT, some rights reserved (CC BY-SA)",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Mulloidichthys vanicolensis, Jemeluk Wall, Amed, Bali, Indonesia imported from iNaturalist photo 429994681.jpg",
+   "article": "https://en.wikipedia.org/wiki/Goatfish",
+   "matched_by": "common name"
+  },
+  "pavo_cristatus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Peacock_on_tree_%2852077240794%29.jpg/500px-Peacock_on_tree_%2852077240794%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Peacock_on_tree_(52077240794).jpg",
+   "artist": "Kandukuru Nagarjun from Bangalore, India",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "file": "Peacock on tree (52077240794).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_peafowl",
+   "matched_by": "scientific name"
+  },
+  "pellona_ditchela": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Pellona_ditchela_Day_165.jpg/500px-Pellona_ditchela_Day_165.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Pellona_ditchela_Day_165.jpg",
+   "artist": "Francis Day",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Pellona ditchela Day 165.jpg",
+   "article": "https://en.wikipedia.org/wiki/Pellona_ditchela",
+   "matched_by": "scientific name"
+  },
+  "petaurista_philippensis": {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/95/Indian_giant_flying_squirrel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_giant_flying_squirrel.jpg",
+   "artist": "Unknown author",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian giant flying squirrel.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_giant_flying_squirrel",
+   "matched_by": "scientific name"
+  },
+  "phalacrocorax_fuscicollis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Indian_cormorant1_bySaptarshiGayen.jpg/500px-Indian_cormorant1_bySaptarshiGayen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_cormorant1_bySaptarshiGayen.jpg",
+   "artist": "Rivugayen",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian cormorant1 bySaptarshiGayen.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_cormorant",
+   "matched_by": "scientific name"
+  },
+  "phyllanthus_emblica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Phyllanthus_officinalis.jpg/500px-Phyllanthus_officinalis.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Phyllanthus_officinalis.jpg",
+   "artist": "L. Shyamal",
+   "licence": "CC BY 2.5",
+   "licence_url": "https://creativecommons.org/licenses/by/2.5",
+   "file": "Phyllanthus officinalis.jpg",
+   "article": "https://en.wikipedia.org/wiki/Phyllanthus_emblica",
+   "matched_by": "scientific name"
+  },
+  "phylloscopus_sindianus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Mountain_Chiffchaff_-_Shreeram_M_V_-_Suru_Valley.jpg/500px-Mountain_Chiffchaff_-_Shreeram_M_V_-_Suru_Valley.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Mountain_Chiffchaff_-_Shreeram_M_V_-_Suru_Valley.jpg",
+   "artist": "Mvshreeram",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Mountain Chiffchaff - Shreeram M V - Suru Valley.jpg",
+   "article": "https://en.wikipedia.org/wiki/Mountain_chiffchaff",
+   "matched_by": "scientific name"
+  },
+  "picea_smithiana": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Picea_smithiana_-_Solang_Valley_-_Kullu_2014-05-10_2593.jpg/500px-Picea_smithiana_-_Solang_Valley_-_Kullu_2014-05-10_2593.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Picea_smithiana_-_Solang_Valley_-_Kullu_2014-05-10_2593.jpg",
+   "artist": "Original: Biswarup Ganguly, this edit: MPF",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "file": "Picea smithiana - Solang Valley - Kullu 2014-05-10 2593.jpg",
+   "article": "https://en.wikipedia.org/wiki/Picea_smithiana",
+   "matched_by": "scientific name"
+  },
+  "picoides_nanus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/BCP-Woodpecker-SandeepM.jpg/500px-BCP-Woodpecker-SandeepM.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:BCP-Woodpecker-SandeepM.jpg",
+   "artist": "Swardeepak",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "BCP-Woodpecker-SandeepM.jpg",
+   "article": "https://en.wikipedia.org/wiki/Brown-capped_pygmy_woodpecker",
+   "matched_by": "scientific name"
+  },
+  "pitta_brachyura": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Indian_pitta_%28Pitta_brachyura%29_Photograph_by_Shantanu_Kuveskar.jpg/500px-Indian_pitta_%28Pitta_brachyura%29_Photograph_by_Shantanu_Kuveskar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_pitta_(Pitta_brachyura)_Photograph_by_Shantanu_Kuveskar.jpg",
+   "artist": "Shantanu Kuveskar",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian pitta (Pitta brachyura) Photograph by Shantanu Kuveskar.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_pitta",
+   "matched_by": "scientific name"
+  },
+  "plectorhinchus_vittatus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Bakoko_oriental_%28Plectorhinchus_vittatus%29%2C_Anilao%2C_Filipinas%2C_2023-08-22%2C_DD_182.jpg/500px-Bakoko_oriental_%28Plectorhinchus_vittatus%29%2C_Anilao%2C_Filipinas%2C_2023-08-22%2C_DD_182.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Bakoko_oriental_(Plectorhinchus_vittatus),_Anilao,_Filipinas,_2023-08-22,_DD_182.jpg",
+   "artist": "Diego Delso",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Bakoko oriental (Plectorhinchus vittatus), Anilao, Filipinas, 2023-08-22, DD 182.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_Ocean_oriental_sweetlips",
+   "matched_by": "scientific name"
+  },
+  "pomatorhinus_horsfieldii": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/IndianScimitarBabbler.jpg/500px-IndianScimitarBabbler.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:IndianScimitarBabbler.jpg",
+   "artist": "Cks3976",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "IndianScimitarBabbler.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_scimitar_babbler",
+   "matched_by": "scientific name"
+  },
+  "psammophilus_dorsalis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Peninsular_Rock_agama_-psammophilus_dorsalis_from_Nilambur_IMG_8942.jpg/500px-Peninsular_Rock_agama_-psammophilus_dorsalis_from_Nilambur_IMG_8942.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Peninsular_Rock_agama_-psammophilus_dorsalis_from_Nilambur_IMG_8942.jpg",
+   "artist": "Subhash Pulikkal",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Peninsular Rock agama -psammophilus dorsalis from Nilambur IMG 8942.jpg",
+   "article": "https://en.wikipedia.org/wiki/Peninsular_rock_agama",
+   "matched_by": "scientific name"
+  },
+  "psettodes_erumei": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Psettodes_erumei-by-HamidBadarOsmany-Pakistan-Karachi-24-6-2001-27cm.jpg/500px-Psettodes_erumei-by-HamidBadarOsmany-Pakistan-Karachi-24-6-2001-27cm.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Psettodes_erumei-by-HamidBadarOsmany-Pakistan-Karachi-24-6-2001-27cm.jpg",
+   "artist": "Hamid Badar Osmany",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Psettodes erumei-by-HamidBadarOsmany-Pakistan-Karachi-24-6-2001-27cm.jpg",
+   "article": "https://en.wikipedia.org/wiki/Psettodes_erumei",
+   "matched_by": "scientific name"
+  },
+  "pteropus_medius": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/047_Indian_flying_fox_in_Keoladeo_National_Park_Photo_by_Giles_Laurent.jpg/500px-047_Indian_flying_fox_in_Keoladeo_National_Park_Photo_by_Giles_Laurent.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:047_Indian_flying_fox_in_Keoladeo_National_Park_Photo_by_Giles_Laurent.jpg",
+   "artist": "Giles Laurent",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "047 Indian flying fox in Keoladeo National Park Photo by Giles Laurent.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_flying_fox",
+   "matched_by": "scientific name"
+  },
+  "python_molurus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Pratik_jain_dahod_python.JPG/500px-Pratik_jain_dahod_python.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Pratik_jain_dahod_python.JPG",
+   "artist": "Pratik Jain",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Pratik jain dahod python.JPG",
+   "article": "https://en.wikipedia.org/wiki/Indian_python",
+   "matched_by": "scientific name"
+  },
+  "rastrelliger_kanagurta": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Rastrelliger_kanagurta_JNC2855.JPG/500px-Rastrelliger_kanagurta_JNC2855.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Rastrelliger_kanagurta_JNC2855.JPG",
+   "artist": "Jean-Lou Justine",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Rastrelliger kanagurta JNC2855.JPG",
+   "article": "https://en.wikipedia.org/wiki/Indian_mackerel",
+   "matched_by": "scientific name"
+  },
+  "ratufa_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Indian_giant_squirrel_in_Kuldiha_Wildlife_Sanctuary_March_2025_by_Tisha_Mukherjee_01.jpg/500px-Indian_giant_squirrel_in_Kuldiha_Wildlife_Sanctuary_March_2025_by_Tisha_Mukherjee_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_giant_squirrel_in_Kuldiha_Wildlife_Sanctuary_March_2025_by_Tisha_Mukherjee_01.jpg",
+   "artist": "Tisha Mukherjee",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian giant squirrel in Kuldiha Wildlife Sanctuary March 2025 by Tisha Mukherjee 01.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_giant_squirrel",
+   "matched_by": "scientific name"
+  },
+  "rauvolfia_serpentina": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Rauvolfia_serpentina_11.JPG/500px-Rauvolfia_serpentina_11.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Rauvolfia_serpentina_11.JPG",
+   "artist": "Forestowlet",
+   "licence": "CC0",
+   "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "file": "Rauvolfia serpentina 11.JPG",
+   "article": "https://en.wikipedia.org/wiki/Rauvolfia_serpentina",
+   "matched_by": "scientific name"
+  },
+  "rhino": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Great-Indian-one-horned-rhinoceros-at-Kaziranga-national-park-in-Assam-India.jpg/500px-Great-Indian-one-horned-rhinoceros-at-Kaziranga-national-park-in-Assam-India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Great-Indian-one-horned-rhinoceros-at-Kaziranga-national-park-in-Assam-India.jpg",
+   "artist": "Mayank1704",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Great-Indian-one-horned-rhinoceros-at-Kaziranga-national-park-in-Assam-India.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_rhinoceros",
+   "matched_by": "scientific name"
+  },
+  "roa_jayakari": {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Roa_jayakari%2C_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Roa_jayakari,_India.jpg",
+   "artist": "K.V. Akhilesh & Beni. N",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "file": "Roa jayakari, India.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "rynchops_albicollis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Indian_skimmer_bird_%282016%29_1361.jpg/500px-Indian_skimmer_bird_%282016%29_1361.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_skimmer_bird_(2016)_1361.jpg",
+   "artist": "Davidvraju",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian skimmer bird (2016) 1361.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_skimmer",
+   "matched_by": "scientific name"
+  },
+  "saara_hardwickii": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/AAB004_Uromastyx_hardwickii_763.JPG/500px-AAB004_Uromastyx_hardwickii_763.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:AAB004_Uromastyx_hardwickii_763.JPG",
+   "artist": "No machine-readable author provided. Nature Loader assumed (based on copyright claims).",
+   "licence": "CC BY-SA 2.5",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.5",
+   "file": "AAB004 Uromastyx hardwickii 763.JPG",
+   "article": "https://en.wikipedia.org/wiki/Saara_hardwickii",
+   "matched_by": "scientific name"
+  },
+  "salpornis_spilonota": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Spotted_Creeper.jpg/500px-Spotted_Creeper.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Spotted_Creeper.jpg",
+   "artist": "Sumeet Moghe",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Spotted Creeper.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_spotted_creeper",
+   "matched_by": "scientific name"
+  },
+  "santalum_album": {
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Santalum_album_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-128.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "page": "https://commons.wikimedia.org/wiki/File:Santalum_album_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-128.jpg",
+   "artist": "Franz Eugen Köhler, Köhler's Medizinal-Pflanzen",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Santalum album - Köhler–s Medizinal-Pflanzen-128.jpg",
+   "article": "https://en.wikipedia.org/wiki/Santalum_album",
+   "matched_by": "scientific name"
+  },
+  "sapindus_trifoliatus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Sapindus_trifoliatus_06.jpg/500px-Sapindus_trifoliatus_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Sapindus_trifoliatus_06.jpg",
+   "artist": "Vinayaraj",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Sapindus trifoliatus 06.jpg",
+   "article": "https://en.wikipedia.org/wiki/Sapindus_trifoliatus",
+   "matched_by": "scientific name"
+  },
+  "sardinella_longiceps": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Indian_Oil_Sardine.JPG/500px-Indian_Oil_Sardine.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Oil_Sardine.JPG",
+   "artist": "Nithin bolar k",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Indian Oil Sardine.JPG",
+   "article": "https://en.wikipedia.org/wiki/Indian_oil_sardine",
+   "matched_by": "scientific name"
+  },
+  "sillago_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Sillago_indica.jpg/500px-Sillago_indica.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Sillago_indica.jpg",
+   "artist": "Kare Kare",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Sillago indica.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_sillago",
+   "matched_by": "scientific name"
+  },
+  "sitta_castanea": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Indian_Nuthatch_in_Satpura_Tiger_Reserve.jpg/500px-Indian_Nuthatch_in_Satpura_Tiger_Reserve.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Nuthatch_in_Satpura_Tiger_Reserve.jpg",
+   "artist": "Sidharth Srinivasan",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Nuthatch in Satpura Tiger Reserve.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_nuthatch",
+   "matched_by": "scientific name"
+  },
+  "sousa_plumbea": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Dolphin-Musandam_2.jpg/500px-Dolphin-Musandam_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Dolphin-Musandam_2.jpg",
+   "artist": "Mandy",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "file": "Dolphin-Musandam 2.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_Ocean_humpback_dolphin",
+   "matched_by": "scientific name"
+  },
+  "soymida_febrifuga": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Soymida_febrifuga_%28Roxb.%29_A.Juss._-_Flickr_-_lalithamba.jpg/500px-Soymida_febrifuga_%28Roxb.%29_A.Juss._-_Flickr_-_lalithamba.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Soymida_febrifuga_(Roxb.)_A.Juss._-_Flickr_-_lalithamba.jpg",
+   "artist": "Lalithamba from India",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "file": "Soymida febrifuga (Roxb.) A.Juss. - Flickr - lalithamba.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "sphaeranthus_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Sphaeranthus_indicus_habit.jpg/500px-Sphaeranthus_indicus_habit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Sphaeranthus_indicus_habit.jpg",
+   "artist": "Mark Marathon",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Sphaeranthus indicus habit.jpg",
+   "article": "https://en.wikipedia.org/wiki/Sphaeranthus_indicus",
+   "matched_by": "scientific name"
+  },
+  "sphaerotheca_breviceps": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Sphaerotheca_breviceps_India.jpg/500px-Sphaerotheca_breviceps_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Sphaerotheca_breviceps_India.jpg",
+   "artist": "L. Shyamal",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Sphaerotheca breviceps India.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_burrowing_frog",
+   "matched_by": "scientific name"
+  },
+  "sphenomorphus_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Sphenomorphus_indicus.jpg/500px-Sphenomorphus_indicus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Sphenomorphus_indicus.jpg",
+   "artist": "Thomas Brown",
+   "licence": "CC BY 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by/2.0",
+   "file": "Sphenomorphus indicus.jpg",
+   "article": "https://en.wikipedia.org/wiki/Sphenomorphus_indicus",
+   "matched_by": "scientific name"
+  },
+  "stegostoma_tigrinum": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Zebra_Shark_at_Sydney_Sea_Life_Aquarium.png/500px-Zebra_Shark_at_Sydney_Sea_Life_Aquarium.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Zebra_Shark_at_Sydney_Sea_Life_Aquarium.png",
+   "artist": "Felix Frost-Savage",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Zebra Shark at Sydney Sea Life Aquarium.png",
+   "article": "https://en.wikipedia.org/wiki/Zebra_shark",
+   "matched_by": "scientific name"
+  },
+  "stolephorus_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Stolephorus_indicus.jpg/500px-Stolephorus_indicus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Stolephorus_indicus.jpg",
+   "artist": "BEDO (Thailand)",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Stolephorus indicus.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_anchovy",
+   "matched_by": "scientific name"
+  },
+  "synodus_indicus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Saurus_indicus_Day_117.jpg/500px-Saurus_indicus_Day_117.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Saurus_indicus_Day_117.jpg",
+   "artist": "Francis Day",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Saurus indicus Day 117.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_lizardfish",
+   "matched_by": "scientific name"
+  },
+  "tatera_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Tatera_indica_Hardwicke.jpg/500px-Tatera_indica_Hardwicke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Tatera_indica_Hardwicke.jpg",
+   "artist": "Thomas Hardwicke",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Tatera indica Hardwicke.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_gerbil",
+   "matched_by": "scientific name"
+  },
+  "terpsiphone_paradisi": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Indian_paradise_flycatcher_%282018%29.jpg/500px-Indian_paradise_flycatcher_%282018%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_paradise_flycatcher_(2018).jpg",
+   "artist": "Drashokk",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian paradise flycatcher (2018).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_paradise_flycatcher",
+   "matched_by": "scientific name"
+  },
+  "tiger": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Bengal_tiger_%28Panthera_tigris_tigris%29_female_3_crop.jpg/500px-Bengal_tiger_%28Panthera_tigris_tigris%29_female_3_crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Bengal_tiger_(Panthera_tigris_tigris)_female_3_crop.jpg",
+   "artist": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Bengal tiger (Panthera tigris tigris) female 3 crop.jpg",
+   "article": "https://en.wikipedia.org/wiki/Tiger",
+   "matched_by": "common name"
+  },
+  "trachinotus_mookalee": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Trachinotus_mookalee.jpg/500px-Trachinotus_mookalee.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Trachinotus_mookalee.jpg",
+   "artist": "renjus box",
+   "licence": "CC BY 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0",
+   "file": "Trachinotus mookalee.jpg",
+   "article": null,
+   "matched_by": "Commons file name"
+  },
+  "turdus_simillimus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Indian_Blackbird_at_Kotagiri.jpg/500px-Indian_Blackbird_at_Kotagiri.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Blackbird_at_Kotagiri.jpg",
+   "artist": "Deepak Sundar",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian Blackbird at Kotagiri.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_blackbird",
+   "matched_by": "scientific name"
+  },
+  "uperodon_globulosus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Greater_Balloon_Frog.JPG/500px-Greater_Balloon_Frog.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Greater_Balloon_Frog.JPG",
+   "artist": "Sindhu ramchandran at English Wikipedia",
+   "licence": "CC BY 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by/3.0",
+   "file": "Greater Balloon Frog.JPG",
+   "article": "https://en.wikipedia.org/wiki/Uperodon_globulosus",
+   "matched_by": "scientific name"
+  },
+  "uperodon_mormoratus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Uperodon_mormoratus.jpg/500px-Uperodon_mormoratus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Uperodon_mormoratus.jpg",
+   "artist": "Girish Gowda",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Uperodon mormoratus.jpg",
+   "article": "https://en.wikipedia.org/wiki/Uperodon_mormoratus",
+   "matched_by": "scientific name"
+  },
+  "uropeltis_pulneyensis": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/PlectrurusPulneyensisJury.jpg/500px-PlectrurusPulneyensisJury.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:PlectrurusPulneyensisJury.jpg",
+   "artist": "J. Jury",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "PlectrurusPulneyensisJury.jpg",
+   "article": "https://en.wikipedia.org/wiki/Uropeltis_pulneyensis",
+   "matched_by": "scientific name"
+  },
+  "uroteuthis_duvauceli": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Uroteuthis_duvauceli.jpg/500px-Uroteuthis_duvauceli.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Uroteuthis_duvauceli.jpg",
+   "artist": "A. Pollock",
+   "licence": "Public domain",
+   "licence_url": null,
+   "file": "Uroteuthis duvauceli.jpg",
+   "article": "https://en.wikipedia.org/wiki/Uroteuthis_duvaucelii",
+   "matched_by": "scientific name"
+  },
+  "urva_auropunctata": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Astonished.jpg/500px-Astonished.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Astonished.jpg",
+   "artist": "Minakksi",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Astonished.jpg",
+   "article": "https://en.wikipedia.org/wiki/Small_Indian_mongoose",
+   "matched_by": "scientific name"
+  },
+  "urva_edwardsii": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Herpestes_edwardsii_at_Hyderaba.jpg/500px-Herpestes_edwardsii_at_Hyderaba.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Herpestes_edwardsii_at_Hyderaba.jpg",
+   "artist": "J.M.Garg",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Herpestes edwardsii at Hyderaba.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_grey_mongoose",
+   "matched_by": "scientific name"
+  },
+  "urva_fusca": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Indian_Brown_Mongoose.jpg/500px-Indian_Brown_Mongoose.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_Brown_Mongoose.jpg",
+   "artist": "Navaneeth Kishor",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Indian Brown Mongoose.jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_brown_mongoose",
+   "matched_by": "scientific name"
+  },
+  "viverra_zibetha": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Large_Indian_Civet%2C_Viverra_zibetha_in_Kaeng_Krachan_national_park.jpg/500px-Large_Indian_Civet%2C_Viverra_zibetha_in_Kaeng_Krachan_national_park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Large_Indian_Civet,_Viverra_zibetha_in_Kaeng_Krachan_national_park.jpg",
+   "artist": "tontantravel, Kaeng Krachan national park tours",
+   "licence": "CC BY-SA 2.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+   "file": "Large Indian Civet, Viverra zibetha in Kaeng Krachan national park.jpg",
+   "article": "https://en.wikipedia.org/wiki/Large_Indian_civet",
+   "matched_by": "scientific name"
+  },
+  "viverricula_indica": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Small_Indian_Civet%2C_Silchar%2C_Assam%2C_India.jpg/500px-Small_Indian_Civet%2C_Silchar%2C_Assam%2C_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Small_Indian_Civet,_Silchar,_Assam,_India.jpg",
+   "artist": "Rejaul karim.rk",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Small Indian Civet, Silchar, Assam, India.jpg",
+   "article": "https://en.wikipedia.org/wiki/Small_Indian_civet",
+   "matched_by": "scientific name"
+  },
+  "walkerana_phrynoderma": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Indirana_phrynoderma_-_Davidraju_IIMG_2484_a.jpg/500px-Indirana_phrynoderma_-_Davidraju_IIMG_2484_a.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indirana_phrynoderma_-_Davidraju_IIMG_2484_a.jpg",
+   "artist": "Davidvraju",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indirana phrynoderma - Davidraju IIMG 2484 a.jpg",
+   "article": "https://en.wikipedia.org/wiki/Walkerana_phrynoderma",
+   "matched_by": "scientific name"
+  },
+  "zebrasoma_desjardinii": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Acanthuridae_-_Zebrasoma_desjardinii.JPG/500px-Acanthuridae_-_Zebrasoma_desjardinii.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Acanthuridae_-_Zebrasoma_desjardinii.JPG",
+   "artist": "Hectonichus",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Acanthuridae - Zebrasoma desjardinii.JPG",
+   "article": "https://en.wikipedia.org/wiki/Zebrasoma_desjardinii",
+   "matched_by": "scientific name"
+  },
+  "ziziphus_mauritiana": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Indian_jujube_%28fruit%29.jpg/500px-Indian_jujube_%28fruit%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_jujube_(fruit).jpg",
+   "artist": "Augustus Binu : flickr",
+   "licence": "CC BY-SA 3.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+   "file": "Indian jujube (fruit).jpg",
+   "article": "https://en.wikipedia.org/wiki/Ziziphus_mauritiana",
+   "matched_by": "scientific name"
+  },
+  "zosterops_palpebrosus": {
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Indian_white-eye_%28Zosterops_palpebrosus_egregius%29.jpg/500px-Indian_white-eye_%28Zosterops_palpebrosus_egregius%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "page": "https://commons.wikimedia.org/wiki/File:Indian_white-eye_(Zosterops_palpebrosus_egregius).jpg",
+   "artist": "Charles J. Sharp",
+   "licence": "CC BY-SA 4.0",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "file": "Indian white-eye (Zosterops palpebrosus egregius).jpg",
+   "article": "https://en.wikipedia.org/wiki/Indian_white-eye",
+   "matched_by": "scientific name"
+  }
+ }
+}

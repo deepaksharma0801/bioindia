@@ -48,7 +48,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 56px;display:f
 .nav-links a{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;white-space:nowrap;text-transform:uppercase;color:var(--parchment-dark);text-decoration:none;opacity:.65;transition:all .3s;}
 .nav-links a:hover{opacity:1;color:var(--teal-l);text-shadow:0 0 10px var(--teal);}
 /* HERO */
-#hero{position:relative;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+#hero{position:relative;min-height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:104px 0 64px;box-sizing:border-box;}
 .hero-pb{position:absolute;inset:0;background-size:cover;background-position:center bottom;transform:scale(1.06);animation:hpan 28s ease-in-out infinite alternate;}
 @keyframes hpan{from{transform:scale(1.06) translateX(-2%)}to{transform:scale(1.12) translateX(2%)}}
 .hero-vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 15%,rgba(6,12,20,.5) 55%,rgba(6,12,20,.92) 100%),linear-gradient(to bottom,rgba(4,8,16,.65) 0%,transparent 28%,transparent 58%,rgba(6,12,20,.97) 100%);}
@@ -433,13 +433,18 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .si-chip.active{border-color:var(--teal-l);color:var(--teal-l);background:rgba(42,138,122,.12);}
 .si-count{padding:10px 16px 6px;font-family:'Cinzel',serif;font-size:.48rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(168,196,216,.35);}
 .si-list{overflow-y:auto;flex:1;min-height:0;scrollbar-width:thin;scrollbar-color:rgba(42,138,122,.4) transparent;}
-.si-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;width:100%;text-align:left;padding:9px 16px;border:none;border-left:2px solid transparent;background:none;cursor:pointer;color:inherit;}
+.si-row{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:2px 10px;align-items:center;width:100%;text-align:left;padding:9px 16px;border:none;border-left:2px solid transparent;background:none;cursor:pointer;color:inherit;}
 .si-row:hover{background:rgba(42,138,122,.06);}
 .si-row.active{border-left-color:var(--teal-l);background:rgba(42,138,122,.12);}
 .si-row-name{font-family:'EB Garamond',serif;font-size:.98rem;color:var(--parchment);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.si-row-sci{grid-column:1;font-family:'EB Garamond',serif;font-style:italic;font-size:.78rem;color:rgba(168,196,216,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.si-row-n{grid-row:1/span 2;grid-column:2;align-self:center;font-family:'Cinzel',serif;font-size:.55rem;color:rgba(168,196,216,.5);}
+.si-row-sci{grid-column:2;font-family:'EB Garamond',serif;font-style:italic;font-size:.78rem;color:rgba(168,196,216,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.si-row-n{grid-row:1/span 2;grid-column:3;align-self:center;font-family:'Cinzel',serif;font-size:.55rem;color:rgba(168,196,216,.5);}
 .si-row-flag{font-family:'Cinzel',serif;font-size:.42rem;letter-spacing:.15em;color:var(--teal-l);margin-left:6px;}
+.si-row-pic{grid-row:1/span 2;grid-column:1;width:34px;height:34px;border-radius:50%;overflow:hidden;border:1px solid rgba(42,138,122,.3);background:rgba(42,138,122,.12);display:flex;align-items:center;justify-content:center;font-family:'Cinzel Decorative',serif;font-size:.8rem;color:var(--teal-l);}
+.si-row-pic img{width:100%;height:100%;object-fit:cover;}
+.si-row-name{grid-column:2;}
+.si-credit{position:absolute;left:0;right:0;bottom:0;padding:4px 8px;background:rgba(4,10,18,.78);font-family:'EB Garamond',serif;font-size:.7rem;line-height:1.3;color:rgba(221,234,245,.75);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.si-credit:hover{color:var(--teal-l);}
 .si-detail{padding:28px 32px 32px;min-width:0;}
 .si-head{display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px;align-items:stretch;}
 .si-pic{height:220px;border:2px solid rgba(42,138,122,.25);overflow:hidden;position:relative;background:linear-gradient(135deg,rgba(42,138,122,.16),rgba(6,12,20,.85));}
@@ -964,7 +969,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   <div class="footer-bottom">
     <span>© 2026 BioIndia — Biodiversity Intelligence Platform for India</span>
     <span style="color:rgba(42,138,122,.3);font-size:.8rem;letter-spacing:.5em">✦ ✦ ✦ ✦ ✦</span>
-    <span>GBIF · IUCN · OSM · Hansen GFC · GHSL</span>
+    <span>GBIF · IUCN · OSM · Hansen GFC · GHSL · Species photos: Wikimedia Commons contributors</span>
   </div>
 </footer>
 
@@ -1046,6 +1051,18 @@ function spImg(e, cls='', style='') {
   const src = SP_IMG[e];
   if (!src) return `<span style="font-size:inherit">${e}</span>`;
   return `<img src="${src}" class="${cls}" style="width:100%;height:100%;object-fit:cover;object-position:center;${style}" alt="">`;
+}
+// Freely licensed species photos from Wikimedia Commons (loaded by bioindia-phase5.js); each keeps its credit.
+window.SPECIES_PHOTOS = window.SPECIES_PHOTOS || {};
+function escText(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+function photoCredit(p) { return p ? 'Photo: ' + p.artist + ' · ' + p.licence + ' · Wikimedia Commons' : ''; }
+// Card picture: the illustrated art for the five flagships, otherwise a Commons photo, otherwise initials.
+function cardImg(sp) {
+  if (SP_IMG[sp.e]) return spImg(sp.e, 'sp-art-img');
+  const p = window.SPECIES_PHOTOS[sp.species_id];
+  if (p) return `<img src="${escText(p.thumb)}" class="sp-art-img" loading="lazy" alt="${escText(sp.n)}" title="${escText(photoCredit(p))}">`;
+  const initials = String(sp.n || sp.s || '').split(/[\s-]+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
+  return `<span style="font-family:'Cinzel Decorative',serif;font-size:1.3rem;color:var(--teal-l)">${escText(initials)}</span>`;
 }
 function spImgFixed(e, w, h, extra='') {
   const src = SP_IMG[e];
@@ -1261,7 +1278,7 @@ function showState(nm) {
       const render = list => list.forEach(sp => {
         const card = document.createElement('div');
         card.className = 'sp-card';
-        card.innerHTML = `<div class="sp-portrait" data-e="${sp.e}">${spImg(sp.e,'sp-art-img')}<span class="sp-obs">${sp.obs} obs</span></div><div class="sp-name">${sp.n}</div><div class="sp-sci">${sp.s}</div><span class="sp-st s-${sp.st}">${sp.st.toUpperCase()}</span>`;
+        card.innerHTML = `<div class="sp-portrait" data-e="${sp.e}">${cardImg(sp)}<span class="sp-obs">${sp.obs} obs</span></div><div class="sp-name">${sp.n}</div><div class="sp-sci">${sp.s}</div><span class="sp-st s-${sp.st}">${sp.st.toUpperCase()}</span>`;
         card.onclick = () => openModal(sp, nm);
         grid.appendChild(card);
       });
@@ -1294,8 +1311,9 @@ function switchTab(t) {
 function openModal(sp, state) {
   const imgSrc = SP_IMG[sp.e];
   const mE = document.getElementById('mE');
-  if (imgSrc) {
-    mE.innerHTML = `<img src="${imgSrc}" style="width:80px;height:80px;object-fit:cover;object-position:center;border-radius:2px;border:1px solid rgba(42,138,122,.3);" alt="">`;
+  const photo = !imgSrc && window.SPECIES_PHOTOS[sp.species_id];
+  if (imgSrc || photo) {
+    mE.innerHTML = `<img src="${escText(imgSrc || photo.thumb)}" style="width:80px;height:80px;object-fit:cover;object-position:center;border-radius:2px;border:1px solid rgba(42,138,122,.3);" alt="">`;
   } else {
     mE.textContent = sp.e;
   }
@@ -1305,6 +1323,12 @@ function openModal(sp, state) {
   document.getElementById('mH').textContent = sp.h || 'Various habitats';
   document.getElementById('mObs').textContent = sp.obs + ' occurrence records';
   document.getElementById('mD').textContent = sp.desc || '';
+  if (photo) {
+    const credit = document.createElement('div');
+    credit.style.cssText = 'margin-top:10px;font-size:.78rem;opacity:.6';
+    credit.innerHTML = `<a href="${escText(photo.page)}" target="_blank" rel="noopener" style="color:inherit">${escText(photoCredit(photo))}</a>`;
+    document.getElementById('mD').appendChild(credit);
+  }
   const stLabels = {en:'Endangered',vu:'Vulnerable',cr:'Critically Endangered',nt:'Near Threatened',lc:'Least Concern'};
   document.getElementById('mSt').textContent = stLabels[sp.st] || sp.st;
 
@@ -2381,7 +2405,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script src="bioindia-phase2.js?v=6"></script>
 <script src="bioindia-phase3.js?v=5"></script>
-<script src="bioindia-phase5.js?v=10"></script>
-<div style="position:relative;z-index:2;padding:14px 16px 18px;background:rgba(4,10,18,.92);font:11px/1.4 Georgia,serif;color:rgba(168,196,216,.75);text-align:center">Static snapshot of 2026-10-27. GBIF.org occurrence download https://doi.org/10.15468/dl.dvgq2s; Hansen et al. Global Forest Change; GHSL; OpenStreetMap contributors (ODbL). IUCN Red List categories are not shown, except the five flagships (unverified reference list). Model outputs are not IUCN assessments.</div>
+<script src="bioindia-phase5.js?v=11"></script>
+<div style="position:relative;z-index:2;padding:14px 16px 18px;background:rgba(4,10,18,.92);font:11px/1.4 Georgia,serif;color:rgba(168,196,216,.75);text-align:center">Static snapshot of 2026-10-27. GBIF.org occurrence download https://doi.org/10.15468/dl.dvgq2s; Hansen et al. Global Forest Change; GHSL; OpenStreetMap contributors (ODbL); species photos: Wikimedia Commons contributors, credited on each photo. IUCN Red List categories are not shown, except the five flagships (unverified reference list). Model outputs are not IUCN assessments.</div>
 </body>
 </html>
