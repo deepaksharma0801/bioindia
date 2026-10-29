@@ -81,13 +81,18 @@ def write_dashboard(out: Path, stamp: str) -> None:
     """Copy the dashboard files into the site with the static-mode flag and the citation footer."""
     for name in DASHBOARD_FILES:
         shutil.copy2(ROOT / name, out / name)
+    # Species photo index (Wikimedia Commons links and credits) from scripts/fetch_species_images.py.
+    photos = ROOT / "data" / "processed" / "species_images.json"
+    if photos.exists():
+        (out / "data" / "processed").mkdir(parents=True, exist_ok=True)
+        shutil.copy2(photos, out / "data" / "processed" / photos.name)
     html = (out / DASHBOARD_FILES[0]).read_text(encoding="utf-8")
     flag = (f'<script>window.BIOINDIA_STATIC = {{date: "{stamp}"}};</script>\n'
             '<style>.sp-st.s-\\-{opacity:.5}</style>\n</head>')
     note = ('<div style="position:relative;z-index:2;padding:14px 16px 18px;background:rgba(4,10,18,.92);'
             'font:11px/1.4 Georgia,serif;color:rgba(168,196,216,.75);text-align:center">Static snapshot of '
             f'{stamp}. GBIF.org occurrence download https://doi.org/10.15468/dl.dvgq2s; Hansen et al. Global Forest Change; GHSL; '
-            'OpenStreetMap contributors (ODbL). IUCN Red List categories are not shown, except the five flagships '
+            'OpenStreetMap contributors (ODbL); species photos: Wikimedia Commons contributors, credited on each photo. IUCN Red List categories are not shown, except the five flagships '
             '(unverified reference list). Model outputs are not IUCN assessments.</div>\n</body>')
     html = html.replace("</head>", flag, 1).replace("</body>", note, 1)
     (out / DASHBOARD_FILES[0]).write_text(html, encoding="utf-8")

@@ -97,7 +97,7 @@ class SecurityTests(unittest.TestCase):
 
     def test_output_endpoint_serves_only_dashboard_files(self) -> None:
         listed = {item["name"] for item in self.client.get("/api/datasets/outputs").json()["outputs"]}
-        self.assertEqual(listed, {"state_species.json", "occurrence_points.json", "hotspots.geojson"})
+        self.assertEqual(listed, {"state_species.json", "occurrence_points.json", "hotspots.geojson", "species_images.json"})
         for name in ("species_master.json", "osm_protected_areas.gpkg", "..%2Fraw%2Fgbif%2Fgbif_download_request.json"):
             self.assertEqual(self.client.get(f"/api/datasets/outputs/{name}").status_code, 404, name)
 

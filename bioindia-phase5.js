@@ -69,9 +69,27 @@
     }
   }
 
-  function image(emoji, size) {
+  // Species photos (Wikimedia Commons, freely licensed) for every species without illustrated art.
+  async function loadPhotos() {
+    var candidates = window.BIOINDIA_STATIC ? ["data/processed/species_images.json"] :
+      ["/api/datasets/outputs/species_images.json", "http://127.0.0.1:8000/api/datasets/outputs/species_images.json",
+       "http://localhost:8000/api/datasets/outputs/species_images.json", "data/processed/species_images.json"];
+    for (var i = 0; i < candidates.length; i += 1) {
+      try {
+        var response = await fetch(candidates[i]);
+        if (response.ok) { window.SPECIES_PHOTOS = (await response.json()).images || {}; return; }
+      } catch (error) { /* try the next location */ }
+    }
+  }
+
+  function photoOf(speciesId) { return (window.SPECIES_PHOTOS || {})[speciesId] || null; }
+
+  function image(emoji, size, speciesId) {
     var src = typeof SP_IMG !== "undefined" ? SP_IMG[emoji] : "";
-    return src ? '<img src="' + src + '" style="width:' + size + "px;height:" + size + 'px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:7px" alt="">' : "";
+    var photo = !src && photoOf(speciesId);
+    if (photo) src = photo.thumb;
+    return src ? '<img src="' + esc(src) + '" loading="lazy" style="width:' + size + "px;height:" + size + 'px;object-fit:cover;border-radius:2px;vertical-align:middle;margin-right:7px" alt=""' +
+      (photo ? ' title="' + esc("Photo: " + photo.artist + " · " + photo.licence + " · Wikimedia Commons") + '"' : "") + ">" : "";
   }
 
   function shapBars(items, scale) {
@@ -99,7 +117,7 @@
       var factors = item.top_contributions.slice(0, 3).map(function (f) {
         return '<span class="ai-factor">' + (f.shap_value > 0 ? "▲ " : "▼ ") + esc(f.description) + "</span>";
       }).join("");
-      return '<div class="ai-card"><h3>' + image((FLAGSHIPS.find(function (f) { return f.id === item.species_id; }) || {}).emoji, 22) +
+      return '<div class="ai-card"><h3>' + image((FLAGSHIPS.find(function (f) { return f.id === item.species_id; }) || {}).emoji, 22, item.species_id) +
         esc(item.common_name || item.scientific_name) + "</h3>" +
         '<div class="risk-meter ' + level + '"><div class="risk-label"><span>Model-predicted probability of threatened status</span><span>' + esc(status) + "</span></div>" +
         '<div class="risk-track"><div class="risk-fill" style="width:' + risk + '%"></div></div><div class="risk-pct">' + risk + "%</div></div>" +
@@ -201,7 +219,10 @@
       });
       document.getElementById("siCount").textContent = shown.length + " of " + species.length + " species";
       document.getElementById("siList").innerHTML = shown.map(function (s) {
+        var flagArt = FLAGSHIPS.find(function (f) { return f.id === s.species_id; });
+        var thumb = flagArt && typeof SP_IMG !== "undefined" && SP_IMG[flagArt.emoji] ? SP_IMG[flagArt.emoji] : (photoOf(s.species_id) || {}).thumb;
         return '<button class="si-row' + (s.species_id === state.selected ? " active" : "") + '" data-id="' + esc(s.species_id) + '">' +
+          '<span class="si-row-pic">' + (thumb ? '<img src="' + esc(thumb) + '" loading="lazy" alt="">' : esc((s.common_name || s.scientific_name).slice(0, 1))) + "</span>" +
           '<span class="si-row-name">' + esc(s.common_name || s.scientific_name) + (flagshipOrder.indexOf(s.species_id) >= 0 ? '<span class="si-row-flag">FLAGSHIP</span>' : "") + "</span>" +
           '<span class="si-row-n">' + fmt(s.observation_record_count) + "</span>" +
           '<span class="si-row-sci">' + esc(s.scientific_name) + "</span></button>";
@@ -253,6 +274,7 @@
       : (window.BIOINDIA_STATIC ? "Withheld in public snapshot" : "Not assessed");
     var pa = protection && protection.wildlife_protected_areas.record_intersection_percent;
     var image = flag && typeof SP_IMG !== "undefined" ? SP_IMG[flag.emoji] : "";
+    var photo = !image && photoOf(speciesId);
     var maxTrend = Math.max.apply(null, trend.normalized_observation_index.concat([1]));
     var bars = trend.normalized_observation_index.map(function (value, i) {
       return '<div class="si-bar" style="height:' + Math.max(1, Math.round(value / maxTrend * 100)) + '%;background:linear-gradient(to top,#277a73,#4abaa8);flex:1" data-tip="' +
@@ -276,7 +298,10 @@
     var types = network && network.documented_links_by_type ? Object.entries(network.documented_links_by_type).sort(function (a, b) { return b[1] - a[1]; }).slice(0, 3) : [];
 
     return '<div class="si-head"><div class="si-pic">' +
-      (image ? '<img src="' + image + '" alt="' + esc(name) + '">' : '<div class="si-mono"><b>' + esc(initials) + "</b><span>" + esc(groupOf(sp.taxonomic_group)) + "</span></div>") +
+      (image ? '<img src="' + image + '" alt="' + esc(name) + '">' :
+        photo ? '<img src="' + esc(photo.thumb) + '" alt="' + esc(name) + '"><a class="si-credit" href="' + esc(photo.page) + '" target="_blank" rel="noopener">' +
+          esc("Photo: " + photo.artist + " · " + photo.licence) + "</a>" :
+        '<div class="si-mono"><b>' + esc(initials) + "</b><span>" + esc(groupOf(sp.taxonomic_group)) + "</span></div>") +
       "</div><div>" +
       '<div class="si-title">' + esc(name) + '</div><div class="si-sub">' + esc(sp.scientific_name) + "</div>" +
       '<div class="si-taxo">' + [taxo.class_name, taxo.order_name, taxo.family].filter(Boolean).map(esc).join(" · ") + "</div>" +
@@ -606,6 +631,7 @@
 
   async function bootstrap() {
     var steps = [liveRisk, liveXai, liveSpeciesIntel, liveTimeSeries, liveEnvironment];
+    await loadPhotos();
     try {
       await request("/model-info");
     } catch (error) {

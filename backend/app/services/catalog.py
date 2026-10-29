@@ -71,7 +71,7 @@ def _candidate_output(name: str) -> Path | None:
 
 # Only the derived dashboard files are served. Other processed files hold licensed source data
 # (IUCN, WDPA, OSM) whose terms forbid offering it for download.
-PUBLIC_OUTPUTS = ("state_species.json", "occurrence_points.json", "hotspots.geojson")
+PUBLIC_OUTPUTS = ("state_species.json", "occurrence_points.json", "hotspots.geojson", "species_images.json")
 
 
 def list_output_files() -> list[dict[str, object]]:
