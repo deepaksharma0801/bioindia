@@ -223,9 +223,9 @@
         var thumb = flagArt && typeof SP_IMG !== "undefined" && SP_IMG[flagArt.emoji] ? SP_IMG[flagArt.emoji] : (photoOf(s.species_id) || {}).thumb;
         return '<button class="si-row' + (s.species_id === state.selected ? " active" : "") + '" data-id="' + esc(s.species_id) + '">' +
           '<span class="si-row-pic">' + (thumb ? '<img src="' + esc(thumb) + '" loading="lazy" alt="">' : esc((s.common_name || s.scientific_name).slice(0, 1))) + "</span>" +
-          '<span class="si-row-name">' + esc(s.common_name || s.scientific_name) + (flagshipOrder.indexOf(s.species_id) >= 0 ? '<span class="si-row-flag">FLAGSHIP</span>' : "") + "</span>" +
+          '<span class="si-row-name">' + esc(s.common_name || s.scientific_name) + "</span>" +
           '<span class="si-row-n">' + fmt(s.observation_record_count) + "</span>" +
-          '<span class="si-row-sci">' + esc(s.scientific_name) + "</span></button>";
+          '<span class="si-row-sci">' + (flagshipOrder.indexOf(s.species_id) >= 0 ? '<span class="si-row-flag">FLAGSHIP</span>' : "") + esc(s.scientific_name) + "</span></button>";
       }).join("") || '<div class="si-loading">No species match</div>';
     }
     document.getElementById("siSearch").addEventListener("input", function (e) { state.query = e.target.value.trim(); renderList(); });
