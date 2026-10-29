@@ -516,10 +516,12 @@
       // Running tally in the corner once the cascade starts.
       var shown = nodes.filter(function (n) { return n.lost && t > n.delay; }).length;
       if (removed > 0) {
-        ctx.font = "9px Cinzel, serif"; ctx.textAlign = "right"; ctx.fillStyle = "rgba(240,140,150,.85)";
-        ctx.fillText("POTENTIALLY LOST: " + Math.min(shown, data.summary.potentially_secondarily_lost), W - 14, 20);
+        // On narrow canvases the tally sits under the ring labels instead of sharing their line.
+        var narrow = W < 520, tx = narrow ? 14 : W - 14, ty = narrow ? (far.length ? 52 : 38) : 20;
+        ctx.font = "9px Cinzel, serif"; ctx.textAlign = narrow ? "left" : "right"; ctx.fillStyle = "rgba(240,140,150,.85)";
+        ctx.fillText("POTENTIALLY LOST: " + Math.min(shown, data.summary.potentially_secondarily_lost), tx, ty);
         ctx.fillStyle = "rgba(143,220,205,.8)";
-        ctx.fillText("PERSIST: " + nodes.filter(function (n) { return !n.lost; }).length, W - 14, 34);
+        ctx.fillText("PERSIST: " + nodes.filter(function (n) { return !n.lost; }).length, tx, ty + 14);
       }
       cascadeAnim = requestAnimationFrame(frame);
     }
