@@ -1557,7 +1557,8 @@ function drawEco() {
 
   eNodes.forEach(n => {
     if (n.opacity <= 0) return;
-    const r = n.sz * (n.alive ? 1 : 0.7 + 0.3 * n.opacity);
+    // Smaller nodes on phones keep each name clear of the next level's heading.
+    const r = n.sz * (W < 600 ? 0.7 : 1) * (n.alive ? 1 : 0.7 + 0.3 * n.opacity);
     ctx.globalAlpha = n.opacity;
     const glow = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, r * 2.4);
     glow.addColorStop(0, (n.alive ? n.col : '#dc5064') + '55'); glow.addColorStop(1, 'transparent');
