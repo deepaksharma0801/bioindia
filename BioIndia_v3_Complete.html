@@ -44,8 +44,8 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 56px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(to bottom,rgba(4,8,16,.97) 60%,transparent);border-bottom:1px solid rgba(42,138,122,.2);}
 .nav-logo{font-family:'Cinzel Decorative',serif;font-size:1.2rem;color:var(--teal-l);letter-spacing:.05em;display:flex;align-items:center;gap:10px;}
-.nav-links{display:flex;gap:32px;list-style:none;}
-.nav-links a{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--parchment-dark);text-decoration:none;opacity:.65;transition:all .3s;}
+.nav-links{display:flex;gap:clamp(14px,2vw,32px);list-style:none;margin:0;padding:0;}
+.nav-links a{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.2em;white-space:nowrap;text-transform:uppercase;color:var(--parchment-dark);text-decoration:none;opacity:.65;transition:all .3s;}
 .nav-links a:hover{opacity:1;color:var(--teal-l);text-shadow:0 0 10px var(--teal);}
 /* HERO */
 #hero{position:relative;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
@@ -486,6 +486,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .leaflet-control-attribution{background:rgba(4,10,18,.75)!important;color:rgba(168,196,216,.7)!important;font-size:10px!important;}
 .leaflet-control-attribution a{color:var(--teal-l)!important;}
 @media(min-width:901px) and (max-width:1200px){.si-browser{grid-template-columns:250px minmax(0,1fr);}.si-head{grid-template-columns:150px minmax(0,1fr);gap:20px;}.si-pic{height:170px;}.si-detail{padding:24px;}}
+@media(min-width:769px) and (max-width:1200px){nav{padding:14px 24px;}.nav-logo{font-size:1.05rem;}.nav-links{gap:clamp(10px,1.3vw,18px);}.nav-links a{font-size:.55rem;letter-spacing:.1em;}}
 /* Phones and narrow tablets: stack the two-column sections (kept last so it overrides the base grid rules). */
 @media(max-width:900px){#forest-scroll{overflow-x:clip;}.stats-strip{grid-template-columns:repeat(2,minmax(0,1fr));}.stats-strip .si:nth-child(2n){border-right:none;}.stats-strip .si:nth-child(-n+2){border-bottom:1px solid rgba(42,138,122,.18);}.sn{font-size:clamp(1.3rem,6.2vw,2.2rem);}.sl{font-size:.85rem;}#spGrid{max-height:480px;}.eco-panel{padding:16px 12px;}.report-risk-list{grid-template-columns:1fr;}.report-risk-item{min-width:0;}.si-browser{grid-template-columns:1fr;}.si-rail{border-right:none;border-bottom:1px solid rgba(42,138,122,.15);}.si-rail{contain:none;min-height:0;}.si-list{max-height:260px;flex:none;}.si-head,.si-mid,.si-cards{grid-template-columns:1fr;}.si-detail{padding:20px 16px;}.hotspot-grid{grid-template-columns:1fr;}.hotspot-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.hm-metric{min-width:0;}.ai-grid,.env-grid,.xai-grid{grid-template-columns:1fr;}.si-content.active{grid-template-columns:1fr;}.report-controls{grid-template-columns:1fr;}.report-kpis{grid-template-columns:1fr 1fr;}.hm-grid{grid-template-columns:repeat(3,minmax(0,1fr));}.hm-score{font-size:.8rem;}#hero{overflow-x:clip;}.ts-stats{grid-template-columns:repeat(2,minmax(0,1fr));}}
 </style>
