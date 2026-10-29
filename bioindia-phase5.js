@@ -299,7 +299,7 @@
 
     return '<div class="si-head"><div class="si-pic">' +
       (image ? '<img src="' + image + '" alt="' + esc(name) + '">' :
-        photo ? '<img src="' + esc(photo.thumb) + '" alt="' + esc(name) + '"><a class="si-credit" href="' + esc(photo.page) + '" target="_blank" rel="noopener">' +
+        photo ? photoFrame(photo.thumb, name) + '<a class="si-credit" href="' + esc(photo.page) + '" target="_blank" rel="noopener">' +
           esc("Photo: " + photo.artist + " · " + photo.licence) + "</a>" :
         '<div class="si-mono"><b>' + esc(initials) + "</b><span>" + esc(groupOf(sp.taxonomic_group)) + "</span></div>") +
       "</div><div>" +

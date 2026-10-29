@@ -127,7 +127,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 56px;display:f
 .sp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);transform:scaleX(0);transition:transform .4s;}
 .sp-card:hover::before{transform:scaleX(1);}
 .sp-card:hover{border-color:rgba(42,138,122,.45);transform:translateY(-1px);}
-.sp-portrait{width:100%;height:68px;display:flex;align-items:center;justify-content:center;font-size:2.4rem;background:linear-gradient(135deg,rgba(42,138,122,.08),rgba(6,12,20,.6));border:1px solid rgba(42,138,122,.15);margin-bottom:7px;position:relative;overflow:hidden;}
+.sp-portrait{width:100%;height:auto;aspect-ratio:2/1;min-height:68px;max-height:150px;display:flex;align-items:center;justify-content:center;font-size:2.4rem;background:linear-gradient(135deg,rgba(42,138,122,.08),rgba(6,12,20,.6));border:1px solid rgba(42,138,122,.15);margin-bottom:7px;position:relative;overflow:hidden;}
 .sp-art-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s ease;}
 .sp-card:hover .sp-art-img{transform:scale(1.08);}
 .sp-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(6,12,20,.55) 100%);pointer-events:none;z-index:1;}
@@ -241,7 +241,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 @keyframes fin{from{opacity:0}to{opacity:1}}
 /* RESPONSIVE */
 @media(max-width:1024px){.map-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.data-grid{grid-template-columns:1fr;}}
-@media(max-width:768px){nav{padding:14px 20px;}.nav-links{display:none;}#map-section,#ecosystem,#heatmap,#timeline,#heritage,#data-sec,#ai-risk,#hotspots,#species-intel,#timeseries,#env-impact,#xai,#reports{padding:60px 20px !important;}.hm-grid{grid-template-columns:repeat(4,1fr);}.paintings-duo{grid-template-columns:1fr;}.sp-grid{grid-template-columns:1fr;}.modal-fields{grid-template-columns:1fr;}.tl-item{grid-template-columns:1fr 30px 1fr;}}
+@media(max-width:768px){nav{padding:14px 20px;}.nav-links{display:none;}#map-section,#ecosystem,#heatmap,#timeline,#heritage,#data-sec,#ai-risk,#hotspots,#species-intel,#timeseries,#env-impact,#xai,#reports{padding:60px 20px !important;}.hm-grid{grid-template-columns:repeat(4,1fr);}.paintings-duo{grid-template-columns:1fr;}.modal-fields{grid-template-columns:1fr;}.tl-item{grid-template-columns:1fr 30px 1fr;}}
 
 /* ===== NEW MODULE STYLES ===== */
 /* GIS MAP */
@@ -445,6 +445,11 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .si-row-name{grid-column:2;}
 .si-credit{position:absolute;left:0;right:0;bottom:0;padding:4px 8px;background:rgba(4,10,18,.78);font-family:'EB Garamond',serif;font-size:.7rem;line-height:1.3;color:rgba(221,234,245,.75);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .si-credit:hover{color:var(--teal-l);}
+.ph-frame{position:absolute;inset:0;display:block;overflow:hidden;background:#06121a;}
+.ph-frame .ph-bg{position:absolute;inset:-12%;width:124%;height:124%;object-fit:cover;filter:blur(14px) brightness(.45) saturate(1.1);}
+.ph-frame .ph-fg{position:relative;display:block;width:100%;height:100%;object-fit:contain;}
+.ph-frame .ph-fg.fill{object-fit:cover;}
+.sp-card:hover .ph-fg{transform:scale(1.04);transition:transform .4s ease;}
 .si-detail{padding:28px 32px 32px;min-width:0;}
 .si-head{display:grid;grid-template-columns:210px minmax(0,1fr);gap:28px;align-items:stretch;}
 .si-pic{height:220px;border:2px solid rgba(42,138,122,.25);overflow:hidden;position:relative;background:linear-gradient(135deg,rgba(42,138,122,.16),rgba(6,12,20,.85));}
@@ -492,6 +497,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .leaflet-control-attribution a{color:var(--teal-l)!important;}
 @media(min-width:901px) and (max-width:1200px){.si-browser{grid-template-columns:250px minmax(0,1fr);}.si-head{grid-template-columns:150px minmax(0,1fr);gap:20px;}.si-pic{height:170px;}.si-detail{padding:24px;}}
 @media(min-width:769px) and (max-width:1200px){nav{padding:14px 24px;}.nav-logo{font-size:1.05rem;}.nav-links{gap:clamp(10px,1.3vw,18px);}.nav-links a{font-size:.55rem;letter-spacing:.1em;}}
+@media(max-width:520px){.sp-grid{grid-template-columns:1fr;}}
 /* Phones and narrow tablets: stack the two-column sections (kept last so it overrides the base grid rules). */
 @media(max-width:900px){#forest-scroll{overflow-x:clip;}.stats-strip{grid-template-columns:repeat(2,minmax(0,1fr));}.stats-strip .si:nth-child(2n){border-right:none;}.stats-strip .si:nth-child(-n+2){border-bottom:1px solid rgba(42,138,122,.18);}.sn{font-size:clamp(1.3rem,6.2vw,2.2rem);}.sl{font-size:.85rem;}#spGrid{max-height:480px;}.eco-panel{padding:16px 12px;}.report-risk-list{grid-template-columns:1fr;}.report-risk-item{min-width:0;}.si-browser{grid-template-columns:1fr;}.si-rail{border-right:none;border-bottom:1px solid rgba(42,138,122,.15);}.si-rail{contain:none;min-height:0;}.si-list{max-height:260px;flex:none;}.si-head,.si-mid,.si-cards{grid-template-columns:1fr;}.si-detail{padding:20px 16px;}.hotspot-grid{grid-template-columns:1fr;}.hotspot-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}.hm-metric{min-width:0;}.ai-grid,.env-grid,.xai-grid{grid-template-columns:1fr;}.si-content.active{grid-template-columns:1fr;}.report-controls{grid-template-columns:1fr;}.report-kpis{grid-template-columns:1fr 1fr;}.hm-grid{grid-template-columns:repeat(3,minmax(0,1fr));}.hm-score{font-size:.8rem;}#hero{overflow-x:clip;}.ts-stats{grid-template-columns:repeat(2,minmax(0,1fr));}}
 </style>
@@ -1054,11 +1060,23 @@ function spImg(e, cls='', style='') {
 window.SPECIES_PHOTOS = window.SPECIES_PHOTOS || {};
 function escText(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 function photoCredit(p) { return p ? 'Photo: ' + p.artist + ' · ' + p.licence + ' · Wikimedia Commons' : ''; }
+// Whole photo, letterboxed over a blurred copy of itself, so wide fish or tall plants are never cropped.
+function photoFrame(src, alt, title) {
+  return `<span class="ph-frame"${title ? ` title="${escText(title)}"` : ''}><img class="ph-bg" src="${escText(src)}" loading="lazy" alt="" aria-hidden="true"><img class="ph-fg" src="${escText(src)}" loading="lazy" alt="${escText(alt)}" onload="fitPhoto(this)"></span>`;
+}
+// Fill the frame when that crops little; show the whole photo when filling would cut away more than a third.
+function fitPhoto(img) {
+  const frame = img.parentElement;
+  if (!frame || !img.naturalWidth || !frame.clientHeight) return;
+  const fr = frame.clientWidth / frame.clientHeight, ir = img.naturalWidth / img.naturalHeight;
+  img.classList.toggle('fill', 1 - Math.min(fr / ir, ir / fr) < 0.34);
+}
+window.addEventListener('resize', () => document.querySelectorAll('.ph-fg').forEach(fitPhoto));
 // Card picture: the illustrated art for the five flagships, otherwise a Commons photo, otherwise initials.
 function cardImg(sp) {
   if (SP_IMG[sp.e]) return spImg(sp.e, 'sp-art-img');
   const p = window.SPECIES_PHOTOS[sp.species_id];
-  if (p) return `<img src="${escText(p.thumb)}" class="sp-art-img" loading="lazy" alt="${escText(sp.n)}" title="${escText(photoCredit(p))}">`;
+  if (p) return photoFrame(p.thumb, sp.n, photoCredit(p));
   const initials = String(sp.n || sp.s || '').split(/[\s-]+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
   return `<span style="font-family:'Cinzel Decorative',serif;font-size:1.3rem;color:var(--teal-l)">${escText(initials)}</span>`;
 }
@@ -1310,8 +1328,10 @@ function openModal(sp, state) {
   const imgSrc = SP_IMG[sp.e];
   const mE = document.getElementById('mE');
   const photo = !imgSrc && window.SPECIES_PHOTOS[sp.species_id];
-  if (imgSrc || photo) {
-    mE.innerHTML = `<img src="${escText(imgSrc || photo.thumb)}" style="width:80px;height:80px;object-fit:cover;object-position:center;border-radius:2px;border:1px solid rgba(42,138,122,.3);" alt="">`;
+  if (photo) {
+    mE.innerHTML = `<span style="position:relative;display:inline-block;width:96px;height:80px;border-radius:2px;border:1px solid rgba(42,138,122,.3);overflow:hidden">${photoFrame(photo.thumb, sp.n)}</span>`;
+  } else if (imgSrc) {
+    mE.innerHTML = `<img src="${escText(imgSrc)}" style="width:80px;height:80px;object-fit:cover;object-position:center;border-radius:2px;border:1px solid rgba(42,138,122,.3);" alt="">`;
   } else {
     mE.textContent = sp.e;
   }
@@ -2403,6 +2423,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <script src="bioindia-phase2.js?v=6"></script>
 <script src="bioindia-phase3.js?v=5"></script>
-<script src="bioindia-phase5.js?v=12"></script>
+<script src="bioindia-phase5.js?v=13"></script>
 </body>
 </html>
