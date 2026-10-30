@@ -137,7 +137,8 @@ docker compose --profile app up -d --build
 ```
 
 The dashboard is then served at `http://localhost:8080`, with interactive API documentation at
-`/docs`. The database is populated by the pipeline described below.
+`/docs`. The database is populated from a data bundle ([step-by-step guide](docs/SETUP.md)) or by the
+pipeline described below.
 
 <details>
 <summary><strong>Full setup and data pipeline</strong></summary>
